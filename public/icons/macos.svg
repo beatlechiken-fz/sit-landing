@@ -1,0 +1,7 @@
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <title>macOS (Laptop)</title>
+  <rect x="3.5" y="4.5" width="17" height="11" rx="1.2" stroke="#14B8A6" stroke-width="1.5" fill="none"/>
+  <rect x="1.5" y="16.2" width="21" height="1.8" rx="0.9" fill="#14B8A6" opacity="0.12"/>
+  <path d="M8.8 7.8c.6-.6 1.8-.9 3.2-.6 1.4.3 2.2 1.2 2.6 1.8" stroke="#14B8A6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="0.6" fill="#14B8A6"/>
+</svg>
