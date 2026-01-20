@@ -38,36 +38,36 @@ export function createMenuNavElement(t: TType): MenuNavElement {
       url: "/apps",
       submenu: [
         { id: "apps", label: t("dev"), url: "/apps" },
-        { id: "landing", label: t("landing"), url: "/" },
-        { id: "ia", label: t("ia"), url: "/" },
+        { id: "landing", label: t("landing"), url: "/landing" },
+        { id: "ia", label: t("ia"), url: "/ia" },
       ],
     },
     support: {
       id: "support",
       label: t("support"),
-      url: "/",
+      url: "/fix",
       submenu: [
-        { id: "fix", label: t("fix"), url: "/" },
-        { id: "maintainance", label: t("maintainance"), url: "/" },
+        { id: "fix", label: t("fix"), url: "/fix" },
+        { id: "maintenance", label: t("maintenance"), url: "/maintenance" },
       ],
     },
     store: {
       id: "store",
       label: t("store"),
-      url: "/",
+      url: "/parts",
       submenu: [
-        { id: "parts", label: t("parts"), url: "/" },
-        { id: "update", label: t("update"), url: "/" },
+        { id: "parts", label: t("parts"), url: "/parts" },
+        { id: "upgrade", label: t("upgrade"), url: "/upgrade" },
       ],
     },
     sit: {
       id: "sit",
       label: t("sit"),
-      url: "/",
+      url: "/about",
       submenu: [
-        { id: "about", label: t("about"), url: "/" },
-        { id: "promotion", label: t("promotion"), url: "/" },
-        { id: "contact", label: t("contact"), url: "/" },
+        { id: "about", label: t("about"), url: "/about" },
+        { id: "promotions", label: t("promotion"), url: "/promotions" },
+        { id: "contact", label: t("contact"), url: "/contact" },
       ],
     },
   };

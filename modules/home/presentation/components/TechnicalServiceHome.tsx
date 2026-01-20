@@ -1,100 +1,74 @@
-import Images from "@/core/assets/Images";
-import Card from "@/core/components/card/Card";
+"use client";
+
+import { motion } from "framer-motion";
 import CustomLink from "@/core/components/custom-link/CustomLink";
-import { useTranslations } from "next-intl";
+import { useMessages, useTranslations } from "next-intl";
+
+type TechServiceCard = {
+  title: string;
+  desc: string;
+};
 
 export default function TechnicalServiceHome() {
   const t = useTranslations("home");
+  const messages = useMessages();
 
-  type CardContent = {
-    title: string;
-    text: string;
-    label?: string;
-  };
+  const cards = (messages?.home as any)?.techServiceCards as TechServiceCard[];
 
-  const cardContent: CardContent[] = [
-    {
-      title: t("titleMaintance"),
-      text: t("textMaintance"),
-      label: t("labelMaintance"),
-    },
-    {
-      title: t("titleFix"),
-      text: t("textFix"),
-      label: t("labelFix"),
-    },
-    {
-      title: t("titleSale"),
-      text: t("textSale"),
-      label: t("labelSale"),
-    },
-  ];
-
-  const classesCard =
-    "rounded-3xl flex flex-col gap-4 p-8 py-4 items-center border border-white w-full";
+  const phone = "524431234567";
+  const message = "Hola, me gustaría cotizar un servicio técnico.";
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    message,
+  )}`;
 
   return (
-    <main
-      style={{ backgroundImage: `url(${Images.technicalService})` }}
-      className={`relative flex items-center justify-center w-full h-full py-12 bg-cover bg-center h-min-[700px] h-auto`}
-    >
-      <section className="absolute inset-0 bg-gray/10"></section>
-      <section
-        className={`relative z-10 flex flex-col items-center w-[100%] h-full px-12 sm:px-24`}
+    <section className="w-[85%] max-w-7xl flex flex-col items-center gap-16">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-[clamp(2rem,5vw,4rem)] font-bold text-center"
       >
-        <div className="flex flex-col w-full items-center lg:items-end">
-          <span className="text-[clamp(2rem,4vw,5rem)] text-white font-bold">
-            {t("techinalServiceTitle")}
-          </span>
+        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          {t("techService1")}
+        </span>
+      </motion.h2>
 
-          <h3 className="text-white text-[clamp(1.4rem,2.5vw,2rem)] w-[80%] md:w-[50%] mt-4 text-center lg:text-right">
-            {t("techinalServiceTitleDescription")}
-          </h3>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full"
+      >
+        {cards.map((card, i) => (
+          <motion.div
+            key={i}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="bg-white/5 border border-white/10 rounded-2xl p-8 text-center
+                       hover:border-teal-400/40 hover:-translate-y-2 transition"
+          >
+            <h3 className="text-xl font-bold mb-4">{card.title}</h3>
+            <p className="text-gray-400">{card.desc}</p>
+          </motion.div>
+        ))}
+      </motion.div>
 
-          <section className="flex flex-col md:flex-row gap-8 mt-12 md:mt-16 animate-fadeIn opacity-0 [animation-delay:0.1s]">
-            <CustomLink
-              url="/apps"
-              appearance="blueGreenBg"
-              size="lg"
-              fullWidth={false}
-              width="w-[290px]"
-            >
-              <div className="flex gap-3 items-center">
-                <span>{t("quoteService")}</span>
-              </div>
-            </CustomLink>
-          </section>
-        </div>
-
-        <div className="flex flex-col lg:flex-row w-full gap-8 mt-24">
-          {cardContent.map((item, index) => (
-            <Card
-              key={index}
-              appearance="whiteTransparent"
-              classes={classesCard}
-            >
-              <h5 className="flex text-[clamp(1.2rem,2vw,1.5rem)] font-bold text-center h-[62px] items-center">
-                {item.title}
-              </h5>
-              <div className="w-fit">
-                <CustomLink
-                  appearance="blueDarkBg"
-                  url="/"
-                  size="xlg"
-                  fullWidth={true}
-                >
-                  <div className="flex gap-3 items-center w-full text-center">
-                    <span>{item.label}</span>
-                  </div>
-                </CustomLink>
-              </div>
-              <span className="text-[clamp(1rem,2vw,1.2rem)] text-center mt-4">
-                {item.text}
-              </span>
-            </Card>
-          ))}
-        </div>
-      </section>
-    </main>
+      <div className="w-full sm:w-auto">
+        <CustomLink
+          url={whatsappUrl}
+          appearance="blueGreenBg"
+          size="md"
+          fullWidth
+        >
+          {t("techServiceQuote")}
+        </CustomLink>
+      </div>
+    </section>
   );
 }

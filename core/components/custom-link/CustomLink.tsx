@@ -34,6 +34,11 @@ export const LinkAppearance = {
     type: "solid-gradient",
     classes: "bg-gradient-to-r from-gray-100 to-gray-300 text-black",
   },
+  darkOutline: {
+    type: "solid",
+    classes:
+      "border border-white/20 text-white bg-transparent hover:bg-white/10",
+  },
 } as const;
 
 export type LinkAppearanceKey = keyof typeof LinkAppearance;

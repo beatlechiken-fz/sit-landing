@@ -9,9 +9,12 @@ export default class Icons {
   static uxBlue = "/icons/ux-blue.svg";
   static iaPowered = "/icons/robot.svg";
   static ios = "/icons/ios.svg";
-  static andriod = "/icons/android.svg";
+  static android = "/icons/android.svg";
   static web = "/icons/web.svg";
   static macos = "/icons/macos.svg";
   static windows = "/icons/windows.svg";
   static plusGreen = "/icons/plus-green.svg";
+  static business = "/icons/plus-green.svg";
+  static scale = "/icons/plus-green.svg";
+  static support = "/icons/plus-green.svg";
 }

@@ -1,35 +1,191 @@
 {
   "home": {
-    "title": "Automatiza tus procesos",
-    "titleDescription": "Impulsa tu negocio con aplicaciones inteligentes.",
-    "subtitleDescription": "Creamos soluciones multiplataforma potenciadas con IA que automatizan tareas, optimizan procesos y llevan tu empresa al siguiente nivel.",
-    "ia": "IA",
-    "plus": "+",
-    "apps": "Apps",
-    "model": "Modelo de negocio",
-    "scale": "Escalabilidad",
-    "security": "Seguridad",
-    "ux": "Diseños únicos",
-    "optimization": "Optimización",
-    "quoteApp": "Cotiza tu App",
-    "websiteTitle": "Diseño web",
-    "websiteTitleDescription": "Aumenta tu visibilidad en internet, conecta con nuevos mercados o simplemente comienza a vender en línea",
-    "responsive": "Responsive",
-    "websitePricing": "Ver planes",
-    "customSite": "Sitio personalizado",
-    "techinalServiceTitle": "Soporte técnico",
-    "techinalServiceTitleDescription": "Te ofrecemos una variedad de servicios enfocados a mantener tus equipos en óptimas condiciones",
-    "plansFix": "Planes de mantenimiento",
-    "quoteService": "Cotiza tu servicio",
-    "titleMaintance": "Mantenimiento preventivo",
-    "textMaintance": "Mantén tu equipo en condiciones óptimas, se recomienda realizar el mantenimiento mínimo una vez al año.",
-    "labelMaintance": "Ver planes",
-    "titleFix": "Reparaciones",
-    "textFix": "Tenemos todo en reparaciones para tu computadora, laptop, celular e impresora.",
-    "labelFix": "Cotiza tu servicio",
-    "titleSale": "Venta de reafacciones",
-    "textSale": "Discos duros, SSD, pantallas, teclados, baterías, cargadores y más",
-    "labelSale": "Cotización gratuita"
+    "automatization1": "IA y apps a la medida",
+    "automatization2": "para empresas que quieren crecer en serio",
+    "automatization3": "Automatizamos procesos, desarrollamos aplicaciones y creamos soluciones digitales pensadas para mejorar resultados, reducir costos y escalar tu negocio en México.",
+    "automatizationExpert": "Hablar con un experto",
+    "automatizationInfo": "+ Información",
+    "techServiceCards": [
+      {
+        "title": "Mantenimiento",
+        "desc": "Mantenimiento preventivo y correctivo de sistemas y aplicaciones."
+      },
+      {
+        "title": "Reparación",
+        "desc": "Solución de fallas técnicas y optimización de rendimiento."
+      },
+      {
+        "title": "Escalabilidad",
+        "desc": "Preparación de tu sistema para crecer sin problemas."
+      }
+    ],
+    "techService1": "Soporte técnico especializado",
+    "techServiceQuote": "Cotizar",
+    "landing1": "Diseño y desarrollo web",
+    "landingDesc": "Creamos sitios web que transmiten confianza, posicionan tu marca y convierten visitas en clientes reales.",
+    "landingInfo": "Quiero mi sitio web",
+    "landingPro": "Sitios web profesionales",
+    "landingConvert": "Landing pages que convierten",
+    "landingSEO": "Optimización SEO para Google",
+    "landingDesign": "Diseño moderno y adaptable"
+  },
+  "apps": {
+    "apps1": "Desarrollo de apps a la medida",
+    "apps2": "para empresas en México",
+    "apps3": "Creamos aplicaciones móviles y web que optimizan procesos, reducen costos y ayudan a tu empresa a crecer con tecnología confiable.",
+    "appsQuote": "Agendar llamada",
+    "appsWhy1": "¿Por qué desarrollar tu app con nosotros?",
+    "appsWhyCards": [
+      {
+        "key": "results",
+        "title": "Enfoque en resultados",
+        "desc": "Desarrollamos apps que realmente ayudan a vender más y operar mejor."
+      },
+      {
+        "key": "scale",
+        "title": "Tecnología escalable",
+        "desc": "Pensamos en el futuro de tu empresa desde el primer día."
+      },
+      {
+        "key": "support",
+        "title": "Acompañamiento cercano",
+        "desc": "Te asesoramos antes, durante y después del lanzamiento."
+      }
+    ],
+    "appsType1": "Tipos de aplicaciones que desarrollamos",
+    "appsTypeCards": [
+      {
+        "key": "mobile",
+        "title": "Apps móviles",
+        "desc": "Desarrollamos apps nativas para iOS y Android pensadas para crecer en el mercado mexicano.",
+        "items": [
+          "Experiencia de usuario premium",
+          "Seguridad y rendimiento",
+          "Escalabilidad real",
+          "Publicación en App Store y Play Store"
+        ]
+      },
+      {
+        "key": "pwa",
+        "title": "PWA & Web Apps",
+        "desc": "Aplicaciones web rápidas y accesibles desde cualquier dispositivo.",
+        "items": [
+          "Un solo código",
+          "Modo offline",
+          "Actualizaciones inmediatas",
+          "Menor costo de desarrollo"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "title": "Apps empresariales",
+        "desc": "Plataformas internas a la medida para optimizar procesos y equipos.",
+        "items": [
+          "Roles y permisos",
+          "Integraciones con sistemas existentes",
+          "Automatización de procesos",
+          "Alta disponibilidad"
+        ]
+      },
+      {
+        "key": "ai",
+        "title": "Apps con IA",
+        "desc": "Soluciones inteligentes para tomar mejores decisiones y reducir costos.",
+        "items": [
+          "Predicción y análisis",
+          "Procesamiento de datos",
+          "Optimización continua",
+          "Automatización inteligente"
+        ]
+      }
+    ]
+  },
+  "appsCTA": {
+    "title": "Hagamos realidad tu app",
+    "desc": "Cuéntanos tu idea y te ayudamos a convertirla en una app funcional, escalable y lista para el mercado mexicano. La asesoría inicial va por nuestra cuenta.",
+    "quoteBtn": "Cotizar mi app",
+    "callBtn": "Agendar llamada"
+  },
+  "processApps": {
+    "title": "Nuestro proceso de desarrollo",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Diagnóstico",
+        "desc": "Analizamos tu idea, tu mercado y tus objetivos de negocio."
+      },
+      {
+        "step": "02",
+        "title": "Diseño UX/UI",
+        "desc": "Creamos experiencias claras y fáciles de usar."
+      },
+      {
+        "step": "03",
+        "title": "Desarrollo",
+        "desc": "Construimos con código escalable y buenas prácticas."
+      },
+      {
+        "step": "04",
+        "title": "Pruebas",
+        "desc": "Validamos rendimiento, seguridad y estabilidad."
+      },
+      {
+        "step": "05",
+        "title": "Lanzamiento",
+        "desc": "Publicamos tu app y te acompañamos en el crecimiento."
+      }
+    ]
+  },
+  "landing": {
+    "landingTitle1": "Landing pages que convierten",
+    "landingTitle2": "clientes en ventas reales",
+    "landingDesc1": "Diseñamos landing pages enfocadas en resultados, pensadas para empresas en México que buscan más leads, más ventas y mayor presencia digital.",
+    "landingDesc2": "Rápidas, optimizadas para Google y listas para escalar tu negocio.",
+    "landingPlansBtn": "Ver planes",
+    "landingQuoteBtn": "Cotizar landing",
+
+    "plansTitle": "Planes mensuales para hacer crecer tu negocio",
+    "startPlan": "Start",
+    "startPlanPrice": "$2,490",
+    "startPlanDesc": "Perfecto para iniciar tu presencia digital y comenzar a generar prospectos.",
+    "startPlanBtn": "Contratar plan",
+    "startPlanItems": [
+      "Landing page profesional",
+      "Diseño responsivo (móvil y desktop)",
+      "Optimización básica SEO",
+      "Formulario de contacto",
+      "Carga rápida",
+      "Soporte y mantenimiento mensual"
+    ],
+    "proPlan": "Pro",
+    "proPlanPrice": "$7,990",
+    "proPlanDesc": "La mejor opción para empresas que buscan más ventas y conversiones cada mes.",
+    "proPlanBtn": "Más vendido",
+    "proPlanItems": [
+      "Todo lo incluido en Start",
+      "SEO avanzado",
+      "Integración con WhatsApp",
+      "Optimización de conversiones",
+      "Panel de administración",
+      "Soporte prioritario"
+    ],
+    "enterprisePlan": "Enterprise",
+    "enterprisePlanPrice": "$15,900",
+    "enterprisePlanDesc": "Soluciones a la medida para negocios que necesitan escalar sin límites.",
+    "enterprisePlanBtn": "Solicitar cotización",
+    "enterprisePlanItems": [
+      "Todo lo incluido en Pro",
+      "Arquitectura personalizada",
+      "Alta disponibilidad",
+      "Seguridad avanzada",
+      "Integraciones empresariales",
+      "Soporte dedicado"
+    ],
+    "whatsapp": {
+      "start": "Hola, me interesa el plan Start mensual para mi landing page. ¿Me puedes dar más información?",
+      "pro": "Hola, me interesa el plan Pro mensual para generar más ventas con mi landing page.",
+      "enterprise": "Hola, me interesa una solución Enterprise mensual para mi empresa. ¿Podemos platicarlo?"
+    }
   },
   "mainnav": {
     "home": "Inicio",
@@ -39,8 +195,8 @@
     "ia": "Automatizaciones con IA",
     "support": "Soporte técnico",
     "fix": "Reparaciones",
-    "maintainance": "Mantenimiento de equipos",
-    "update": "Actualización de equipos",
+    "maintenance": "Mantenimiento de equipos",
+    "upgrade": "Actualización de equipos",
     "store": "Venta de equipo",
     "sit": "Sit",
     "about": "Acerca de nosotros",
@@ -48,35 +204,458 @@
     "contact": "Contacto",
     "parts": "Refacciones y equipos"
   },
-  "apps": {
-    "title": "Tu app, el motor digital de tu negocio",
-    "titleDescription": "Soluciones multiplataforma diseñadas para crecer contigo, integradas con inteligencia artificial y enfocadas en resultados reales.",
-    "quoteApp": "Cotiza tu app",
-    "iaPowered": "IA+",
-    "ios": "iOS",
-    "android": "Android",
-    "web": "Web",
-    "mac": "macOS",
-    "windows": "Windows",
-    "typeAppsTitle": "¿Qué tipo de apps desarrollamos?",
-    "mobileApps": "Aplicaciones móviles",
-    "mobileAppsDesc": "Diseñamos apps móviles multiplataforma que cumplen los estándares que garantizan eficiencia, seguridad y usabilidad.",
-    "pwa": "Aplicaciones Web Progresivas",
-    "pwaAppsDesc": "Desarrollamos aplicaciones web progresivas rápidas, seguras e instalables, optimizadas para rendimiento y experiencia de usuario.",
-    "enterpriseApps": "Sistemas empresariales",
-    "enterpriseAppsDesc": "Sistemas empresariales escalables que optimizan procesos internos, integran áreas clave y mejoran la toma de decisiones.",
-    "iaAutomate": "Automatizaciones con IA",
-    "iaAutomateDesc": "Chatbots, asistentes inteligentes, análisis automatizado, predicciones, extracción de datos, reconocimiento de imágenes, etc.",
-    "processAppsTitle": "Nuestro proceso de desarrollo",
-    "devStep1": "Reunión inicial",
-    "devDescStep1": "Entendemos tu negocio, tus metas y tus retos.",
-    "devStep2": "Plan + Prototipo",
-    "devDescStep2": "Creamos un diseño funcional para que visualices tu app antes de desarrollarla",
-    "devStep3": "Desarrollo ágil",
-    "devDescStep3": "Entregas parciales semanales, avances reales y comunicación constante.",
-    "devStep4": "Integración de IA y APIs",
-    "devDescStep4": "Conectamos tu app con tus sistemas o servicios externos.",
-    "devStep5": "Despliegue + soporte",
-    "devDescStep5": "Te acompañamos incluso después de lanzar tu app."
+  "footer": {
+    "rights": "Morelia, MX. Soluciones Integrales en Tecnología. 2025"
+  },
+  "ia": {
+    "mainTitle": "Automatizaciones con IA que sí generan resultados",
+    "mainDesc": "Implementamos inteligencia artificial para empresas mexicanas que buscan ahorrar tiempo, reducir costos y escalar operaciones.",
+    "ctaTitle": "Lleva tu empresa al siguiente nivel con IA",
+    "ctaDesc": "Agenda una llamada y descubre cómo automatizar procesos reales en tu negocio.",
+    "ctaBtn": "Hablar con un experto",
+    "ctaWhatsappMsg": "Hola, me gustaría más información sobre las automatizaciones con IA.",
+    "servicesTitle": "¿Qué podemos automatizar con IA?",
+    "services": [
+      {
+        "title": "Chatbots inteligentes",
+        "desc": "Atiende clientes 24/7 en WhatsApp, web o sistemas internos con IA entrenada a tu negocio."
+      },
+      {
+        "title": "Automatización de procesos",
+        "desc": "Elimina tareas manuales y errores con flujos automáticos impulsados por IA."
+      },
+      {
+        "title": "Migración y limpieza de datos",
+        "desc": "Movemos y transformamos tu información para que esté lista para IA y analítica."
+      },
+      {
+        "title": "Implementación de modelos IA",
+        "desc": "Integramos modelos de lenguaje, visión y predicción directamente en tus sistemas."
+      },
+      {
+        "title": "Apps con inteligencia artificial",
+        "desc": "Desarrollamos aplicaciones que piensan, aprenden y escalan contigo."
+      }
+    ],
+    "processTitle": "Nuestro proceso de automatización",
+    "processSteps": [
+      {
+        "step": "01",
+        "title": "Diagnóstico",
+        "desc": "Detectamos procesos con alto impacto de automatización."
+      },
+      {
+        "step": "02",
+        "title": "Diseño IA",
+        "desc": "Definimos flujos, datos y modelos necesarios."
+      },
+      {
+        "step": "03",
+        "title": "Implementación",
+        "desc": "Integramos IA sin interrumpir tu operación."
+      },
+      {
+        "step": "04",
+        "title": "Entrenamiento",
+        "desc": "Ajustamos modelos con datos reales."
+      },
+      {
+        "step": "05",
+        "title": "Escalamiento",
+        "desc": "Optimizamos y hacemos crecer la solución."
+      }
+    ],
+    "techTitle": "Tecnología que usamos",
+    "tech": [
+      "OpenAI",
+      "LangChain",
+      "Pinecone",
+      "PostgreSQL",
+      "Python",
+      "Node.js",
+      "Next.js"
+    ]
+  },
+  "fixCTA": {
+    "title": "¿Tu equipo falló?",
+    "desc": "Agenda una revisión y te decimos exactamente qué tiene y cuánto cuesta. Sin letras chiquitas.",
+    "ctaBtn": "Hablar con técnico",
+    "whatsappMsg": "Hola, me gustaría reparar un equipo."
+  },
+  "fixHero": {
+    "title1": "Reparación profesional de equipos",
+    "title2": "rápida, confiable y garantizada",
+    "desc": "Reparamos computadoras, laptops, celulares e impresoras. Diagnóstico honesto, refacciones de calidad y atención directa en México.",
+    "ctaBtn": "Agendar revisión",
+    "whatsappMsg": "Hola, me gustaría reparar un equipo."
+  },
+  "fixProcess": {
+    "title": "Nuestro proceso",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Diagnóstico",
+        "desc": "Revisamos tu equipo sin rodeos."
+      },
+      {
+        "step": "02",
+        "title": "Cotización",
+        "desc": "Precio claro antes de reparar."
+      },
+      {
+        "step": "03",
+        "title": "Reparación",
+        "desc": "Refacciones de calidad."
+      },
+      {
+        "step": "04",
+        "title": "Pruebas",
+        "desc": "Verificamos funcionamiento."
+      },
+      {
+        "step": "05",
+        "title": "Entrega",
+        "desc": "Equipo listo y garantizado."
+      }
+    ]
+  },
+  "fixServices": {
+    "title": "Servicios de reparación",
+    "services": [
+      {
+        "title": "Computadoras & Laptops",
+        "desc": "Cambio de disco, teclado, batería, limpieza y optimización."
+      },
+      {
+        "title": "Celulares",
+        "desc": "Pantallas, baterías, centros de carga y software."
+      },
+      {
+        "title": "Impresoras",
+        "desc": "Mantenimiento, fallas mecánicas y configuración."
+      },
+      {
+        "title": "Actualizaciones",
+        "desc": "Mejora de rendimiento, SSD, RAM y sistemas."
+      }
+    ]
+  },
+  "maintenance": {
+    "heroTitle1": "Mantenimiento profesional",
+    "heroTitle2": "para que tu computadora rinda como nueva",
+    "heroDesc": "Evita fallas, sobrecalentamiento y lentitud. Dale mantenimiento preventivo a tu equipo y alarga su vida útil.",
+    "heroBtnPlans": "Ver paquetes",
+    "heroBtnWhatsapp": "Agendar mantenimiento",
+    "heroWhatsappMsg": "Hola, me gustaría más información sobre el el mantenimiento de equipos.",
+    "ctaTitle": "Dale mantenimiento antes de que falle",
+    "ctaDesc": "Un mantenimiento a tiempo es más barato que una reparación. Agenda hoy y evita problemas mañana.",
+    "ctaBtnWhatsapp": "Agendar mantenimiento",
+    "plansTitle": "Paquetes de mantenimiento",
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Mantenimiento Esencial",
+        "price": "$650 MXN",
+        "desc": "Ideal para uso diario y oficina.",
+        "items": [
+          "Limpieza interna y externa",
+          "Respaldo de información",
+          "Instalación de sistema operativo",
+          "Apps y configuraciones"
+        ],
+        "btn": "Agendar",
+        "whatsappMsg": "Hola, me gustaría más información sobre el Mantenimiento Esencial."
+      },
+      {
+        "key": "pro",
+        "name": "Mantenimiento Pro Gamer",
+        "price": "$990 MXN",
+        "desc": "Para equipos de alto rendimiento.",
+        "items": [
+          "Todo lo del Esencial",
+          "Cambio de pasta térmica",
+          "Cambio de thermal pads",
+          "Optimización térmica"
+        ],
+        "btn": "Agendar",
+        "highlight": true,
+        "whatsappMsg": "Hola, me gustaría más información sobre el Mantenimiento Pro Gamer."
+      },
+      {
+        "key": "apple",
+        "name": "Mantenimiento Apple Care+",
+        "price": "$1,490 MXN",
+        "desc": "Cuidado especializado para Mac.",
+        "items": [
+          "Todo lo del Esencial",
+          "Cambio de pasta térmica",
+          "Cambio de thermal pads",
+          "Proceso especializado Apple"
+        ],
+        "btn": "Agendar",
+        "whatsappMsg": "Hola, me gustaría más información sobre el Mantenimiento Apple Care+."
+      }
+    ],
+    "processTitle": "Nuestro proceso",
+    "processSteps": [
+      "Recepción del equipo",
+      "Respaldo de información",
+      "Limpieza y mantenimiento",
+      "Pruebas de rendimiento",
+      "Entrega garantizada"
+    ]
+  },
+  "fixWhy": {
+    "title": "¿Por qué reparar con nosotros?",
+    "reasons": [
+      {
+        "title": "Diagnóstico honesto",
+        "desc": "Te decimos exactamente qué tiene tu equipo."
+      },
+      {
+        "title": "Refacciones de calidad",
+        "desc": "Nada de piezas genéricas de baja duración."
+      },
+      { "title": "Garantía real", "desc": "Respaldamos nuestro trabajo." }
+    ]
+  },
+  "storeParts": {
+    "heroTitle1": "Refacciones y equipos",
+    "heroTitle2": "para mantener tu equipo al 100%",
+    "heroDesc1": "Vendemos refacciones, accesorios y equipos para computadoras y laptops.",
+    "heroDesc2": "No es tienda en línea: te asesoramos, cotizamos y conseguimos justo lo que necesitas.",
+    "ctaTitle": "¿Buscas una refacción específica?",
+    "ctaDesc": "Escríbenos, dinos tu modelo y te decimos disponibilidad, precio y tiempos. Sin compromiso.",
+    "ctaBtn": "Hablar con un experto",
+    "categoriesTitle": "¿Qué vendemos?",
+    "categories": [
+      {
+        "title": "Pantallas",
+        "desc": "Pantallas para laptop, monitores y equipos especiales."
+      },
+      {
+        "title": "Teclados y touchpads",
+        "desc": "Repuestos originales y compatibles para laptops."
+      },
+      {
+        "title": "Baterías y cargadores",
+        "desc": "Baterías internas, externas y cargadores certificados."
+      },
+      {
+        "title": "Almacenamiento",
+        "desc": "SSD, discos duros, migraciones y upgrades."
+      },
+      {
+        "title": "Cables y conectores",
+        "desc": "Flex, cables de poder, HDMI, USB, adaptadores."
+      },
+      {
+        "title": "Software",
+        "desc": "Sistemas operativos, licencias y configuraciones."
+      },
+      {
+        "title": "Limpieza y mantenimiento",
+        "desc": "Aire, líquidos, brochas y soluciones profesionales."
+      },
+      {
+        "title": "Mucho más",
+        "desc": "Si existe para computadora, lo conseguimos."
+      }
+    ],
+    "whyTitle": "¿Por qué comprar con nosotros?",
+    "whyReasons": [
+      {
+        "title": "Asesoría real",
+        "desc": "No vendemos por vender. Te decimos qué sí y qué no necesitas."
+      },
+      {
+        "title": "Compatibilidad garantizada",
+        "desc": "Nos aseguramos que la refacción sea compatible con tu equipo."
+      },
+      {
+        "title": "Todo en un solo lugar",
+        "desc": "Refacciones, instalación, configuración y soporte."
+      }
+    ]
+  },
+  "upgrade": {
+    "heroTitle1": "Haz que tu equipo",
+    "heroTitle2": "vuele otra vez",
+    "heroDesc": "Actualizamos los componentes clave de tu computadora para que cargue rápido, responda al instante y se sienta como nueva.",
+    "ctaTitle": "¿Tu computadora está lenta?",
+    "ctaDesc": "En muchos casos no necesitas comprar una nueva. Un upgrade bien hecho puede cambiarlo todo.",
+    "ctaBtn": "Asesoría sin costo",
+    "ctaBtn2": "Hablar con un experto",
+    "ctaWhatsappMsg": "Hola, me gustaría más información para actualizar mi equipo.",
+    "benefitsTitle": "El cambio se nota desde el primer día",
+    "benefits": [
+      {
+        "title": "Arranque en segundos",
+        "desc": "Con SSD tu equipo pasa de minutos a segundos."
+      },
+      {
+        "title": "Multitarea sin trabarse",
+        "desc": "Más RAM = más fluidez al trabajar, estudiar o jugar."
+      },
+      {
+        "title": "Mayor rendimiento gráfico",
+        "desc": "Mejor experiencia en diseño, edición y gaming."
+      }
+    ],
+    "optionsTitle": "¿Qué podemos actualizar?",
+    "options": [
+      {
+        "title": "SSD / NVMe",
+        "desc": "El upgrade más importante. Velocidad extrema."
+      },
+      {
+        "title": "Memoria RAM",
+        "desc": "Ideal para multitarea, trabajo y gaming."
+      },
+      {
+        "title": "Tarjeta gráfica",
+        "desc": "Mejor desempeño en diseño, video y juegos."
+      },
+      {
+        "title": "Discos secundarios",
+        "desc": "Más espacio para archivos y respaldos."
+      }
+    ],
+    "processTitle": "Así mejoramos tu equipo",
+    "processSteps": [
+      {
+        "title": "Revisión del equipo",
+        "desc": "Analizamos compatibilidad y cuellos de botella."
+      },
+      {
+        "title": "Recomendación clara",
+        "desc": "Te decimos qué conviene actualizar y por qué."
+      },
+      {
+        "title": "Instalación profesional",
+        "desc": "Upgrade seguro, limpio y bien configurado."
+      },
+      {
+        "title": "Equipo optimizado",
+        "desc": "Listo para trabajar rápido desde el primer encendido."
+      }
+    ]
+  },
+  "about": {
+    "heroTitle1": "Tecnología con",
+    "heroTitle2": "propósito y resultados",
+    "heroDesc": "Somos una empresa de tecnología nacida en Morelia, México, enfocada en crear soluciones reales que hacen que la tecnología trabaje a tu favor.",
+    "valuesTitle": "Nuestros valores",
+    "valuesCards": [
+      {
+        "title": "Claridad",
+        "desc": "Hablamos claro, sin tecnicismos innecesarios."
+      },
+      {
+        "title": "Responsabilidad",
+        "desc": "Cuidamos tus equipos, tu información y tu inversión."
+      },
+      {
+        "title": "Resultados",
+        "desc": "La tecnología debe mejorar tu día a día, no complicarlo."
+      },
+      {
+        "title": "Cercanía",
+        "desc": "Trato humano, atención directa y seguimiento real."
+      }
+    ],
+    "whyUsTitle": "¿Por qué confiar en nosotros?",
+    "whyUsReasons": [
+      "Atención personalizada, sin intermediarios",
+      "Experiencia real en tecnología y automatización",
+      "Soluciones pensadas para personas y negocios en México",
+      "Soporte antes, durante y después del servicio"
+    ],
+    "ctaTitle": "Tecnología que sí funciona",
+    "ctaDesc": "Si buscas alguien que te hable claro y te ayude a tomar la mejor decisión, estás en el lugar correcto.",
+    "ctaBtn": "Contáctanos",
+    "ctaWhatsappMsg": "Hola, quiero información sobre sus servicios."
+  },
+  "promotions": {
+    "heroTitle1": "Promociones especiales",
+    "heroTitle2": "San Valentín ❤️",
+    "heroDesc": "Este 14 de febrero consiente tu equipo o sorprende a alguien especial con tecnología que sí se nota.",
+    "validUntil": "Válido hasta:",
+    "ctaTitle": "Aprovecha antes de que termine 💘",
+    "ctaDesc": "Las promociones son por tiempo limitado. Escríbenos y asegura tu lugar.",
+    "ctaBtn": "Quiero la promoción",
+    "expires": "Vigencia hasta",
+    "month": "Febrero",
+
+    "badges": {
+      "bestSeller": "🔥 Más vendido",
+      "fast": "⚡ Rápido",
+      "gift": "🎁 Regalo ideal"
+    },
+
+    "coupleMaintenance": {
+      "title": "Mantenimiento en pareja",
+      "subtitle": "Dos equipos, un precio especial",
+      "description": "Trae dos laptops o computadoras y obtén mantenimiento esencial a $650 MXN o mantenimiento pro gamer a $1,390.00"
+    },
+
+    "ssdUpgrade": {
+      "title": "Actualiza tu SSD",
+      "subtitle": "Velocidad que enamora",
+      "description": "Haz que tu equipo arranque en segundos con un SSD nuevo. Todos los SSD con 15% de descuento."
+    },
+
+    "screen": {
+      "title": "Cambia tu pantalla",
+      "subtitle": "Dale nueva vida a tu equipo",
+      "description": "Tenemos todos los cambios de pantalla para laptop o celular con un 15% de descuento."
+    },
+
+    "giftCard": {
+      "title": "Regala tecnología",
+      "subtitle": "Vale de regalo",
+      "description": "Regala un vale para mantenimiento, reparación o actualización. Vales: $500 MXN, $1,000 MXN y $2,000 MXN."
+    },
+    "includes": {
+      "cleaning": "Limpieza interna y externa",
+      "optimization": "Optimización de sistema",
+      "backup": "Respaldo básico",
+      "ssdInstall": "Instalación de SSD",
+      "cloning": "Clonación de información",
+      "bootOptimization": "Optimización de arranque",
+      "customizable": "Personalizable",
+      "anyService": "Válido en cualquier servicio",
+      "idealGift": "Ideal para pareja o familia",
+      "screenInstall": "Instalación de la pantalla"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Hablemos 👋",
+      "desc1": "¿Tienes dudas, quieres cotizar o evaluar nuestro servicio?",
+      "desc2": "Tu opinión nos ayuda a ser mejores."
+    },
+    "form": {
+      "title": "Evalúa nuestro servicio",
+      "categories": ["Servicio / Producto", "Tiempo", "Atención"],
+      "allCategoriesAlert": "Por favor evalúa todas las categorías",
+      "commentsLabel": "Observaciones",
+      "commentsPlaceholder": "Cuéntanos cómo fue tu experiencia…",
+      "sending": "Enviando...",
+      "submit": "Enviar evaluación",
+      "successMsg": "¡Gracias por tu evaluación! 💚",
+      "confidential": "Tu opinión es confidencial y nos ayuda a mejorar."
+    },
+    "socials": {
+      "title": "Contáctanos directo",
+      "desc": "Escríbenos por el medio que prefieras. Respondemos rápido.",
+      "labels": {
+        "whatsapp": "WhatsApp",
+        "instagram": "Instagram",
+        "tiktok": "TikTok",
+        "facebook": "Facebook",
+        "youtube": "Youtube"
+      }
+    }
   }
 }

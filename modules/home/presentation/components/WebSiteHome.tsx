@@ -1,84 +1,77 @@
-import Images from "@/core/assets/Images";
+"use client";
+
+import { motion } from "framer-motion";
 import CustomLink from "@/core/components/custom-link/CustomLink";
 import { useTranslations } from "next-intl";
-import { useState, useEffect } from "react";
 
 export default function WebSiteHome() {
   const t = useTranslations("home");
 
-  const [xs, setXs] = useState(false);
+  const items = [
+    t("landingPro"),
+    t("landingConvert"),
+    t("landingSEO"),
+    t("landingDesign"),
+  ];
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
-
-    setXs(mediaQuery.matches);
-
-    const handler = (e: MediaQueryListEvent) => setXs(e.matches);
-
-    mediaQuery.addEventListener("change", handler);
-
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-
-  const cardClasses =
-    "gap-4 items-center justify-center px-8 py-4 sm:w-[250px] w-full text-black justify-start";
+  const phone = "524431234567";
+  const message =
+    "Hola, me gustaría más información sobre el desarrollo de mi sitio web.";
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    message,
+  )}`;
 
   return (
-    <main className={`flex items-center justify-center w-full h-full py-12`}>
-      <section
-        className={`flex flex-col items-center w-[100%] h-full ${
-          xs ? "px-12" : "px-24"
-        }`}
+    <section className="w-[85%] max-w-7xl flex flex-col items-center text-center gap-16">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-[clamp(2rem,5vw,4rem)] font-bold"
       >
-        <h2
-          className="
-            flex
-            text-[clamp(2rem,4vw,5.5rem)]
-            bg-gradient-to-r from-gray-700 to-gray-400 bg-clip-text text-transparent drop-shadow-lg
-            animate-fadeIn opacity-0 [animation-delay:0.3s]
-          "
+        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          {t("landing1")}
+        </span>
+      </motion.h2>
+
+      <p className="text-gray-400 max-w-2xl text-lg">{t("landingDesc")}</p>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          visible: { transition: { staggerChildren: 0.1 } },
+        }}
+        className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl"
+      >
+        {items.map((item, i) => (
+          <motion.div
+            key={i}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.4 }}
+            className="bg-white/5 border border-white/10 rounded-xl py-4 px-6
+                       hover:border-teal-400/40 transition"
+          >
+            {item}
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <div className="w-full sm:w-auto">
+        <CustomLink
+          url={whatsappUrl}
+          appearance="blueGreenBg"
+          size="md"
+          fullWidth
         >
-          {t("websiteTitle")}
-        </h2>
-
-        <h3 className="text-gray-500 text-[clamp(1.4rem,2.5vw,2rem)] w-[50%] mt-4 text-center">
-          {t("websiteTitleDescription")}
-        </h3>
-
-        <section className="flex flex-col sm:flex-row gap-8 mt-12 md:mt-16 animate-fadeIn opacity-0 [animation-delay:0.1s]">
-          <CustomLink
-            url="/apps"
-            appearance="blueGreenBg"
-            size="lg"
-            fullWidth={false}
-            width="w-[250px]"
-          >
-            <div className="flex gap-3 items-center">
-              <span>{t("websitePricing")}</span>
-            </div>
-          </CustomLink>
-
-          <CustomLink
-            url="/apps"
-            appearance="blackBg"
-            size="lg"
-            fullWidth={false}
-            width="w-[250px]"
-          >
-            <div className="flex gap-3 items-center">
-              <span>{t("customSite")}</span>
-            </div>
-          </CustomLink>
-        </section>
-
-        <div className="flex items-end justify-end animate-fadeIn opacity-0 [animation-delay:0.9s] mt-20 sm:mt-24">
-          <img
-            src={Images.devices}
-            alt=""
-            className="max-w-full h-auto object-contain"
-          />
-        </div>
-      </section>
-    </main>
+          {t("landingInfo")}
+        </CustomLink>
+      </div>
+    </section>
   );
 }
