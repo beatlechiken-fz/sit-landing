@@ -20,7 +20,7 @@ export default function AutomatizationHome() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="w-[85%] max-w-7xl min-h-[90vh] flex flex-col justify-center gap-12"
+      className="w-[85%] max-w-7xl min-h-auto lg:min-h-[90vh] mt-30 flex flex-col justify-start lg:justify-center gap-12"
     >
       <h1 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-tight">
         <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">

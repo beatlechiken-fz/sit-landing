@@ -22,7 +22,7 @@ export default function WebSiteHome() {
   )}`;
 
   return (
-    <section className="w-[85%] max-w-7xl flex flex-col items-center text-center gap-16">
+    <section className="w-[85%] max-w-7xl flex flex-col mt-16 lg:mt-0 items-center text-center gap-16">
       <motion.h2
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

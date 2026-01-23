@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link, useRouter } from "@/i18n/navigation";
 
 // Flecha delgada tipo chevron (triángulo incompleto)
 const ArrowIcon = ({ open = false }: { open?: boolean }) => (
@@ -31,6 +31,7 @@ export default function MainNavItem({
   isOpen = false,
   onToggle,
 }: any) {
+  const router = useRouter();
   // =========================
   // MOBILE VERSION
   // =========================
@@ -38,7 +39,14 @@ export default function MainNavItem({
     return (
       <div className="flex flex-col">
         <button
-          onClick={submenu.length > 0 ? onToggle : onSelect}
+          onClick={() => {
+            if (submenu.length > 0) {
+              onToggle();
+            } else {
+              onSelect?.();
+              router.push(url);
+            }
+          }}
           className={`
             px-4 py-2 rounded-xl transition font-medium text-left
             flex justify-between items-center
