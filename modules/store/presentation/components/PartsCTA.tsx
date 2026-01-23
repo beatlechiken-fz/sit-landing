@@ -17,7 +17,7 @@ function PartsCTA() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-bold mb-6">{t("ctaTitle")}</h2>
+      <h2 className="text-3xl font-bold mb-6 font-title">{t("ctaTitle")}</h2>
 
       <p className="text-gray-400 mb-10">{t("ctaDesc")}</p>
 

@@ -18,7 +18,7 @@ export default function MaintenanceBenefits() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="w-[85%] max-w-7xl flex flex-col items-center gap-16"
     >
-      <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold text-center">
+      <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold text-center font-title">
         <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
           ¿Por qué hacer mantenimiento?
         </span>

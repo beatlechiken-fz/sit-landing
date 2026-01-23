@@ -22,7 +22,7 @@ export default function IACTA() {
         <div className="w-[520px] h-[520px] bg-gradient-to-tr from-sky-600/20 to-teal-600/20 blur-[160px]" />
       </div>
 
-      <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold mb-6">
+      <h2 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold mb-6 font-title">
         {t("ctaTitle")}
       </h2>
       <p className="max-w-2xl mx-auto text-gray-300 mb-10">{t("ctaDesc")}</p>

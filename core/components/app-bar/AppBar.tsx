@@ -22,29 +22,34 @@ export default function AppBar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full">
+    <header className="fixed top-0 left-0 z-50 w-full py-2">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="mx-auto flex h-[64px] items-center justify-between px-6 md:px-10 bg-black/60 backdrop-blur-xl border-b border-white/10"
+        className="mx-auto flex h-[64px] items-center px-6 md:px-10 bg-black/60 backdrop-blur-xl border-b border-white/10"
       >
-        {/* Logo */}
-        <div className="flex items-center gap-4">
-          <Image
-            src={Images.logoFullWhiteTextOpacity}
-            alt="SIT"
-            width={96}
-            height={32}
-            priority
-          />
+        {/* IZQUIERDA */}
+        <div className="flex items-center gap-6">
+          {pathname !== "/" && (
+            <Image
+              src={Images.logoOpacity}
+              alt="SIT"
+              width={32}
+              height={32}
+              priority
+            />
+          )}
+
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8">
+            <MainNav />
+          </div>
         </div>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
-          <MainNav />
-        </div>
+        {/* ESPACIADOR */}
+        <div className="flex-1" />
 
-        {/* Right */}
+        {/* DERECHA */}
         <div className="flex items-center gap-4">
           <div className="hidden md:block">
             <NativeSelect

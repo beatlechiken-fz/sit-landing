@@ -11,7 +11,7 @@ export default function AboutWhyUs() {
   return (
     <div className="w-[90%] max-w-5xl">
       <motion.h2
-        className="text-3xl font-bold mb-10 text-center"
+        className="text-3xl font-bold mb-10 text-center font-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

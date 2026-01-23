@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Anta } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -13,6 +13,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const anta = Anta({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-anta",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +40,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${anta.variable} antialiased`}
       >
         <NextIntlClientProvider locale={locale}>
           {children}

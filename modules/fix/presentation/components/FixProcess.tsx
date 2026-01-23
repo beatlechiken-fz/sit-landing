@@ -8,7 +8,7 @@ export default function FixProcess() {
 
   return (
     <section className="w-[85%] max-w-7xl flex flex-col items-center">
-      <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-20 text-center">
+      <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-20 text-center font-title">
         <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
           {t("title")}
         </span>

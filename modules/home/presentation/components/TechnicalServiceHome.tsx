@@ -30,7 +30,7 @@ export default function TechnicalServiceHome() {
         transition={{ duration: 0.6 }}
         className="text-[clamp(2rem,5vw,4rem)] font-bold text-center"
       >
-        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent font-title">
           {t("techService1")}
         </span>
       </motion.h2>

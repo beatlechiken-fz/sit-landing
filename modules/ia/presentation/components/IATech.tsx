@@ -15,7 +15,7 @@ export default function IATech() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="w-[85%] max-w-6xl py-24 text-center"
     >
-      <h2 className="text-3xl font-bold mb-10">{t("techTitle")}</h2>
+      <h2 className="text-3xl font-bold mb-10 font-title">{t("techTitle")}</h2>
       <div className="flex flex-wrap justify-center gap-4">
         {tech.map((item, i) => (
           <span

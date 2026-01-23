@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 
 export default function FooterBar() {
   const t = useTranslations("footer");
-  const menu: MenuNavElement = createMenuNavElement(t);
 
   const socialLinks = [
     {

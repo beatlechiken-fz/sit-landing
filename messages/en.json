@@ -1,10 +1,10 @@
 {
   "home": {
-    "automatization1": "Custom AI & app development",
-    "automatization2": "for companies that want to scale seriously",
-    "automatization3": "We automate processes, build applications, and create digital solutions designed to improve results, reduce costs, and scale your business in Mexico.",
+    "automatization1": "Custom AI & apps",
+    "automatization2": "for companies that want to grow seriously",
+    "automatization3": "We automate processes, develop applications, and create digital solutions designed to improve results, reduce costs, and scale your business in Mexico.",
     "automatizationExpert": "Talk to an expert",
-    "automatizationInfo": "More info",
+    "automatizationInfo": "+ More info",
     "techServiceCards": [
       {
         "title": "Maintenance",
@@ -16,30 +16,30 @@
       },
       {
         "title": "Scalability",
-        "desc": "Preparing your system to grow smoothly."
+        "desc": "Preparing your system to grow without issues."
       }
     ],
     "techService1": "Specialized technical support",
     "techServiceQuote": "Get a quote",
-    "landing1": "Web design & development",
-    "landingDesc": "We create websites that build trust, position your brand, and turn visitors into real customers.",
+    "landing1": "Web design and development",
+    "landingDesc": "We create websites that build trust, position your brand, and turn visits into real customers.",
     "landingInfo": "I want my website",
     "landingPro": "Professional websites",
-    "landingConvert": "High-converting landing pages",
-    "landingSEO": "Google SEO optimization",
-    "landingDesign": "Modern, responsive design"
+    "landingConvert": "Landing pages that convert",
+    "landingSEO": "SEO optimization for Google",
+    "landingDesign": "Modern and responsive design"
   },
   "apps": {
     "apps1": "Custom app development",
     "apps2": "for companies in Mexico",
     "apps3": "We build mobile and web applications that optimize processes, reduce costs, and help your business grow with reliable technology.",
     "appsQuote": "Schedule a call",
-    "appsWhy1": "Why build your app with us?",
+    "appsWhy1": "Why develop your app with us?",
     "appsWhyCards": [
       {
         "key": "results",
         "title": "Results-driven approach",
-        "desc": "We build apps that actually help you sell more and operate better."
+        "desc": "We develop apps that truly help you sell more and operate better."
       },
       {
         "key": "scale",
@@ -52,17 +52,17 @@
         "desc": "We guide you before, during, and after launch."
       }
     ],
-    "appsType1": "Types of applications we build",
+    "appsType1": "Types of applications we develop",
     "appsTypeCards": [
       {
         "key": "mobile",
         "title": "Mobile apps",
-        "desc": "Native iOS and Android apps designed to scale in the Mexican market.",
+        "desc": "We develop native iOS and Android apps designed to grow in the Mexican market.",
         "items": [
           "Premium user experience",
           "Security and performance",
-          "True scalability",
-          "App Store & Play Store publishing"
+          "Real scalability",
+          "App Store and Play Store publishing"
         ]
       },
       {
@@ -82,7 +82,7 @@
         "desc": "Custom internal platforms to optimize processes and teams.",
         "items": [
           "Roles and permissions",
-          "Integration with existing systems",
+          "Integrations with existing systems",
           "Process automation",
           "High availability"
         ]
@@ -101,9 +101,9 @@
     ]
   },
   "appsCTA": {
-    "title": "Let’s build your app",
-    "desc": "Tell us your idea and we’ll help you turn it into a functional, scalable app ready for the Mexican market. Initial consulting is on us.",
-    "quoteBtn": "Get an app quote",
+    "title": "Let’s bring your app to life",
+    "desc": "Tell us your idea and we’ll help you turn it into a functional, scalable app ready for the Mexican market. The initial consultation is on us.",
+    "quoteBtn": "Quote my app",
     "callBtn": "Schedule a call"
   },
   "processApps": {
@@ -112,12 +112,12 @@
       {
         "step": "01",
         "title": "Discovery",
-        "desc": "We analyze your idea, market, and business goals."
+        "desc": "We analyze your idea, your market, and your business goals."
       },
       {
         "step": "02",
         "title": "UX/UI Design",
-        "desc": "We design clear, easy-to-use experiences."
+        "desc": "We create clear and easy-to-use experiences."
       },
       {
         "step": "03",
@@ -132,35 +132,34 @@
       {
         "step": "05",
         "title": "Launch",
-        "desc": "We publish your app and support its growth."
+        "desc": "We launch your app and support its growth."
       }
     ]
   },
   "landing": {
     "landingTitle1": "Landing pages that convert",
     "landingTitle2": "visitors into real sales",
-    "landingDesc1": "We design result-driven landing pages for companies in Mexico looking for more leads, more sales, and a stronger digital presence.",
+    "landingDesc1": "We design result-focused landing pages for companies in Mexico looking for more leads, more sales, and a stronger digital presence.",
     "landingDesc2": "Fast, Google-optimized, and ready to scale your business.",
     "landingPlansBtn": "View plans",
-    "landingQuoteBtn": "Get a landing quote",
+    "landingQuoteBtn": "Quote landing",
 
     "plansTitle": "Monthly plans to grow your business",
     "startPlan": "Start",
     "startPlanPrice": "$2,490",
-    "startPlanDesc": "Perfect for launching your digital presence and starting to generate leads.",
-    "startPlanBtn": "Subscribe now",
+    "startPlanDesc": "Perfect for starting your digital presence and generating leads.",
+    "startPlanBtn": "Subscribe to plan",
     "startPlanItems": [
       "Professional landing page",
-      "Responsive design (mobile & desktop)",
+      "Responsive design (mobile and desktop)",
       "Basic SEO optimization",
       "Contact form",
-      "Fast loading speed",
+      "Fast loading",
       "Monthly support and maintenance"
     ],
-
     "proPlan": "Pro",
     "proPlanPrice": "$7,990",
-    "proPlanDesc": "The best option for businesses looking to increase sales and conversions every month.",
+    "proPlanDesc": "The best option for businesses looking for more sales and conversions every month.",
     "proPlanBtn": "Best seller",
     "proPlanItems": [
       "Everything included in Start",
@@ -170,10 +169,9 @@
       "Admin panel",
       "Priority support"
     ],
-
     "enterprisePlan": "Enterprise",
     "enterprisePlanPrice": "$15,900",
-    "enterprisePlanDesc": "Custom solutions for businesses that need to scale without limits.",
+    "enterprisePlanDesc": "Custom solutions for businesses that need unlimited scalability.",
     "enterprisePlanBtn": "Request a quote",
     "enterprisePlanItems": [
       "Everything included in Pro",
@@ -183,11 +181,10 @@
       "Enterprise integrations",
       "Dedicated support"
     ],
-
     "whatsapp": {
-      "start": "Hi, I'm interested in the monthly Start plan for my landing page. Could you share more information?",
-      "pro": "Hi, I'm interested in the monthly Pro plan to generate more sales with my landing page.",
-      "enterprise": "Hi, I'm interested in a monthly Enterprise solution for my company. Can we discuss it?"
+      "start": "Hi, I’m interested in the Start monthly plan for my landing page. Can you give me more information?",
+      "pro": "Hi, I’m interested in the Pro monthly plan to generate more sales with my landing page.",
+      "enterprise": "Hi, I’m interested in an Enterprise monthly solution for my company. Can we talk about it?"
     }
   },
   "mainnav": {
@@ -205,30 +202,33 @@
     "about": "About us",
     "promotion": "Promotions",
     "contact": "Contact",
-    "parts": "Parts & equipment"
+    "parts": "Parts and equipment",
+    "titleMobile": "Menu",
+    "subtitleMobile": "Navigation"
   },
   "footer": {
-    "rights": "Morelia, MX. Integrated Technology Solutions. 2025"
+    "rights": "Morelia, MX. Integrated Technology Solutions. 2025",
+    "rightsShort": "Morelia, MX. Sit. 2025"
   },
   "ia": {
-    "mainTitle": "AI automations that actually deliver results",
+    "mainTitle": "AI automations that truly deliver results",
     "mainDesc": "We implement artificial intelligence for Mexican companies looking to save time, reduce costs, and scale operations.",
-    "ctaTitle": "Take your company to the next level with AI",
+    "ctaTitle": "Take your business to the next level with AI",
     "ctaDesc": "Schedule a call and discover how to automate real processes in your business.",
     "ctaBtn": "Talk to an expert",
-    "ctaWhatsappMsg": "Hello, I’d like more information about AI automations.",
+    "ctaWhatsappMsg": "Hi, I’d like more information about AI automations.",
     "servicesTitle": "What can we automate with AI?",
     "services": [
       {
-        "title": "Smart chatbots",
+        "title": "Intelligent chatbots",
         "desc": "Serve customers 24/7 on WhatsApp, web, or internal systems with AI trained for your business."
       },
       {
         "title": "Process automation",
-        "desc": "Eliminate manual tasks and errors with AI-powered workflows."
+        "desc": "Eliminate manual tasks and errors with AI-powered automated workflows."
       },
       {
-        "title": "Data migration & cleanup",
+        "title": "Data migration and cleanup",
         "desc": "We move and transform your data so it’s ready for AI and analytics."
       },
       {
@@ -236,26 +236,26 @@
         "desc": "We integrate language, vision, and prediction models directly into your systems."
       },
       {
-        "title": "AI-powered apps",
-        "desc": "We build applications that think, learn, and scale with you."
+        "title": "Artificial intelligence apps",
+        "desc": "We develop applications that think, learn, and scale with you."
       }
     ],
     "processTitle": "Our automation process",
     "processSteps": [
       {
         "step": "01",
-        "title": "Diagnosis",
-        "desc": "We identify high-impact automation opportunities."
+        "title": "Discovery",
+        "desc": "We identify processes with high automation impact."
       },
       {
         "step": "02",
         "title": "AI design",
-        "desc": "We define workflows, data, and required models."
+        "desc": "We define the required workflows, data, and models."
       },
       {
         "step": "03",
         "title": "Implementation",
-        "desc": "We integrate AI without disrupting operations."
+        "desc": "We integrate AI without disrupting your operations."
       },
       {
         "step": "04",
@@ -265,7 +265,7 @@
       {
         "step": "05",
         "title": "Scaling",
-        "desc": "We optimize and expand the solution."
+        "desc": "We optimize and grow the solution."
       }
     ],
     "techTitle": "Technology we use",
@@ -283,14 +283,14 @@
     "title": "Did your device fail?",
     "desc": "Schedule a checkup and we’ll tell you exactly what’s wrong and how much it costs. No fine print.",
     "ctaBtn": "Talk to a technician",
-    "whatsappMsg": "Hi, I would like to repair a device."
+    "whatsappMsg": "Hi, I’d like to repair a device."
   },
   "fixHero": {
     "title1": "Professional device repair",
-    "title2": "fast, reliable and guaranteed",
-    "desc": "We repair computers, laptops, smartphones and printers. Honest diagnostics, quality parts and direct service in Mexico.",
-    "ctaBtn": "Schedule a checkup",
-    "whatsappMsg": "Hi, I would like to repair a device."
+    "title2": "fast, reliable, and guaranteed",
+    "desc": "We repair computers, laptops, phones, and printers. Honest diagnostics, quality parts, and direct service in Mexico.",
+    "ctaBtn": "Schedule inspection",
+    "whatsappMsg": "Hi, I’d like to repair a device."
   },
   "fixProcess": {
     "title": "Our process",
@@ -298,12 +298,12 @@
       {
         "step": "01",
         "title": "Diagnosis",
-        "desc": "We check your device with no runarounds."
+        "desc": "We check your device straight to the point."
       },
       {
         "step": "02",
         "title": "Quote",
-        "desc": "Clear pricing before any repair."
+        "desc": "Clear pricing before repair."
       },
       {
         "step": "03",
@@ -313,12 +313,12 @@
       {
         "step": "04",
         "title": "Testing",
-        "desc": "We verify everything works properly."
+        "desc": "We verify proper operation."
       },
       {
         "step": "05",
         "title": "Delivery",
-        "desc": "Your device ready and guaranteed."
+        "desc": "Device ready and guaranteed."
       }
     ]
   },
@@ -327,31 +327,31 @@
     "services": [
       {
         "title": "Computers & Laptops",
-        "desc": "Drive replacement, keyboards, batteries, cleaning and optimization."
+        "desc": "Drive replacement, keyboard, battery, cleaning, and optimization."
       },
       {
-        "title": "Smartphones",
-        "desc": "Screens, batteries, charging ports and software."
+        "title": "Mobile phones",
+        "desc": "Screens, batteries, charging ports, and software."
       },
       {
         "title": "Printers",
-        "desc": "Maintenance, mechanical issues and configuration."
+        "desc": "Maintenance, mechanical issues, and configuration."
       },
       {
         "title": "Upgrades",
-        "desc": "Performance improvements: SSD, RAM and system upgrades."
+        "desc": "Performance improvements, SSDs, RAM, and systems."
       }
     ]
   },
   "maintenance": {
     "heroTitle1": "Professional maintenance",
-    "heroTitle2": "to keep your computer running like new",
-    "heroDesc": "Avoid failures, overheating and slowness. Preventive maintenance extends your device’s lifespan.",
+    "heroTitle2": "so your computer runs like new",
+    "heroDesc": "Prevent failures, overheating, and slowdowns. Give your device preventive maintenance and extend its lifespan.",
     "heroBtnPlans": "View packages",
     "heroBtnWhatsapp": "Schedule maintenance",
     "heroWhatsappMsg": "Hi, I’d like more information about device maintenance.",
     "ctaTitle": "Maintain it before it fails",
-    "ctaDesc": "Timely maintenance is cheaper than a repair. Book today and avoid problems tomorrow.",
+    "ctaDesc": "Maintenance today is cheaper than repair tomorrow. Schedule now and avoid future issues.",
     "ctaBtnWhatsapp": "Schedule maintenance",
     "plansTitle": "Maintenance packages",
     "plans": [
@@ -364,7 +364,7 @@
           "Internal and external cleaning",
           "Data backup",
           "Operating system installation",
-          "Apps and configurations"
+          "Apps and configuration"
         ],
         "btn": "Schedule",
         "whatsappMsg": "Hi, I’d like more information about Essential Maintenance."
@@ -388,12 +388,12 @@
         "key": "apple",
         "name": "Apple Care+ Maintenance",
         "price": "$1,490 MXN",
-        "desc": "Specialized care for Mac devices.",
+        "desc": "Specialized care for Mac.",
         "items": [
           "Everything in Essential",
           "Thermal paste replacement",
           "Thermal pad replacement",
-          "Apple-specific process"
+          "Apple-specialized process"
         ],
         "btn": "Schedule",
         "whatsappMsg": "Hi, I’d like more information about Apple Care+ Maintenance."
@@ -412,12 +412,12 @@
     "title": "Why repair with us?",
     "reasons": [
       {
-        "title": "Honest diagnosis",
+        "title": "Honest diagnostics",
         "desc": "We tell you exactly what’s wrong with your device."
       },
       {
         "title": "Quality parts",
-        "desc": "No low-quality generic components."
+        "desc": "No low-quality generic parts."
       },
       {
         "title": "Real warranty",
@@ -428,16 +428,16 @@
   "storeParts": {
     "heroTitle1": "Parts and equipment",
     "heroTitle2": "to keep your device at 100%",
-    "heroDesc1": "We sell parts, accessories and equipment for computers and laptops.",
-    "heroDesc2": "This is not an online store: we advise you, provide a quote and source exactly what you need.",
+    "heroDesc1": "We sell parts, accessories, and equipment for computers and laptops.",
+    "heroDesc2": "This is not an online store: we advise you, quote you, and get exactly what you need.",
     "ctaTitle": "Looking for a specific part?",
-    "ctaDesc": "Message us, tell us your model and we’ll check availability, pricing and timelines. No commitment.",
+    "ctaDesc": "Message us, tell us your model, and we’ll check availability, pricing, and timelines. No commitment.",
     "ctaBtn": "Talk to an expert",
     "categoriesTitle": "What do we sell?",
     "categories": [
       {
         "title": "Screens",
-        "desc": "Laptop screens, monitors and specialized displays."
+        "desc": "Laptop screens, monitors, and special equipment displays."
       },
       {
         "title": "Keyboards and touchpads",
@@ -445,51 +445,51 @@
       },
       {
         "title": "Batteries and chargers",
-        "desc": "Internal and external batteries, certified chargers."
+        "desc": "Internal and external batteries and certified chargers."
       },
       {
         "title": "Storage",
-        "desc": "SSD, hard drives, data migrations and upgrades."
+        "desc": "SSDs, hard drives, migrations, and upgrades."
       },
       {
         "title": "Cables and connectors",
-        "desc": "Flex cables, power cables, HDMI, USB and adapters."
+        "desc": "Flex cables, power cables, HDMI, USB, and adapters."
       },
       {
         "title": "Software",
-        "desc": "Operating systems, licenses and configurations."
+        "desc": "Operating systems, licenses, and configurations."
       },
       {
         "title": "Cleaning and maintenance",
-        "desc": "Compressed air, liquids, brushes and professional solutions."
+        "desc": "Compressed air, liquids, brushes, and professional solutions."
       },
       {
-        "title": "And much more",
+        "title": "Much more",
         "desc": "If it exists for computers, we can get it."
       }
     ],
     "whyTitle": "Why buy from us?",
     "whyReasons": [
       {
-        "title": "Real advice",
-        "desc": "We don’t sell just to sell. We tell you what you do and don’t need."
+        "title": "Real guidance",
+        "desc": "We don’t sell just to sell. We tell you what you actually need — and what you don’t."
       },
       {
         "title": "Guaranteed compatibility",
-        "desc": "We make sure the part is compatible with your device."
+        "desc": "We make sure the part is fully compatible with your device."
       },
       {
-        "title": "Everything in one place",
-        "desc": "Parts, installation, configuration and support."
+        "title": "All in one place",
+        "desc": "Parts, installation, configuration, and support."
       }
     ]
   },
   "upgrade": {
     "heroTitle1": "Make your device",
     "heroTitle2": "fly again",
-    "heroDesc": "We upgrade the key components of your computer so it boots faster, responds instantly and feels like new.",
+    "heroDesc": "We upgrade the key components of your computer so it boots fast, responds instantly, and feels like new.",
     "ctaTitle": "Is your computer slow?",
-    "ctaDesc": "In many cases, you don’t need to buy a new one. A well-done upgrade can change everything.",
+    "ctaDesc": "In many cases, you don’t need a new one. A proper upgrade can change everything.",
     "ctaBtn": "Free consultation",
     "ctaBtn2": "Talk to an expert",
     "ctaWhatsappMsg": "Hi, I’d like more information about upgrading my device.",
@@ -501,11 +501,11 @@
       },
       {
         "title": "Smooth multitasking",
-        "desc": "More RAM = better performance for work, study or gaming."
+        "desc": "More RAM = better performance for work, study, or gaming."
       },
       {
         "title": "Better graphics performance",
-        "desc": "Improved experience for design, editing and gaming."
+        "desc": "Improved experience in design, editing, and gaming."
       }
     ],
     "optionsTitle": "What can we upgrade?",
@@ -516,11 +516,11 @@
       },
       {
         "title": "RAM memory",
-        "desc": "Ideal for multitasking, work and gaming."
+        "desc": "Ideal for multitasking, work, and gaming."
       },
       {
         "title": "Graphics card",
-        "desc": "Better performance for design, video and games."
+        "desc": "Better performance for design, video, and games."
       },
       {
         "title": "Secondary drives",
@@ -530,16 +530,16 @@
     "processTitle": "How we improve your device",
     "processSteps": [
       {
-        "title": "Device review",
-        "desc": "We analyze compatibility and performance bottlenecks."
+        "title": "Device inspection",
+        "desc": "We analyze compatibility and bottlenecks."
       },
       {
         "title": "Clear recommendation",
-        "desc": "We explain what’s worth upgrading and why."
+        "desc": "We tell you what’s worth upgrading and why."
       },
       {
         "title": "Professional installation",
-        "desc": "Safe, clean and properly configured upgrade."
+        "desc": "Safe, clean, and properly configured upgrade."
       },
       {
         "title": "Optimized device",
@@ -550,7 +550,7 @@
   "about": {
     "heroTitle1": "Technology with",
     "heroTitle2": "purpose and results",
-    "heroDesc": "We are a technology company born in Morelia, Mexico, focused on creating real solutions that make technology work for you.",
+    "heroDesc": "We are a technology company born in Morelia, Mexico, focused on creating real solutions that make technology work in your favor.",
     "valuesTitle": "Our values",
     "valuesCards": [
       {
@@ -559,7 +559,7 @@
       },
       {
         "title": "Responsibility",
-        "desc": "We take care of your devices, your data and your investment."
+        "desc": "We take care of your devices, your data, and your investment."
       },
       {
         "title": "Results",
@@ -567,15 +567,15 @@
       },
       {
         "title": "Closeness",
-        "desc": "Human approach, direct attention and real follow-up."
+        "desc": "Human approach, direct attention, and real follow-up."
       }
     ],
     "whyUsTitle": "Why trust us?",
     "whyUsReasons": [
-      "Personalized attention, no intermediaries",
+      "Personalized service, no middlemen",
       "Real experience in technology and automation",
       "Solutions designed for people and businesses in Mexico",
-      "Support before, during and after the service"
+      "Support before, during, and after the service"
     ],
     "ctaTitle": "Technology that truly works",
     "ctaDesc": "If you’re looking for someone who speaks clearly and helps you make the best decision, you’re in the right place.",
@@ -585,44 +585,38 @@
   "promotions": {
     "heroTitle1": "Special promotions",
     "heroTitle2": "Valentine’s Day ❤️",
-    "heroDesc": "This February 14th, treat your equipment or surprise someone special with technology that truly makes a difference.",
+    "heroDesc": "This February 14th, treat your device or surprise someone special with technology that truly makes a difference.",
     "validUntil": "Valid until:",
-    "ctaTitle": "Don’t miss out 💘",
-    "ctaDesc": "These promotions are available for a limited time. Message us and secure yours.",
-    "ctaBtn": "I want this promotion",
+    "ctaTitle": "Take advantage before it ends 💘",
+    "ctaDesc": "Promotions are for a limited time. Message us and secure your spot.",
+    "ctaBtn": "I want the promotion",
     "expires": "Valid until",
     "month": "February",
-
     "badges": {
       "bestSeller": "🔥 Best seller",
       "fast": "⚡ Fast",
-      "gift": "🎁 Perfect gift"
+      "gift": "🎁 Ideal gift"
     },
-
     "coupleMaintenance": {
-      "title": "Couple Maintenance",
+      "title": "Couples maintenance",
       "subtitle": "Two devices, one special price",
-      "description": "Bring two laptops or computers and get Essential Maintenance for $650 MXN or Pro Gamer Maintenance for $1,390 MXN."
+      "description": "Bring two laptops or computers and get essential maintenance for $650 MXN or pro gamer maintenance for $1,390.00"
     },
-
     "ssdUpgrade": {
-      "title": "Upgrade Your SSD",
+      "title": "Upgrade your SSD",
       "subtitle": "Speed you’ll love",
       "description": "Make your device boot in seconds with a new SSD. All SSDs with 15% off."
     },
-
     "screen": {
-      "title": "Replace Your Screen",
+      "title": "Replace your screen",
       "subtitle": "Give your device a new life",
-      "description": "We offer laptop and smartphone screen replacements with 20% off."
+      "description": "We offer all laptop and phone screen replacements with 15% off."
     },
-
     "giftCard": {
-      "title": "Give the Gift of Technology",
-      "subtitle": "Gift Card",
-      "description": "Give a gift card for maintenance, repair, or upgrades. Available values: $500 MXN, $1,000 MXN, and $2,000 MXN."
+      "title": "Give the gift of technology",
+      "subtitle": "Gift card",
+      "description": "Give a voucher for maintenance, repair, or upgrades. Vouchers: $500 MXN, $1,000 MXN, and $2,000 MXN."
     },
-
     "includes": {
       "cleaning": "Internal and external cleaning",
       "optimization": "System optimization",
@@ -632,30 +626,30 @@
       "bootOptimization": "Boot optimization",
       "customizable": "Customizable",
       "anyService": "Valid for any service",
-      "idealGift": "Perfect for couples or family",
+      "idealGift": "Ideal for couples or families",
       "screenInstall": "Screen installation"
     }
   },
   "contact": {
     "hero": {
       "title": "Let’s talk 👋",
-      "desc1": "Do you have questions, want a quote, or would like to evaluate our service?",
+      "desc1": "Do you have questions, want a quote, or want to review our service?",
       "desc2": "Your feedback helps us improve."
     },
     "form": {
       "title": "Rate our service",
-      "categories": ["Service / Product", "Time", "Support"],
+      "categories": ["Service / Product", "Time", "Attention"],
       "allCategoriesAlert": "Please rate all categories",
       "commentsLabel": "Comments",
       "commentsPlaceholder": "Tell us about your experience…",
       "sending": "Sending...",
-      "submit": "Submit feedback",
+      "submit": "Submit review",
       "successMsg": "Thank you for your feedback! 💚",
       "confidential": "Your feedback is confidential and helps us improve."
     },
     "socials": {
       "title": "Contact us directly",
-      "desc": "Reach out through the channel you prefer. We reply fast.",
+      "desc": "Message us through the channel you prefer. We respond quickly.",
       "labels": {
         "whatsapp": "WhatsApp",
         "instagram": "Instagram",

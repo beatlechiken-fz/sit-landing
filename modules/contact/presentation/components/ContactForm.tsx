@@ -63,7 +63,7 @@ export default function ContactForm() {
       transition={{ duration: 0.5 }}
       className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6"
     >
-      <h2 className="text-2xl font-bold">{t("title")}</h2>
+      <h2 className="text-2xl font-bold font-title">{t("title")}</h2>
 
       {categories.map((cat) => (
         <div key={cat}>

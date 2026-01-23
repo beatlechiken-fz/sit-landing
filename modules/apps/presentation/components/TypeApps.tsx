@@ -28,7 +28,7 @@ export default function TypeApps() {
         transition={{ duration: 0.6 }}
         className="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-16 text-center"
       >
-        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent font-title">
           {t("appsType1")}
         </span>
       </motion.h2>

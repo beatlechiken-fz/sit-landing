@@ -202,10 +202,13 @@
     "about": "Acerca de nosotros",
     "promotion": "Promociones",
     "contact": "Contacto",
-    "parts": "Refacciones y equipos"
+    "parts": "Refacciones y equipos",
+    "titleMobile": "Menú",
+    "subtitleMobile": "Navegación"
   },
   "footer": {
-    "rights": "Morelia, MX. Soluciones Integrales en Tecnología. 2025"
+    "rights": "Morelia, MX. Soluciones Integrales en Tecnología. 2025",
+    "rightsShort": "Morelia, MX. Sit. 2025"
   },
   "ia": {
     "mainTitle": "Automatizaciones con IA que sí generan resultados",

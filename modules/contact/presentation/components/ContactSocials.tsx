@@ -80,7 +80,7 @@ export default function ContactSocials() {
       transition={{ duration: 0.5 }}
       className="space-y-6"
     >
-      <h2 className="text-2xl font-bold">{t("title")}</h2>
+      <h2 className="text-2xl font-bold font-title">{t("title")}</h2>
       <p className="text-gray-400">{t("desc")}</p>
 
       <div className="grid grid-cols-2 gap-4">

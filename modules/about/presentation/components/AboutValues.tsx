@@ -11,7 +11,7 @@ export default function AboutValues() {
   return (
     <div className="w-[90%] max-w-6xl text-center">
       <motion.h2
-        className="text-3xl font-bold mb-12"
+        className="text-3xl font-bold mb-12 font-title"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

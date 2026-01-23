@@ -18,7 +18,7 @@ export default function MaintenanceCTA() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="w-[85%] max-w-5xl text-center flex flex-col items-center gap-10"
     >
-      <h2 className="text-[clamp(2.2rem,5vw,3.8rem)] font-bold">
+      <h2 className="text-[clamp(2.2rem,5vw,3.8rem)] font-bold font-title">
         <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
           {t("ctaTitle")}
         </span>
