@@ -13,6 +13,10 @@ export default function PromotionsHero() {
       transition={{ duration: 0.6 }}
     >
       <h1 className="text-[clamp(2.6rem,6vw,4.8rem)] font-extrabold leading-tight">
+        {t("noPromotions")}
+      </h1>
+      {/* 
+      <h1 className="text-[clamp(2.6rem,6vw,4.8rem)] font-extrabold leading-tight">
         {t("heroTitle1")}
         <br />
         <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
@@ -23,6 +27,7 @@ export default function PromotionsHero() {
       <p className="mt-6 text-gray-400 text-lg max-w-3xl mx-auto">
         {t("heroDesc")}
       </p>
+      */}
     </motion.section>
   );
 }

@@ -583,6 +583,7 @@
     "ctaWhatsappMsg": "Hi, I’d like information about your services."
   },
   "promotions": {
+    "noPromotions": "There are not promotions for now",
     "heroTitle1": "Special promotions",
     "heroTitle2": "Valentine’s Day ❤️",
     "heroDesc": "This February 14th, treat your device or surprise someone special with technology that truly makes a difference.",

@@ -9,21 +9,22 @@ import PromotionsGrid from "@/modules/promotions/presentation/components/Promoti
 
 export default function PromotionsPage() {
   return (
-    <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
+    <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden flex flex-col">
       <AppBar />
 
-      <section className="flex justify-center">
+      <section className="flex justify-center items-center flex-1">
         <PromotionsHero />
       </section>
 
+      {/*
       <section className="flex justify-center mt-24">
-        <PromotionsGrid />
+         <PromotionsGrid />
       </section>
 
       <section className="flex justify-center mt-32 mb-32">
         <PromotionsCTA />
       </section>
-
+      */}
       <FooterBar />
     </main>
   );

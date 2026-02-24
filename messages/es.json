@@ -580,6 +580,7 @@
     "ctaWhatsappMsg": "Hola, quiero información sobre sus servicios."
   },
   "promotions": {
+    "noPromotions": "No hay promociones vigentes",
     "heroTitle1": "Promociones especiales",
     "heroTitle2": "San Valentín ❤️",
     "heroDesc": "Este 14 de febrero consiente tu equipo o sorprende a alguien especial con tecnología que sí se nota.",
