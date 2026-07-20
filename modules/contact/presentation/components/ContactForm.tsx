@@ -61,8 +61,11 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6"
+      className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-6 transition hover:border-teal-400/40"
     >
+      <span className="text-xs font-bold uppercase tracking-widest text-teal-300">
+        {t("eyebrow")}
+      </span>
       <h2 className="text-2xl font-bold font-title">{t("title")}</h2>
 
       {categories.map((cat) => (
@@ -96,7 +99,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-green-400 text-black font-semibold hover:opacity-90 transition disabled:opacity-50"
+        className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-400 to-sky-400 text-black font-semibold hover:opacity-90 transition disabled:opacity-50"
       >
         {loading ? t("sending") : t("submit")}
       </button>

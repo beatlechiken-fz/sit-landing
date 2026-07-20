@@ -89,12 +89,12 @@ export default function MainNavItem({
         href={url}
         onClick={onSelect}
         className={`
-          px-4 py-2 rounded-xl transition font-medium
+          relative px-4 py-2 rounded-lg transition font-medium text-sm
           flex items-center gap-1
           ${
             active
-              ? "bg-white/20 text-white"
-              : "text-gray-300 hover:bg-white/5 hover:text-white"
+              ? "text-white"
+              : "text-gray-400 hover:text-white"
           }
         `}
       >
@@ -104,9 +104,9 @@ export default function MainNavItem({
           <svg
             viewBox="0 0 24 24"
             className="
-              w-4 h-4
+              w-3.5 h-3.5 text-gray-500
               transition-transform duration-200
-              group-hover:rotate-180
+              group-hover:rotate-180 group-hover:text-white
             "
             fill="none"
             stroke="currentColor"
@@ -117,18 +117,28 @@ export default function MainNavItem({
             <path d="M6 9l6 6 6-6" />
           </svg>
         )}
+
+        {/* Indicador activo — línea con gradiente de marca */}
+        <span
+          className={`
+            pointer-events-none absolute left-4 right-4 -bottom-[13px] h-[2px]
+            bg-gradient-to-r from-teal-400 to-[#02AFFF]
+            transition-opacity duration-200
+            ${active ? "opacity-100" : "opacity-0 group-hover:opacity-40"}
+          `}
+        />
       </Link>
 
       {submenu.length > 0 && (
         <div
           className="
-            absolute top-full left-0 mt-2 w-48
-            bg-black/70 backdrop-blur-xl
+            absolute top-full left-0 mt-3 w-52
+            bg-black/80 backdrop-blur-2xl
             border border-white/10
-            rounded-xl p-3 shadow-xl
-            opacity-0 invisible
-            group-hover:opacity-100 group-hover:visible
-            transition-all
+            rounded-2xl p-2 shadow-2xl shadow-black/40
+            opacity-0 invisible translate-y-1
+            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+            transition-all duration-200
             z-50
           "
         >
@@ -137,7 +147,7 @@ export default function MainNavItem({
               key={s.id}
               href={s.url}
               onClick={onSelect}
-              className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg"
+              className="block px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors"
             >
               {s.label}
             </Link>

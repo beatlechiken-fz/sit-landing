@@ -5,16 +5,16 @@ export function validateFeedback(body: any) {
 
   if (!ratings || typeof ratings !== "object") return false;
 
-  const categories = ["Servicio / Producto", "Tiempo", "Atención"];
+  const entries = Object.entries(ratings);
+  if (entries.length === 0 || entries.length > 10) return false;
 
-  for (const cat of categories) {
-    const value = ratings[cat];
-    if (typeof value !== "number" || value < 1 || value > 5) {
-      return false;
-    }
+  for (const [, value] of entries) {
+    if (typeof value !== "number" || value < 1 || value > 5) return false;
   }
 
-  if (comments && comments.length > 500) return false;
+  if (comments !== undefined) {
+    if (typeof comments !== "string" || comments.length > 500) return false;
+  }
 
   return true;
 }

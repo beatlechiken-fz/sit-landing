@@ -17,4 +17,7 @@ export default class Icons {
   static business = "/icons/plus-green.svg";
   static scale = "/icons/plus-green.svg";
   static support = "/icons/plus-green.svg";
+  static shoppingBag = "/icons/shopping-bag.svg";
+  static filter = "/icons/filter.svg";
+  static search = "/icons/search.svg";
 }

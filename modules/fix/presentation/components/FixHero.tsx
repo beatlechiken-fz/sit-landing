@@ -1,7 +1,103 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import CustomLink from "@/core/components/custom-link/CustomLink";
+
+// ─────────────────────────────────────────────
+// Ilustración lateral — mockup de "orden de
+// servicio" con checklist + chips flotantes
+// ─────────────────────────────────────────────
+function FixIllustration() {
+  const chips = [
+    { label: "Diagnóstico", pos: "top-0 -left-2 sm:-left-10" },
+    { label: "Refacciones originales", pos: "top-10 -right-2 sm:-right-14" },
+    { label: "Garantía", pos: "bottom-4 -left-4 sm:-left-10" },
+  ];
+
+  return (
+    <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[380px]">
+      <div className="absolute inset-0 -z-10 flex items-center justify-center">
+        <div className="h-56 w-56 rounded-full bg-gradient-to-tr from-teal-500/25 to-sky-500/25 blur-[100px]" />
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/40 overflow-hidden"
+      >
+        {/* Header tipo ticket */}
+        <div className="flex items-center gap-3 border-b border-white/10 bg-white/5 px-5 py-4">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-teal-500 to-sky-500">
+            <svg
+              className="h-5 w-5 text-black"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-white/90">
+              Orden de servicio
+            </p>
+            <p className="text-xs text-white/40">#SIT-0248</p>
+          </div>
+        </div>
+
+        {/* Checklist simulado */}
+        <div className="p-5 flex flex-col gap-3">
+          {[100, 75, 90].map((w, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-400/20">
+                <svg
+                  className="h-3 w-3 text-teal-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={3}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <div
+                className="h-2.5 rounded-full bg-white/10"
+                style={{ width: `${w}%` }}
+              />
+            </div>
+          ))}
+          <div className="mt-2 h-8 w-32 rounded-lg bg-gradient-to-r from-teal-400 to-sky-400" />
+        </div>
+      </motion.div>
+
+      {chips.map((chip, i) => (
+        <motion.div
+          key={chip.label}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 + i * 0.15, duration: 0.6 }}
+          className={`
+            absolute ${chip.pos}
+            flex items-center gap-2 rounded-xl border border-white/10
+            bg-white/5 backdrop-blur-xl px-3 py-2 shadow-lg shadow-black/30
+          `}
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
+          <span className="text-xs font-medium text-white/80">
+            {chip.label}
+          </span>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export default function FixHero() {
   const t = useTranslations("fixHero");
@@ -10,36 +106,73 @@ export default function FixHero() {
   const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   return (
-    <section className="w-[85%] max-w-7xl min-h-[90vh] flex flex-col justify-center items-center text-center gap-10">
+    <section className="relative w-[85%] max-w-7xl flex flex-col lg:flex-row items-center gap-14 mt-16 lg:mt-8">
       {/* Glow */}
-      <div className="absolute inset-0 -z-10 flex justify-center">
+      <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
         <div className="w-[520px] h-[520px] bg-gradient-to-tr from-teal-600/30 to-sky-600/30 blur-[160px]" />
       </div>
 
-      <h1 className="text-[clamp(2.6rem,6vw,5.2rem)] font-extrabold leading-tight">
-        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
-          {t("title1")}
+      {/* Texto */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
+      >
+        <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-1.5 text-xs font-medium text-teal-300">
+          <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l1.9 5.4L19 9l-5.1 1.6L12 16l-1.9-5.4L5 9l5.1-1.6L12 2z" />
+          </svg>
+          {t("heroBadge")}
         </span>
-        <br />
-        {t("title2")}
-      </h1>
 
-      <p className="text-gray-400 max-w-2xl text-[clamp(1.1rem,2vw,1.4rem)]">
-        {t("desc")}
-      </p>
+        <h1 className="text-[clamp(2.4rem,5vw,4.2rem)] font-bold leading-tight font-title">
+          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+            {t("title1")}
+          </span>
+          <br />
+          {t("title2")}
+        </h1>
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-        <div className="w-full sm:w-auto">
-          <CustomLink
-            url={whatsappUrl}
-            appearance="blueGreenBg"
-            size="lg"
-            fullWidth
-          >
-            {t("ctaBtn")}
-          </CustomLink>
+        <p className="text-gray-300 max-w-xl text-[clamp(1.05rem,1.6vw,1.25rem)]">
+          {t("desc")}
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 pt-2 w-full sm:w-auto">
+          <div className="w-full sm:w-auto">
+            <CustomLink
+              url={whatsappUrl}
+              appearance="blueGreenBg"
+              size="md"
+              fullWidth
+            >
+              {t("ctaBtn")}
+            </CustomLink>
+          </div>
+          <div className="w-full sm:w-auto">
+            <CustomLink
+              url="#servicios"
+              appearance="darkOutline"
+              size="md"
+              fullWidth
+            >
+              {t("heroCtaSecondary")}
+            </CustomLink>
+          </div>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Ilustración */}
+      <motion.div
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="flex-1 flex justify-center"
+      >
+        <FixIllustration />
+      </motion.div>
     </section>
   );
 }

@@ -14,7 +14,7 @@ export default function MaintenancePage() {
     <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
       <AppBar />
 
-      <section className="relative flex justify-center">
+      <section className="relative flex justify-center mt-24">
         <MaintenanceHero />
       </section>
 

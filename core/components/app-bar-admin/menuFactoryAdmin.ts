@@ -1,0 +1,68 @@
+// Creamos el tipo manualmente, equivalente a la función que retorna useTranslations()
+export type TType = (key: string, values?: Record<string, any>) => string;
+
+// Tipo para los elementos del submenú
+export type SubmenuItem = {
+  id: string;
+  label: string;
+  url: string;
+};
+
+// Tipo para los elementos principales del menú
+export type MenuItem = {
+  id: string;
+  label: string;
+  url: string;
+  submenu?: SubmenuItem[]; // opcional
+};
+
+// Tipo del objeto completo del menú
+export type MenuNavElement = {
+  [key: string]: MenuItem;
+};
+
+// Tipo de las claves del menú (home, dev, support, etc.)
+export type MenuNavEntry = keyof MenuNavElement;
+
+// Función para crear el menú dinámicamente con traducciones
+export function createMenuNavElementAdmin(t: TType): MenuNavElement {
+  return {
+    home: {
+      id: "dashboard",
+      label: t("dashboard"),
+      url: "/admin/dashboard",
+    },
+    store: {
+      id: "store",
+      label: t("storeAdmin"),
+      url: "/admin/dashboard/store",
+      submenu: [
+        {
+          id: "store-productos",
+          label: t("storeProductos"),
+          url: "/admin/dashboard/store",
+        },
+        {
+          id: "store-grupos",
+          label: t("storeGrupos"),
+          url: "/admin/dashboard/store/groups",
+        },
+        {
+          id: "store-cupones",
+          label: t("storeCupones"),
+          url: "/admin/dashboard/store/coupons",
+        },
+        {
+          id: "store-usuarios",
+          label: t("storeUsuarios"),
+          url: "/admin/dashboard/store/users",
+        },
+        {
+          id: "store-deals",
+          label: t("storeDeals"),
+          url: "/admin/dashboard/store/deals",
+        },
+      ],
+    },
+  };
+}

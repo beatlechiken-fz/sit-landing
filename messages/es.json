@@ -34,6 +34,9 @@
     "apps2": "para empresas en México",
     "apps3": "Creamos aplicaciones móviles y web que optimizan procesos, reducen costos y ayudan a tu empresa a crecer con tecnología confiable.",
     "appsQuote": "Agendar llamada",
+    "heroBadge": "Desarrollo de software a la medida",
+    "heroCtaSecondary": "Ver tipos de apps",
+    "whyEyebrow": "Por qué Sit+",
     "appsWhy1": "¿Por qué desarrollar tu app con nosotros?",
     "appsWhyCards": [
       {
@@ -52,6 +55,7 @@
         "desc": "Te asesoramos antes, durante y después del lanzamiento."
       }
     ],
+    "typeEyebrow": "Lo que construimos",
     "appsType1": "Tipos de aplicaciones que desarrollamos",
     "appsTypeCards": [
       {
@@ -104,9 +108,12 @@
     "title": "Hagamos realidad tu app",
     "desc": "Cuéntanos tu idea y te ayudamos a convertirla en una app funcional, escalable y lista para el mercado mexicano. La asesoría inicial va por nuestra cuenta.",
     "quoteBtn": "Cotizar mi app",
-    "callBtn": "Agendar llamada"
+    "callBtn": "Agendar llamada",
+    "quoteWhatsappMsg": "Hola, me gustaría cotizar el desarrollo de una app.",
+    "callWhatsappMsg": "Hola, me gustaría agendar una llamada para platicar sobre una app."
   },
   "processApps": {
+    "eyebrow": "Cómo trabajamos",
     "title": "Nuestro proceso de desarrollo",
     "steps": [
       {
@@ -137,6 +144,7 @@
     ]
   },
   "landing": {
+    "heroBadge": "Diseño web enfocado en resultados",
     "landingTitle1": "Landing pages que convierten",
     "landingTitle2": "clientes en ventas reales",
     "landingDesc1": "Diseñamos landing pages enfocadas en resultados, pensadas para empresas en México que buscan más leads, más ventas y mayor presencia digital.",
@@ -144,6 +152,27 @@
     "landingPlansBtn": "Ver planes",
     "landingQuoteBtn": "Cotizar landing",
 
+    "whyEyebrow": "Por qué Sit+",
+    "whyTitle": "Landing pages pensadas para vender",
+    "whyCards": [
+      {
+        "key": "design",
+        "title": "Diseño que convierte",
+        "desc": "UX y llamados a la acción claros, pensados para llevar al visitante a la conversión."
+      },
+      {
+        "key": "speed",
+        "title": "Velocidad y SEO",
+        "desc": "Carga rápida y buenas prácticas técnicas para posicionar mejor en Google."
+      },
+      {
+        "key": "results",
+        "title": "Resultados medibles",
+        "desc": "Seguimiento de leads y conversiones para saber exactamente qué está funcionando."
+      }
+    ],
+
+    "plansEyebrow": "Lo que incluye",
     "plansTitle": "Planes mensuales para hacer crecer tu negocio",
     "startPlan": "Start",
     "startPlanPrice": "$2,490",
@@ -187,6 +216,40 @@
       "enterprise": "Hola, me interesa una solución Enterprise mensual para mi empresa. ¿Podemos platicarlo?"
     }
   },
+  "processLanding": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "Nuestro proceso de trabajo",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Brief y objetivos",
+        "desc": "Entendemos tu negocio, tu oferta y qué acción quieres que tome tu cliente."
+      },
+      {
+        "step": "02",
+        "title": "Diseño UI/UX",
+        "desc": "Diseñamos una landing enfocada en claridad y conversión, con tu marca."
+      },
+      {
+        "step": "03",
+        "title": "Desarrollo y contenido",
+        "desc": "Construimos tu página con código optimizado, rápido y responsivo."
+      },
+      {
+        "step": "04",
+        "title": "Lanzamiento y seguimiento",
+        "desc": "Publicamos tu landing y damos seguimiento a resultados y mejoras."
+      }
+    ]
+  },
+  "landingCTA": {
+    "title": "¿Listo para lanzar tu landing page?",
+    "desc": "En unos días tu negocio puede tener una landing page profesional, rápida y lista para generar leads. Cotiza tu plan o agenda una llamada sin costo.",
+    "quoteBtn": "Cotizar mi landing",
+    "callBtn": "Agendar llamada",
+    "quoteWhatsappMsg": "Hola, me gustaría cotizar una landing page para mi negocio.",
+    "callWhatsappMsg": "Hola, me gustaría agendar una llamada para platicar sobre mi landing page."
+  },
   "mainnav": {
     "home": "Inicio",
     "apps": "Aplicaciones",
@@ -197,31 +260,47 @@
     "fix": "Reparaciones",
     "maintenance": "Mantenimiento de equipos",
     "upgrade": "Actualización de equipos",
-    "store": "Venta de equipo",
+    "store": "Store",
     "sit": "Sit",
     "about": "Acerca de nosotros",
     "promotion": "Promociones",
     "contact": "Contacto",
     "parts": "Refacciones y equipos",
     "titleMobile": "Menú",
-    "subtitleMobile": "Navegación"
+    "subtitleMobile": "Navegación",
+    "dashboard": "Dashboard",
+    "storeAdmin": "Store",
+    "storeProductos": "Productos",
+    "storeGrupos": "Grupos",
+    "storeCupones": "Cupones",
+    "storeUsuarios": "Clientes",
+    "storeDeals": "Tratos"
   },
   "footer": {
     "rights": "Morelia, MX. Soluciones Integrales en Tecnología. 2025",
     "rightsShort": "Morelia, MX. Sit. 2025"
   },
   "ia": {
+    "heroBadge": "Automatización e Inteligencia Artificial",
+    "heroCtaSecondary": "Ver servicios",
     "mainTitle": "Automatizaciones con IA que sí generan resultados",
     "mainDesc": "Implementamos inteligencia artificial para empresas mexicanas que buscan ahorrar tiempo, reducir costos y escalar operaciones.",
     "ctaTitle": "Lleva tu empresa al siguiente nivel con IA",
     "ctaDesc": "Agenda una llamada y descubre cómo automatizar procesos reales en tu negocio.",
     "ctaBtn": "Hablar con un experto",
-    "ctaWhatsappMsg": "Hola, me gustaría más información sobre las automatizaciones con IA.",
+    "ctaWhatsappMsg": "Hola, me gustaría más información sobre las automatizacionses con IA.",
+    "ctaCallBtn": "Agendar una llamada",
+    "ctaCallWhatsappMsg": "Hola, me gustaría agendar una llamada para platicar sobre automatización con IA.",
+    "servicesEyebrow": "Lo que hacemos",
     "servicesTitle": "¿Qué podemos automatizar con IA?",
     "services": [
       {
         "title": "Chatbots inteligentes",
         "desc": "Atiende clientes 24/7 en WhatsApp, web o sistemas internos con IA entrenada a tu negocio."
+      },
+      {
+        "title": "Agentes de IA",
+        "desc": "Creamos agentes autónomos que ejecutan tareas, toman decisiones y se conectan a tus sistemas para trabajar por ti."
       },
       {
         "title": "Automatización de procesos",
@@ -240,6 +319,7 @@
         "desc": "Desarrollamos aplicaciones que piensan, aprenden y escalan contigo."
       }
     ],
+    "processEyebrow": "Cómo trabajamos",
     "processTitle": "Nuestro proceso de automatización",
     "processSteps": [
       {
@@ -268,10 +348,15 @@
         "desc": "Optimizamos y hacemos crecer la solución."
       }
     ],
+    "techEyebrow": "Stack tecnológico",
     "techTitle": "Tecnología que usamos",
     "tech": [
       "OpenAI",
+      "Anthropic",
       "LangChain",
+      "HyperAgent",
+      "Lovable",
+      "Horizon",
       "Pinecone",
       "PostgreSQL",
       "Python",
@@ -283,16 +368,20 @@
     "title": "¿Tu equipo falló?",
     "desc": "Agenda una revisión y te decimos exactamente qué tiene y cuánto cuesta. Sin letras chiquitas.",
     "ctaBtn": "Hablar con técnico",
-    "whatsappMsg": "Hola, me gustaría reparar un equipo."
+    "whatsappMsg": "Hola, me gustaría reparar un equipo.",
+    "secondaryBtn": "Ver planes de mantenimiento"
   },
   "fixHero": {
     "title1": "Reparación profesional de equipos",
     "title2": "rápida, confiable y garantizada",
     "desc": "Reparamos computadoras, laptops, celulares e impresoras. Diagnóstico honesto, refacciones de calidad y atención directa en México.",
     "ctaBtn": "Agendar revisión",
-    "whatsappMsg": "Hola, me gustaría reparar un equipo."
+    "whatsappMsg": "Hola, me gustaría reparar un equipo.",
+    "heroBadge": "Servicio técnico especializado",
+    "heroCtaSecondary": "Ver servicios"
   },
   "fixProcess": {
+    "eyebrow": "Cómo trabajamos",
     "title": "Nuestro proceso",
     "steps": [
       {
@@ -323,6 +412,7 @@
     ]
   },
   "fixServices": {
+    "eyebrow": "Lo que reparamos",
     "title": "Servicios de reparación",
     "services": [
       {
@@ -344,15 +434,38 @@
     ]
   },
   "maintenance": {
+    "heroBadge": "Mantenimiento preventivo especializado",
     "heroTitle1": "Mantenimiento profesional",
     "heroTitle2": "para que tu computadora rinda como nueva",
     "heroDesc": "Evita fallas, sobrecalentamiento y lentitud. Dale mantenimiento preventivo a tu equipo y alarga su vida útil.",
     "heroBtnPlans": "Ver paquetes",
     "heroBtnWhatsapp": "Agendar mantenimiento",
     "heroWhatsappMsg": "Hola, me gustaría más información sobre el el mantenimiento de equipos.",
+    "benefitsEyebrow": "Beneficios",
+    "benefitsTitle": "¿Por qué hacer mantenimiento?",
+    "benefits": [
+      {
+        "title": "Mayor rendimiento",
+        "desc": "Tu equipo trabaja como el primer día, sin cuellos de botella por suciedad interna."
+      },
+      {
+        "title": "Menos calentamiento",
+        "desc": "Pasta térmica y ventilación renovadas evitan apagones y throttling por temperatura."
+      },
+      {
+        "title": "Arranque más rápido",
+        "desc": "Limpieza de software y disco para que inicie y responda sin demoras."
+      },
+      {
+        "title": "Prevención de fallas",
+        "desc": "Detectamos desgaste antes de que se convierta en una reparación costosa."
+      }
+    ],
+    "plansEyebrow": "Paquetes",
     "ctaTitle": "Dale mantenimiento antes de que falle",
     "ctaDesc": "Un mantenimiento a tiempo es más barato que una reparación. Agenda hoy y evita problemas mañana.",
     "ctaBtnWhatsapp": "Agendar mantenimiento",
+    "ctaSecondaryBtn": "¿Ya falló? Ver reparación",
     "plansTitle": "Paquetes de mantenimiento",
     "plans": [
       {
@@ -399,6 +512,7 @@
         "whatsappMsg": "Hola, me gustaría más información sobre el Mantenimiento Apple Care+."
       }
     ],
+    "processEyebrow": "Cómo trabajamos",
     "processTitle": "Nuestro proceso",
     "processSteps": [
       "Recepción del equipo",
@@ -409,6 +523,7 @@
     ]
   },
   "fixWhy": {
+    "eyebrow": "Por qué elegirnos",
     "title": "¿Por qué reparar con nosotros?",
     "reasons": [
       {
@@ -482,14 +597,18 @@
     ]
   },
   "upgrade": {
+    "heroBadge": "Actualización de componentes",
     "heroTitle1": "Haz que tu equipo",
     "heroTitle2": "vuele otra vez",
     "heroDesc": "Actualizamos los componentes clave de tu computadora para que cargue rápido, responda al instante y se sienta como nueva.",
+    "heroCtaSecondary": "Ver qué podemos actualizar",
     "ctaTitle": "¿Tu computadora está lenta?",
     "ctaDesc": "En muchos casos no necesitas comprar una nueva. Un upgrade bien hecho puede cambiarlo todo.",
     "ctaBtn": "Asesoría sin costo",
     "ctaBtn2": "Hablar con un experto",
+    "ctaSecondaryBtn": "Ver catálogo de refacciones",
     "ctaWhatsappMsg": "Hola, me gustaría más información para actualizar mi equipo.",
+    "benefitsEyebrow": "Resultados",
     "benefitsTitle": "El cambio se nota desde el primer día",
     "benefits": [
       {
@@ -505,6 +624,7 @@
         "desc": "Mejor experiencia en diseño, edición y gaming."
       }
     ],
+    "optionsEyebrow": "Catálogo de mejoras",
     "optionsTitle": "¿Qué podemos actualizar?",
     "options": [
       {
@@ -524,6 +644,7 @@
         "desc": "Más espacio para archivos y respaldos."
       }
     ],
+    "processEyebrow": "Cómo trabajamos",
     "processTitle": "Así mejoramos tu equipo",
     "processSteps": [
       {
@@ -545,9 +666,25 @@
     ]
   },
   "about": {
+    "heroBadge": "Empresa de tecnología en Morelia, México",
     "heroTitle1": "Tecnología con",
     "heroTitle2": "propósito y resultados",
     "heroDesc": "Somos una empresa de tecnología nacida en Morelia, México, enfocada en crear soluciones reales que hacen que la tecnología trabaje a tu favor.",
+    "heroCtaSecondary": "Conoce nuestra historia",
+    "stats": [
+      { "value": "+10", "label": "años de experiencia" },
+      { "value": "+100", "label": "equipos y clientes atendidos" },
+      { "value": "100%", "label": "soporte directo, sin intermediarios" }
+    ],
+    "storyEyebrow": "Nuestra historia",
+    "storyTitle": "De Morelia para quienes confían en su tecnología",
+    "storyParagraph1": "Sit+ nació en Morelia con una idea simple: la tecnología debe resolver problemas, no crearlos. Desde 2015 acompañamos a personas y negocios en el mantenimiento, reparación y actualización de sus equipos, construyendo una relación de confianza basada en honestidad y resultados reales.",
+    "storyParagraph2": "Hoy combinamos experiencia técnica con atención cercana para ofrecer soluciones que van desde el soporte del día a día hasta el desarrollo de aplicaciones a la medida — siempre hablando claro y sin tecnicismos innecesarios.",
+    "missionTitle": "Misión",
+    "missionText": "Hacer que la tecnología trabaje a favor de las personas y negocios de México, con soluciones claras, honestas y efectivas.",
+    "visionTitle": "Visión",
+    "visionText": "Ser el referente de confianza en servicios tecnológicos en Morelia, llevando esa misma cercanía a más ciudades del país.",
+    "valuesEyebrow": "Lo que nos define",
     "valuesTitle": "Nuestros valores",
     "valuesCards": [
       {
@@ -567,6 +704,7 @@
         "desc": "Trato humano, atención directa y seguimiento real."
       }
     ],
+    "whyUsEyebrow": "Por qué elegirnos",
     "whyUsTitle": "¿Por qué confiar en nosotros?",
     "whyUsReasons": [
       "Atención personalizada, sin intermediarios",
@@ -574,72 +712,94 @@
       "Soluciones pensadas para personas y negocios en México",
       "Soporte antes, durante y después del servicio"
     ],
+    "servicesEyebrow": "Qué hacemos",
+    "servicesTitle": "Todo tu ecosistema tecnológico en un solo lugar",
+    "servicesDesc": "De la reparación al desarrollo de software, cubrimos cada etapa del ciclo de vida de tu tecnología.",
+    "services": [
+      {
+        "title": "Reparación",
+        "desc": "Diagnóstico y reparación experta de equipos."
+      },
+      {
+        "title": "Mantenimiento",
+        "desc": "Planes preventivos para que tu equipo no falle."
+      },
+      {
+        "title": "Actualización",
+        "desc": "Más velocidad y vida útil con mejores componentes."
+      },
+      {
+        "title": "Apps a la medida",
+        "desc": "Software diseñado para tu negocio."
+      },
+      {
+        "title": "Refacciones",
+        "desc": "Piezas originales y compatibles en un solo lugar."
+      }
+    ],
     "ctaTitle": "Tecnología que sí funciona",
     "ctaDesc": "Si buscas alguien que te hable claro y te ayude a tomar la mejor decisión, estás en el lugar correcto.",
     "ctaBtn": "Contáctanos",
+    "ctaSecondaryBtn": "Explora nuestra tienda",
     "ctaWhatsappMsg": "Hola, quiero información sobre sus servicios."
   },
   "promotions": {
     "noPromotions": "No hay promociones vigentes",
-    "heroTitle1": "Promociones especiales",
-    "heroTitle2": "San Valentín ❤️",
-    "heroDesc": "Este 14 de febrero consiente tu equipo o sorprende a alguien especial con tecnología que sí se nota.",
-    "validUntil": "Válido hasta:",
-    "ctaTitle": "Aprovecha antes de que termine 💘",
-    "ctaDesc": "Las promociones son por tiempo limitado. Escríbenos y asegura tu lugar.",
-    "ctaBtn": "Quiero la promoción",
-    "expires": "Vigencia hasta",
-    "month": "Febrero",
-
-    "badges": {
-      "bestSeller": "🔥 Más vendido",
-      "fast": "⚡ Rápido",
-      "gift": "🎁 Regalo ideal"
+    "badgeUpcoming": "Próxima campaña",
+    "badgeActive": "Campaña activa",
+    "heroTitle1": "Prepárate para los descuentos",
+    "heroTitle2": "con el regreso a clases",
+    "heroDesc": "Del 3 al 17 de agosto de 2026 activamos descuentos especiales en SSD, RAM, refacciones y más.",
+    "heroCtaWhatsapp": "Contactar un asesor",
+    "heroCtaSecondary": "Ver descuentos",
+    "heroWhatsappMsg": "Hola, quiero que me avisen cuando inicie la próxima campaña de promociones.",
+    "gridEyebrow": "Descuentos incluidos",
+    "gridTitle": "Lo que viene en esta campaña",
+    "items": {
+      "ssd": {
+        "title": "SSD",
+        "desc": "Actualiza a un SSD y arranca tu equipo en segundos."
+      },
+      "ram": {
+        "title": "Memoria RAM",
+        "desc": "Más multitarea sin trabarse ni ralentizar tu equipo."
+      },
+      "laptopParts": {
+        "title": "Pantallas y teclados de laptop",
+        "desc": "Refacciones originales y compatibles para tu laptop."
+      },
+      "battery": {
+        "title": "Baterías y cargadores de laptop",
+        "desc": "Recupera la autonomía de tu equipo con batería nueva."
+      },
+      "secondMaintenance": {
+        "title": "Segundo paquete de mantenimiento",
+        "desc": "Ideal si traes dos equipos: el segundo con gran descuento."
+      },
+      "phoneScreen": {
+        "title": "Cambio de pantalla de celular",
+        "desc": "Pantallas de calidad para que tu celular luzca como nuevo."
+      }
     },
-
-    "coupleMaintenance": {
-      "title": "Mantenimiento en pareja",
-      "subtitle": "Dos equipos, un precio especial",
-      "description": "Trae dos laptops o computadoras y obtén mantenimiento esencial a $650 MXN o mantenimiento pro gamer a $1,390.00"
-    },
-
-    "ssdUpgrade": {
-      "title": "Actualiza tu SSD",
-      "subtitle": "Velocidad que enamora",
-      "description": "Haz que tu equipo arranque en segundos con un SSD nuevo. Todos los SSD con 15% de descuento."
-    },
-
-    "screen": {
-      "title": "Cambia tu pantalla",
-      "subtitle": "Dale nueva vida a tu equipo",
-      "description": "Tenemos todos los cambios de pantalla para laptop o celular con un 15% de descuento."
-    },
-
-    "giftCard": {
-      "title": "Regala tecnología",
-      "subtitle": "Vale de regalo",
-      "description": "Regala un vale para mantenimiento, reparación o actualización. Vales: $500 MXN, $1,000 MXN y $2,000 MXN."
-    },
-    "includes": {
-      "cleaning": "Limpieza interna y externa",
-      "optimization": "Optimización de sistema",
-      "backup": "Respaldo básico",
-      "ssdInstall": "Instalación de SSD",
-      "cloning": "Clonación de información",
-      "bootOptimization": "Optimización de arranque",
-      "customizable": "Personalizable",
-      "anyService": "Válido en cualquier servicio",
-      "idealGift": "Ideal para pareja o familia",
-      "screenInstall": "Instalación de la pantalla"
-    }
+    "ctaTitleUpcoming": "No te la pierdas",
+    "ctaDescUpcoming": "Del 3 al 17 de agosto, escríbenos y te avisamos en cuanto arranque la campaña.",
+    "ctaBtnUpcoming": "Avísenme cuando inicie",
+    "ctaTitleActive": "Aprovecha antes de que termine",
+    "ctaDescActive": "Esta promoción es por tiempo limitado. Escríbenos y asegura tu descuento.",
+    "ctaBtnActive": "Quiero la promoción",
+    "ctaSecondaryBtn": "Explora nuestra tienda"
   },
   "contact": {
     "hero": {
+      "badge": "Estamos para ayudarte",
       "title": "Hablemos 👋",
       "desc1": "¿Tienes dudas, quieres cotizar o evaluar nuestro servicio?",
-      "desc2": "Tu opinión nos ayuda a ser mejores."
+      "desc2": "Tu opinión nos ayuda a ser mejores.",
+      "ctaWhatsapp": "Escríbenos por WhatsApp",
+      "ctaSecondary": "Ir al formulario"
     },
     "form": {
+      "eyebrow": "Tu opinión importa",
       "title": "Evalúa nuestro servicio",
       "categories": ["Servicio / Producto", "Tiempo", "Atención"],
       "allCategoriesAlert": "Por favor evalúa todas las categorías",
@@ -651,6 +811,7 @@
       "confidential": "Tu opinión es confidencial y nos ayuda a mejorar."
     },
     "socials": {
+      "eyebrow": "Canales directos",
       "title": "Contáctanos directo",
       "desc": "Escríbenos por el medio que prefieras. Respondemos rápido.",
       "labels": {
@@ -660,6 +821,54 @@
         "facebook": "Facebook",
         "youtube": "Youtube"
       }
+    }
+  },
+  "homeV2": {
+    "hero": {
+      "badge": "Desarrollo con Inteligencia Artificial",
+      "title1": "Aplicaciones que piensan,",
+      "title2": "no solo funcionan",
+      "desc": "Diseñamos y desarrollamos apps web, móviles y de escritorio potenciadas con IA — para automatizar procesos, reducir costos y escalar tu negocio.",
+      "ctaPrimary": "Ver desarrollo de apps",
+      "ctaSecondary": "Hablar con un experto",
+      "whatsappMsg": "Hola, me gustaría más información sobre el desarrollo de una app con IA.",
+      "highlight1Title": "Equipo experto",
+      "highlight1Desc": "Desarrolladores con experiencia real en producción.",
+      "highlight2Title": "Soluciones a medida",
+      "highlight2Desc": "Cada app se diseña para tu proceso, no al revés.",
+      "highlight3Title": "Soporte continuo",
+      "highlight3Desc": "Te acompañamos después del lanzamiento."
+    },
+    "store": {
+      "eyebrow": "Tienda en línea",
+      "title1": "Equipo y tecnología,",
+      "title2": "listos para hoy",
+      "desc": "Explora nuestro catálogo de equipo de cómputo, componentes y accesorios con precio claro y disponibilidad real.",
+      "cta": "Explorar la Store",
+      "categoriesLabel": "Categorías populares",
+      "noPrice": "Cotizar"
+    },
+    "techService": {
+      "eyebrow": "Servicio técnico",
+      "title1": "Reparación y mantenimiento,",
+      "title2": "sin que pierdas tiempo",
+      "desc": "Reparamos computadoras, celulares e impresoras, y mantenemos tu equipo funcionando al 100% con planes de mantenimiento preventivo para tu empresa.",
+      "ctaPrimary": "Ver planes de mantenimiento",
+      "ctaSecondary": "¿Necesitas una reparación?"
+    },
+    "landingDev": {
+      "eyebrow": "Sitios web",
+      "title1": "Tu página web,",
+      "title2": "lista para vender",
+      "desc": "Landing pages y sitios profesionales que transmiten confianza y convierten visitas en clientes.",
+      "cta": "Ver planes de sitios web"
+    },
+    "finalCta": {
+      "title1": "¿Listo para impulsar",
+      "title2": "tu negocio?",
+      "desc": "Cuéntanos tu proyecto y te respondemos en minutos.",
+      "cta": "Hablar por WhatsApp",
+      "whatsappMsg": "Hola, me gustaría platicar sobre un proyecto con Sit+."
     }
   }
 }

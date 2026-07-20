@@ -4,6 +4,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../../app/globals.css";
+import { ApolloClientProvider } from "@/core/helpers/apollo/apollo-provider";
+import { CartDrawer } from "@/modules/store/presentation/components/CartDrawer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,9 +44,12 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${anta.variable} antialiased`}
       >
-        <NextIntlClientProvider locale={locale}>
-          {children}
-        </NextIntlClientProvider>
+        <ApolloClientProvider>
+          <NextIntlClientProvider locale={locale}>
+            {children}
+            <CartDrawer />
+          </NextIntlClientProvider>
+        </ApolloClientProvider>
       </body>
     </html>
   );

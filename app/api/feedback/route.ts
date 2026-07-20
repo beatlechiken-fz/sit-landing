@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import clientPromise from "@/core/helpers/mongodb";
+import { getSupabaseServerClient } from "@/modules/admin/store/data/datasources/supabase/supabase-server.client";
 import { rateLimit } from "@/core/helpers/rate-limit";
 import { validateFeedback } from "@/core/helpers/validate-feedback";
 
@@ -23,15 +23,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const client = await clientPromise;
-  const db = client.db("sit");
+  const supabase = getSupabaseServerClient();
 
-  await db.collection("evaluations").insertOne({
+  const { error } = await supabase.from("evaluaciones").insert({
     ratings: body.ratings,
-    comments: body.comments || "",
+    comentarios: body.comments || "",
     ip,
-    createdAt: new Date(),
   });
+
+  if (error) {
+    return NextResponse.json(
+      { error: "Could not save feedback" },
+      { status: 500 },
+    );
+  }
 
   return NextResponse.json({ success: true });
 }

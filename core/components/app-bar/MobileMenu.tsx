@@ -5,6 +5,7 @@ import MainNav from "./MainNav";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Images from "@/core/assets/Images";
+import { AuthArea } from "./AppBar";
 
 const socialLinks = [
   {
@@ -120,6 +121,11 @@ export default function MobileMenu({ onClose }: { onClose: () => void }) {
 
         {/* DIVIDER */}
         <div className="mb-6 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+        {/* Sesión / login */}
+        <div className="mb-6">
+          <AuthArea />
+        </div>
 
         {/* NAV */}
         <MainNav isMobile onSelect={onClose} />

@@ -15,7 +15,10 @@ export default function ContactPage() {
         <ContactHero />
       </section>
 
-      <section className="relative flex justify-center py-24">
+      <section
+        id="formulario"
+        className="relative flex justify-center py-24 scroll-mt-24"
+      >
         <div className="w-[90%] max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
           <ContactSocials />
           <ContactForm />

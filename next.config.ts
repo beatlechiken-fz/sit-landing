@@ -28,6 +28,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  experimental: {
+    serverComponentsExternalPackages: ["@apollo/server"],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "me2.grupocva.com",
+      },
+    ],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

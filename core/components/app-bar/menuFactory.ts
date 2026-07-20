@@ -49,16 +49,13 @@ export function createMenuNavElement(t: TType): MenuNavElement {
       submenu: [
         { id: "fix", label: t("fix"), url: "/fix" },
         { id: "maintenance", label: t("maintenance"), url: "/maintenance" },
+        { id: "upgrade", label: t("upgrade"), url: "/upgrade" },
       ],
     },
     store: {
       id: "store",
       label: t("store"),
-      url: "/parts",
-      submenu: [
-        { id: "parts", label: t("parts"), url: "/parts" },
-        { id: "upgrade", label: t("upgrade"), url: "/upgrade" },
-      ],
+      url: "/store",
     },
     sit: {
       id: "sit",

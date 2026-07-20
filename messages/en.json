@@ -34,6 +34,9 @@
     "apps2": "for companies in Mexico",
     "apps3": "We build mobile and web applications that optimize processes, reduce costs, and help your business grow with reliable technology.",
     "appsQuote": "Schedule a call",
+    "heroBadge": "Custom software development",
+    "heroCtaSecondary": "See app types",
+    "whyEyebrow": "Why Sit+",
     "appsWhy1": "Why develop your app with us?",
     "appsWhyCards": [
       {
@@ -52,6 +55,7 @@
         "desc": "We guide you before, during, and after launch."
       }
     ],
+    "typeEyebrow": "What we build",
     "appsType1": "Types of applications we develop",
     "appsTypeCards": [
       {
@@ -104,9 +108,12 @@
     "title": "Let’s bring your app to life",
     "desc": "Tell us your idea and we’ll help you turn it into a functional, scalable app ready for the Mexican market. The initial consultation is on us.",
     "quoteBtn": "Quote my app",
-    "callBtn": "Schedule a call"
+    "callBtn": "Schedule a call",
+    "quoteWhatsappMsg": "Hi, I'd like a quote for building an app.",
+    "callWhatsappMsg": "Hi, I'd like to schedule a call to talk about an app."
   },
   "processApps": {
+    "eyebrow": "How we work",
     "title": "Our development process",
     "steps": [
       {
@@ -137,6 +144,7 @@
     ]
   },
   "landing": {
+    "heroBadge": "Web design focused on results",
     "landingTitle1": "Landing pages that convert",
     "landingTitle2": "visitors into real sales",
     "landingDesc1": "We design result-focused landing pages for companies in Mexico looking for more leads, more sales, and a stronger digital presence.",
@@ -144,6 +152,27 @@
     "landingPlansBtn": "View plans",
     "landingQuoteBtn": "Quote landing",
 
+    "whyEyebrow": "Why Sit+",
+    "whyTitle": "Landing pages built to sell",
+    "whyCards": [
+      {
+        "key": "design",
+        "title": "Design that converts",
+        "desc": "Clear UX and calls to action designed to drive visitors toward conversion."
+      },
+      {
+        "key": "speed",
+        "title": "Speed and SEO",
+        "desc": "Fast loading and solid technical practices to rank better on Google."
+      },
+      {
+        "key": "results",
+        "title": "Measurable results",
+        "desc": "Lead and conversion tracking so you know exactly what's working."
+      }
+    ],
+
+    "plansEyebrow": "What's included",
     "plansTitle": "Monthly plans to grow your business",
     "startPlan": "Start",
     "startPlanPrice": "$2,490",
@@ -187,6 +216,40 @@
       "enterprise": "Hi, I’m interested in an Enterprise monthly solution for my company. Can we talk about it?"
     }
   },
+  "processLanding": {
+    "eyebrow": "How we work",
+    "title": "Our work process",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Brief and goals",
+        "desc": "We learn about your business, your offer, and the action you want visitors to take."
+      },
+      {
+        "step": "02",
+        "title": "UI/UX design",
+        "desc": "We design a landing page focused on clarity and conversion, with your brand."
+      },
+      {
+        "step": "03",
+        "title": "Development and content",
+        "desc": "We build your page with optimized, fast, and responsive code."
+      },
+      {
+        "step": "04",
+        "title": "Launch and follow-up",
+        "desc": "We publish your landing page and follow up on results and improvements."
+      }
+    ]
+  },
+  "landingCTA": {
+    "title": "Ready to launch your landing page?",
+    "desc": "In just a few days your business can have a professional, fast landing page ready to generate leads. Quote your plan or schedule a free call.",
+    "quoteBtn": "Quote my landing page",
+    "callBtn": "Schedule a call",
+    "quoteWhatsappMsg": "Hi, I’d like to get a quote for a landing page for my business.",
+    "callWhatsappMsg": "Hi, I’d like to schedule a call to talk about my landing page."
+  },
   "mainnav": {
     "home": "Home",
     "apps": "Applications",
@@ -197,7 +260,7 @@
     "fix": "Repairs",
     "maintenance": "Equipment maintenance",
     "upgrade": "Hardware upgrades",
-    "store": "Equipment sales",
+    "store": "Store",
     "sit": "Sit",
     "about": "About us",
     "promotion": "Promotions",
@@ -211,17 +274,26 @@
     "rightsShort": "Morelia, MX. Sit. 2025"
   },
   "ia": {
+    "heroBadge": "AI Automation & Artificial Intelligence",
+    "heroCtaSecondary": "See services",
     "mainTitle": "AI automations that truly deliver results",
     "mainDesc": "We implement artificial intelligence for Mexican companies looking to save time, reduce costs, and scale operations.",
     "ctaTitle": "Take your business to the next level with AI",
     "ctaDesc": "Schedule a call and discover how to automate real processes in your business.",
     "ctaBtn": "Talk to an expert",
     "ctaWhatsappMsg": "Hi, I’d like more information about AI automations.",
+    "ctaCallBtn": "Schedule a call",
+    "ctaCallWhatsappMsg": "Hi, I’d like to schedule a call to talk about AI automation.",
+    "servicesEyebrow": "What we do",
     "servicesTitle": "What can we automate with AI?",
     "services": [
       {
         "title": "Intelligent chatbots",
         "desc": "Serve customers 24/7 on WhatsApp, web, or internal systems with AI trained for your business."
+      },
+      {
+        "title": "AI agents",
+        "desc": "We build autonomous agents that execute tasks, make decisions, and connect to your systems to work for you."
       },
       {
         "title": "Process automation",
@@ -240,6 +312,7 @@
         "desc": "We develop applications that think, learn, and scale with you."
       }
     ],
+    "processEyebrow": "How we work",
     "processTitle": "Our automation process",
     "processSteps": [
       {
@@ -268,10 +341,15 @@
         "desc": "We optimize and grow the solution."
       }
     ],
+    "techEyebrow": "Tech stack",
     "techTitle": "Technology we use",
     "tech": [
       "OpenAI",
+      "Anthropic",
       "LangChain",
+      "HyperAgent",
+      "Lovable",
+      "Horizon",
       "Pinecone",
       "PostgreSQL",
       "Python",
@@ -283,16 +361,20 @@
     "title": "Did your device fail?",
     "desc": "Schedule a checkup and we’ll tell you exactly what’s wrong and how much it costs. No fine print.",
     "ctaBtn": "Talk to a technician",
-    "whatsappMsg": "Hi, I’d like to repair a device."
+    "whatsappMsg": "Hi, I’d like to repair a device.",
+    "secondaryBtn": "See maintenance plans"
   },
   "fixHero": {
     "title1": "Professional device repair",
     "title2": "fast, reliable, and guaranteed",
     "desc": "We repair computers, laptops, phones, and printers. Honest diagnostics, quality parts, and direct service in Mexico.",
     "ctaBtn": "Schedule inspection",
-    "whatsappMsg": "Hi, I’d like to repair a device."
+    "whatsappMsg": "Hi, I’d like to repair a device.",
+    "heroBadge": "Specialized technical service",
+    "heroCtaSecondary": "See services"
   },
   "fixProcess": {
+    "eyebrow": "How we work",
     "title": "Our process",
     "steps": [
       {
@@ -323,6 +405,7 @@
     ]
   },
   "fixServices": {
+    "eyebrow": "What we repair",
     "title": "Repair services",
     "services": [
       {
@@ -344,15 +427,38 @@
     ]
   },
   "maintenance": {
+    "heroBadge": "Specialized preventive maintenance",
     "heroTitle1": "Professional maintenance",
     "heroTitle2": "so your computer runs like new",
     "heroDesc": "Prevent failures, overheating, and slowdowns. Give your device preventive maintenance and extend its lifespan.",
     "heroBtnPlans": "View packages",
     "heroBtnWhatsapp": "Schedule maintenance",
     "heroWhatsappMsg": "Hi, I’d like more information about device maintenance.",
+    "benefitsEyebrow": "Benefits",
+    "benefitsTitle": "Why get maintenance done?",
+    "benefits": [
+      {
+        "title": "Better performance",
+        "desc": "Your device works like day one, without bottlenecks from internal dust."
+      },
+      {
+        "title": "Less overheating",
+        "desc": "Fresh thermal paste and airflow prevent shutdowns and thermal throttling."
+      },
+      {
+        "title": "Faster startup",
+        "desc": "Software and disk cleanup so it boots and responds without delays."
+      },
+      {
+        "title": "Failure prevention",
+        "desc": "We catch wear and tear before it turns into a costly repair."
+      }
+    ],
+    "plansEyebrow": "Packages",
     "ctaTitle": "Maintain it before it fails",
     "ctaDesc": "Maintenance today is cheaper than repair tomorrow. Schedule now and avoid future issues.",
     "ctaBtnWhatsapp": "Schedule maintenance",
+    "ctaSecondaryBtn": "Already failed? See repair",
     "plansTitle": "Maintenance packages",
     "plans": [
       {
@@ -399,6 +505,7 @@
         "whatsappMsg": "Hi, I’d like more information about Apple Care+ Maintenance."
       }
     ],
+    "processEyebrow": "How we work",
     "processTitle": "Our process",
     "processSteps": [
       "Device intake",
@@ -409,6 +516,7 @@
     ]
   },
   "fixWhy": {
+    "eyebrow": "Why choose us",
     "title": "Why repair with us?",
     "reasons": [
       {
@@ -485,14 +593,18 @@
     ]
   },
   "upgrade": {
+    "heroBadge": "Component upgrades",
     "heroTitle1": "Make your device",
     "heroTitle2": "fly again",
     "heroDesc": "We upgrade the key components of your computer so it boots fast, responds instantly, and feels like new.",
+    "heroCtaSecondary": "See what we can upgrade",
     "ctaTitle": "Is your computer slow?",
     "ctaDesc": "In many cases, you don’t need a new one. A proper upgrade can change everything.",
     "ctaBtn": "Free consultation",
     "ctaBtn2": "Talk to an expert",
+    "ctaSecondaryBtn": "See parts catalog",
     "ctaWhatsappMsg": "Hi, I’d like more information about upgrading my device.",
+    "benefitsEyebrow": "Results",
     "benefitsTitle": "You’ll notice the difference from day one",
     "benefits": [
       {
@@ -508,6 +620,7 @@
         "desc": "Improved experience in design, editing, and gaming."
       }
     ],
+    "optionsEyebrow": "Upgrade catalog",
     "optionsTitle": "What can we upgrade?",
     "options": [
       {
@@ -527,6 +640,7 @@
         "desc": "More space for files and backups."
       }
     ],
+    "processEyebrow": "How we work",
     "processTitle": "How we improve your device",
     "processSteps": [
       {
@@ -548,9 +662,25 @@
     ]
   },
   "about": {
+    "heroBadge": "Technology company in Morelia, Mexico",
     "heroTitle1": "Technology with",
     "heroTitle2": "purpose and results",
     "heroDesc": "We are a technology company born in Morelia, Mexico, focused on creating real solutions that make technology work in your favor.",
+    "heroCtaSecondary": "Learn our story",
+    "stats": [
+      { "value": "+10", "label": "years of experience" },
+      { "value": "+100", "label": "devices and clients served" },
+      { "value": "100%", "label": "direct support, no middlemen" }
+    ],
+    "storyEyebrow": "Our story",
+    "storyTitle": "From Morelia, for those who trust their technology",
+    "storyParagraph1": "Sit+ was born in Morelia with a simple idea: technology should solve problems, not create them. Since 2015 we've helped people and businesses maintain, repair, and upgrade their devices, building trust through honesty and real results.",
+    "storyParagraph2": "Today we combine technical expertise with close, personal attention to offer solutions that range from everyday support to custom application development — always speaking clearly, without unnecessary jargon.",
+    "missionTitle": "Mission",
+    "missionText": "To make technology work in favor of people and businesses in Mexico, with clear, honest, and effective solutions.",
+    "visionTitle": "Vision",
+    "visionText": "To be the trusted reference for technology services in Morelia, bringing that same closeness to more cities across the country.",
+    "valuesEyebrow": "What defines us",
     "valuesTitle": "Our values",
     "valuesCards": [
       {
@@ -570,6 +700,7 @@
         "desc": "Human approach, direct attention, and real follow-up."
       }
     ],
+    "whyUsEyebrow": "Why choose us",
     "whyUsTitle": "Why trust us?",
     "whyUsReasons": [
       "Personalized service, no middlemen",
@@ -577,67 +708,79 @@
       "Solutions designed for people and businesses in Mexico",
       "Support before, during, and after the service"
     ],
+    "servicesEyebrow": "What we do",
+    "servicesTitle": "Your entire tech ecosystem in one place",
+    "servicesDesc": "From repair to software development, we cover every stage of your technology's life cycle.",
+    "services": [
+      { "title": "Repair", "desc": "Expert diagnosis and repair for your devices." },
+      { "title": "Maintenance", "desc": "Preventive plans so your equipment never fails." },
+      { "title": "Upgrades", "desc": "More speed and lifespan with better components." },
+      { "title": "Custom apps", "desc": "Software designed around your business." },
+      { "title": "Parts", "desc": "Original and compatible parts in one place." }
+    ],
     "ctaTitle": "Technology that truly works",
     "ctaDesc": "If you’re looking for someone who speaks clearly and helps you make the best decision, you’re in the right place.",
     "ctaBtn": "Contact us",
+    "ctaSecondaryBtn": "Browse our store",
     "ctaWhatsappMsg": "Hi, I’d like information about your services."
   },
   "promotions": {
     "noPromotions": "There are not promotions for now",
-    "heroTitle1": "Special promotions",
-    "heroTitle2": "Valentine’s Day ❤️",
-    "heroDesc": "This February 14th, treat your device or surprise someone special with technology that truly makes a difference.",
-    "validUntil": "Valid until:",
-    "ctaTitle": "Take advantage before it ends 💘",
-    "ctaDesc": "Promotions are for a limited time. Message us and secure your spot.",
-    "ctaBtn": "I want the promotion",
-    "expires": "Valid until",
-    "month": "February",
-    "badges": {
-      "bestSeller": "🔥 Best seller",
-      "fast": "⚡ Fast",
-      "gift": "🎁 Ideal gift"
+    "badgeUpcoming": "Upcoming campaign",
+    "badgeActive": "Active campaign",
+    "heroTitle1": "Get ready for our",
+    "heroTitle2": "next discount campaign",
+    "heroDesc": "From August 3 to 17, 2026 we're turning on special discounts on SSDs, RAM, parts, and more.",
+    "heroCtaWhatsapp": "Notify me when it starts",
+    "heroCtaSecondary": "See discounts",
+    "heroWhatsappMsg": "Hi, I'd like to be notified when the next promotions campaign starts.",
+    "gridEyebrow": "Discounts included",
+    "gridTitle": "What's coming in this campaign",
+    "items": {
+      "ssd": {
+        "title": "SSD",
+        "desc": "Upgrade to an SSD and boot your device in seconds."
+      },
+      "ram": {
+        "title": "RAM memory",
+        "desc": "More multitasking without slowdowns or freezes."
+      },
+      "laptopParts": {
+        "title": "Laptop screens and keyboards",
+        "desc": "Original and compatible parts for your laptop."
+      },
+      "battery": {
+        "title": "Laptop batteries and chargers",
+        "desc": "Get your device's battery life back with a new one."
+      },
+      "secondMaintenance": {
+        "title": "Second maintenance package",
+        "desc": "Ideal if you bring two devices: the second one at a big discount."
+      },
+      "phoneScreen": {
+        "title": "Phone screen replacement",
+        "desc": "Quality screens so your phone looks brand new."
+      }
     },
-    "coupleMaintenance": {
-      "title": "Couples maintenance",
-      "subtitle": "Two devices, one special price",
-      "description": "Bring two laptops or computers and get essential maintenance for $650 MXN or pro gamer maintenance for $1,390.00"
-    },
-    "ssdUpgrade": {
-      "title": "Upgrade your SSD",
-      "subtitle": "Speed you’ll love",
-      "description": "Make your device boot in seconds with a new SSD. All SSDs with 15% off."
-    },
-    "screen": {
-      "title": "Replace your screen",
-      "subtitle": "Give your device a new life",
-      "description": "We offer all laptop and phone screen replacements with 15% off."
-    },
-    "giftCard": {
-      "title": "Give the gift of technology",
-      "subtitle": "Gift card",
-      "description": "Give a voucher for maintenance, repair, or upgrades. Vouchers: $500 MXN, $1,000 MXN, and $2,000 MXN."
-    },
-    "includes": {
-      "cleaning": "Internal and external cleaning",
-      "optimization": "System optimization",
-      "backup": "Basic backup",
-      "ssdInstall": "SSD installation",
-      "cloning": "Data cloning",
-      "bootOptimization": "Boot optimization",
-      "customizable": "Customizable",
-      "anyService": "Valid for any service",
-      "idealGift": "Ideal for couples or families",
-      "screenInstall": "Screen installation"
-    }
+    "ctaTitleUpcoming": "Don't miss it",
+    "ctaDescUpcoming": "From August 3 to 17, message us and we'll notify you as soon as the campaign starts.",
+    "ctaBtnUpcoming": "Notify me when it starts",
+    "ctaTitleActive": "Take advantage before it ends",
+    "ctaDescActive": "This promotion is for a limited time. Message us and secure your discount.",
+    "ctaBtnActive": "I want the promotion",
+    "ctaSecondaryBtn": "Browse our store"
   },
   "contact": {
     "hero": {
+      "badge": "We're here to help",
       "title": "Let’s talk 👋",
       "desc1": "Do you have questions, want a quote, or want to review our service?",
-      "desc2": "Your feedback helps us improve."
+      "desc2": "Your feedback helps us improve.",
+      "ctaWhatsapp": "Message us on WhatsApp",
+      "ctaSecondary": "Go to the form"
     },
     "form": {
+      "eyebrow": "Your opinion matters",
       "title": "Rate our service",
       "categories": ["Service / Product", "Time", "Attention"],
       "allCategoriesAlert": "Please rate all categories",
@@ -649,6 +792,7 @@
       "confidential": "Your feedback is confidential and helps us improve."
     },
     "socials": {
+      "eyebrow": "Direct channels",
       "title": "Contact us directly",
       "desc": "Message us through the channel you prefer. We respond quickly.",
       "labels": {
@@ -658,6 +802,54 @@
         "facebook": "Facebook",
         "youtube": "YouTube"
       }
+    }
+  },
+  "homeV2": {
+    "hero": {
+      "badge": "AI-Powered Development",
+      "title1": "Apps that think,",
+      "title2": "not just function",
+      "desc": "We design and build web, mobile and desktop apps powered by AI — to automate processes, cut costs and scale your business.",
+      "ctaPrimary": "See app development",
+      "ctaSecondary": "Talk to an expert",
+      "whatsappMsg": "Hi, I'd like more information about building an AI-powered app.",
+      "highlight1Title": "Expert team",
+      "highlight1Desc": "Developers with real production experience.",
+      "highlight2Title": "Tailored solutions",
+      "highlight2Desc": "Every app is designed around your process.",
+      "highlight3Title": "Ongoing support",
+      "highlight3Desc": "We stay with you after launch."
+    },
+    "store": {
+      "eyebrow": "Online store",
+      "title1": "Equipment and tech,",
+      "title2": "ready today",
+      "desc": "Browse our catalog of computer equipment, components and accessories with clear pricing and real availability.",
+      "cta": "Explore the Store",
+      "categoriesLabel": "Popular categories",
+      "noPrice": "Get a quote"
+    },
+    "techService": {
+      "eyebrow": "Technical service",
+      "title1": "Repairs and maintenance,",
+      "title2": "without wasting your time",
+      "desc": "We repair computers, phones and printers, and keep your equipment running at 100% with preventive maintenance plans for your business.",
+      "ctaPrimary": "See maintenance plans",
+      "ctaSecondary": "Need a repair?"
+    },
+    "landingDev": {
+      "eyebrow": "Websites",
+      "title1": "Your website,",
+      "title2": "ready to sell",
+      "desc": "Landing pages and professional sites that build trust and turn visits into customers.",
+      "cta": "See website plans"
+    },
+    "finalCta": {
+      "title1": "Ready to grow",
+      "title2": "your business?",
+      "desc": "Tell us about your project and we'll reply in minutes.",
+      "cta": "Chat on WhatsApp",
+      "whatsappMsg": "Hi, I'd like to talk about a project with Sit+."
     }
   }
 }

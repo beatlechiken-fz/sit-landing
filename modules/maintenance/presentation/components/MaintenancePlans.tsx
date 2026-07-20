@@ -18,13 +18,18 @@ export default function MaintenancePlans() {
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       id="plans"
-      className="w-[85%] max-w-7xl flex flex-col items-center gap-16"
+      className="w-[85%] max-w-7xl flex flex-col items-center gap-16 scroll-mt-24"
     >
-      <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold text-center font-title">
-        <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
-          {t("plansTitle")}
+      <div className="flex flex-col items-center text-center gap-3">
+        <span className="text-xs font-bold uppercase tracking-widest text-teal-300">
+          {t("plansEyebrow")}
         </span>
-      </h2>
+        <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold font-title">
+          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+            {t("plansTitle")}
+          </span>
+        </h2>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-full">
         {plans.map((p: any, i: number) => {
@@ -32,7 +37,7 @@ export default function MaintenancePlans() {
           return (
             <div
               key={i}
-              className={`flex flex-col rounded-2xl p-8 border ${
+              className={`flex flex-col rounded-2xl p-8 border transition hover:-translate-y-2 hover:border-teal-400/40 ${
                 p.highlight
                   ? "bg-gradient-to-br from-teal-600/20 to-sky-600/20 border-teal-400/30 scale-[1.03]"
                   : "bg-white/5 border-white/10"

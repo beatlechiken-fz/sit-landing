@@ -41,7 +41,7 @@ const socials = [
   {
     icon: icons.whatsapp,
     labelKey: "whatsapp",
-    url: "https://wa.me/521000000000",
+    url: "https://wa.me/524431234567",
     color: "text-green-400",
   },
   {
@@ -80,6 +80,9 @@ export default function ContactSocials() {
       transition={{ duration: 0.5 }}
       className="space-y-6"
     >
+      <span className="text-xs font-bold uppercase tracking-widest text-teal-300">
+        {t("eyebrow")}
+      </span>
       <h2 className="text-2xl font-bold font-title">{t("title")}</h2>
       <p className="text-gray-400">{t("desc")}</p>
 
@@ -89,7 +92,7 @@ export default function ContactSocials() {
             key={i}
             href={s.url}
             target="_blank"
-            className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-white/30 hover:scale-[1.02] transition"
+            className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 transition hover:-translate-y-1 hover:border-teal-400/40"
           >
             <span className={`text-2xl ${s.color}`}>{s.icon}</span>
             <span className="text-sm">{t(`labels.${s.labelKey}`)}</span>
