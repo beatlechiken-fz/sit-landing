@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { PasswordInput } from "@/core/components/password-input/PasswordInput";
 
 export function RegistroClienteForm({ next }: { next?: string }) {
   const router = useRouter();
@@ -136,34 +137,22 @@ export function RegistroClienteForm({ next }: { next?: string }) {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className="mb-1.5 block text-xs font-medium text-zinc-500">
-              Contraseña
-            </label>
-            <input
-              type="password"
-              value={form.password}
-              onChange={set("password")}
-              placeholder="••••••••"
-              autoComplete="new-password"
-              required
-              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none focus:border-[#02AFFF] transition-colors"
-            />
-          </div>
-          <div>
-            <label className="mb-1.5 block text-xs font-medium text-zinc-500">
-              Confirmar
-            </label>
-            <input
-              type="password"
-              value={form.confirmar}
-              onChange={set("confirmar")}
-              placeholder="••••••••"
-              autoComplete="new-password"
-              required
-              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-zinc-100 placeholder:text-zinc-600 outline-none focus:border-[#02AFFF] transition-colors"
-            />
-          </div>
+          <PasswordInput
+            label="Contraseña"
+            value={form.password}
+            onChange={(v) => setForm({ ...form, password: v })}
+            placeholder="••••••••"
+            autoComplete="new-password"
+            required
+          />
+          <PasswordInput
+            label="Confirmar"
+            value={form.confirmar}
+            onChange={(v) => setForm({ ...form, confirmar: v })}
+            placeholder="••••••••"
+            autoComplete="new-password"
+            required
+          />
         </div>
 
         <button
