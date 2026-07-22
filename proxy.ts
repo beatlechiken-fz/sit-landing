@@ -48,6 +48,7 @@ export default async function middleware(req: NextRequest) {
   const normalizedPath = hasLocale
     ? pathname.replace(`/${locale}`, "")
     : pathname;
+  const prefix = hasLocale ? `/${locale}` : "";
 
   // 4 — Login del cliente — /my-sit es público
   if (normalizedPath === "/my-sit") {
@@ -58,7 +59,6 @@ export default async function middleware(req: NextRequest) {
   if (normalizedPath.startsWith("/my-sit/dashboard")) {
     const cookieToken = req.cookies.get("sit_client_session")?.value;
     const session = cookieToken ? await verifyClientToken(cookieToken) : null;
-    const prefix = hasLocale ? `/${locale}` : "";
 
     if (!session) {
       return NextResponse.redirect(new URL(`${prefix}/my-sit`, req.url));
@@ -80,7 +80,7 @@ export default async function middleware(req: NextRequest) {
   if (normalizedPath.startsWith("/admin/dashboard")) {
     const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
     if (!token) {
-      return NextResponse.redirect(new URL(`/${locale}/admin`, req.url));
+      return NextResponse.redirect(new URL(`${prefix}/admin`, req.url));
     }
   }
 
