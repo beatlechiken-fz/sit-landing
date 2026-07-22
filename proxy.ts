@@ -35,7 +35,11 @@ export default async function middleware(req: NextRequest) {
   );
 
   if (isProtectedApi) {
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+    const token = await getToken({
+      req,
+      secret: process.env.NEXTAUTH_SECRET,
+      secureCookie: process.env.NODE_ENV === "production",
+    });
     if (!token) {
       return NextResponse.json({ error: "No autorizado" }, { status: 401 });
     }
@@ -78,7 +82,11 @@ export default async function middleware(req: NextRequest) {
 
   // 6 — Páginas admin
   if (normalizedPath.startsWith("/admin/dashboard")) {
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+    const token = await getToken({
+      req,
+      secret: process.env.NEXTAUTH_SECRET,
+      secureCookie: process.env.NODE_ENV === "production",
+    });
     if (!token) {
       return NextResponse.redirect(new URL(`${prefix}/admin`, req.url));
     }
