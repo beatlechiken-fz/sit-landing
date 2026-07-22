@@ -14,17 +14,24 @@ export default function LoginView() {
     setError("");
 
     const form = new FormData(e.currentTarget);
-    const result = await signIn("credentials", {
-      email: form.get("email"),
-      password: form.get("password"),
-      redirect: false,
-    });
 
-    if (result?.error) {
-      setError("Correo o contraseña incorrectos");
+    try {
+      const result = await signIn("credentials", {
+        email: form.get("email"),
+        password: form.get("password"),
+        redirect: false,
+      });
+
+      if (result?.error) {
+        setError("Correo o contraseña incorrectos");
+        setLoading(false);
+      } else {
+        router.push("/admin/dashboard/store");
+      }
+    } catch (err) {
+      console.error("signIn failed", err);
+      setError("No se pudo conectar. Intenta de nuevo.");
       setLoading(false);
-    } else {
-      router.push("/admin/dashboard/store");
     }
   }
 
