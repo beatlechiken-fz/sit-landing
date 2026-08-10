@@ -74,6 +74,11 @@ export default function LandingPlans() {
           outline
         />
       </div>
+
+      {/* Nota de escalado por demanda */}
+      <p className="mt-10 text-center text-sm text-gray-500 max-w-3xl mx-auto">
+        {t("plansNote")}
+      </p>
     </section>
   );
 }

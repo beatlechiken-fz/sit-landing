@@ -151,7 +151,6 @@
     "landingDesc2": "Rápidas, optimizadas para Google y listas para escalar tu negocio.",
     "landingPlansBtn": "Ver planes",
     "landingQuoteBtn": "Cotizar landing",
-
     "whyEyebrow": "Por qué Sit+",
     "whyTitle": "Landing pages pensadas para vender",
     "whyCards": [
@@ -171,50 +170,56 @@
         "desc": "Seguimiento de leads y conversiones para saber exactamente qué está funcionando."
       }
     ],
-
-    "plansEyebrow": "Lo que incluye",
-    "plansTitle": "Planes mensuales para hacer crecer tu negocio",
+    "plansEyebrow": "Landing bajo demanda",
+    "plansTitle": "Renta tu landing y olvídate de todo lo demás",
     "startPlan": "Start",
-    "startPlanPrice": "$2,490",
-    "startPlanDesc": "Perfecto para iniciar tu presencia digital y comenzar a generar prospectos.",
+    "startPlanPrice": "$1,490",
+    "startPlanDesc": "Sitio de varias páginas con formularios, correo y Telegram, listo para generar leads sin invertir capital.",
     "startPlanBtn": "Contratar plan",
     "startPlanItems": [
-      "Landing page profesional",
-      "Diseño responsivo (móvil y desktop)",
-      "Optimización básica SEO",
-      "Formulario de contacto",
-      "Carga rápida",
-      "Soporte y mantenimiento mensual"
+      "Sitio de hasta 4 páginas",
+      "Hosting y dominio incluidos",
+      "Hasta 2 formularios conectados a base de datos",
+      "Notificaciones automáticas por correo y Telegram",
+      "3 actualizaciones de contenido al mes",
+      "Hasta 1,500 visitas/mes incluidas"
     ],
     "proPlan": "Pro",
-    "proPlanPrice": "$7,990",
-    "proPlanDesc": "La mejor opción para empresas que buscan más ventas y conversiones cada mes.",
+    "proPlanPrice": "$2,490",
+    "proPlanDesc": "Más páginas, más formularios y un dashboard para dar seguimiento a tus leads.",
     "proPlanBtn": "Más vendido",
     "proPlanItems": [
       "Todo lo incluido en Start",
-      "SEO avanzado",
-      "Integración con WhatsApp",
-      "Optimización de conversiones",
-      "Panel de administración",
-      "Soporte prioritario"
+      "Sitio de hasta 7 páginas",
+      "Hasta 6 formularios conectados a base de datos",
+      "SEO on-page",
+      "Dashboard para ver y exportar tus leads",
+      "10 actualizaciones de contenido al mes",
+      "Hasta 4,000 visitas/mes incluidas"
     ],
     "enterprisePlan": "Enterprise",
-    "enterprisePlanPrice": "$15,900",
-    "enterprisePlanDesc": "Soluciones a la medida para negocios que necesitan escalar sin límites.",
+    "enterprisePlanPrice": "$4,990",
+    "enterprisePlanDesc": "Tienda en línea completa en renta: catálogo, gestión de clientes y dashboards, todo incluido, sin invertir en desarrollo.",
     "enterprisePlanBtn": "Solicitar cotización",
     "enterprisePlanItems": [
       "Todo lo incluido en Pro",
-      "Arquitectura personalizada",
-      "Alta disponibilidad",
-      "Seguridad avanzada",
-      "Integraciones empresariales",
-      "Soporte dedicado"
+      "Tienda en línea con catálogo y carrito de compra",
+      "Gestión de clientes y pedidos (dashboard)",
+      "Gestión de productos (dashboard)",
+      "Notificación automática de cada pedido (correo + Telegram)",
+      "Soporte prioritario",
+      "Hasta 8,000 visitas/mes incluidas"
     ],
     "whatsapp": {
       "start": "Hola, me interesa el plan Start mensual para mi landing page. ¿Me puedes dar más información?",
       "pro": "Hola, me interesa el plan Pro mensual para generar más ventas con mi landing page.",
       "enterprise": "Hola, me interesa una solución Enterprise mensual para mi empresa. ¿Podemos platicarlo?"
-    }
+    },
+    "plansNote": "La cuota incluye hosting, dominio, base de datos y soporte para un uso estándar de tráfico y formularios. Si tu negocio crece y tu landing recibe mucho más tráfico o actividad, te avisamos antes de ajustar la cuota al siguiente escalón.",
+    "compareBannerEyebrow": "¿Buscas ser dueño de tu landing?",
+    "compareBannerTitle": "Conoce Landing a la medida",
+    "compareBannerDesc": "Pagas una vez por el desarrollo y una cuota de mantenimiento más baja. El sitio es tuyo, e incluye Supabase, correo y Telegram desde el paquete básico.",
+    "compareBannerBtn": "Ver paquetes a la medida"
   },
   "processLanding": {
     "eyebrow": "Cómo trabajamos",
@@ -250,11 +255,118 @@
     "quoteWhatsappMsg": "Hola, me gustaría cotizar una landing page para mi negocio.",
     "callWhatsappMsg": "Hola, me gustaría agendar una llamada para platicar sobre mi landing page."
   },
+  "customLanding": {
+    "heroBadge": "Landing a la medida — es tuya para siempre",
+    "heroTitle1": "Construimos tu landing una vez,",
+    "heroTitle2": "tú te quedas con ella",
+    "heroDesc1": "Pagas por el desarrollo de tu sitio y una cuota de mantenimiento accesible para mantenerlo activo, seguro y actualizado. Sin rentas eternas.",
+    "heroDesc2": "Desde una landing de 6 secciones con formulario conectado a Supabase, correo y Telegram, hasta una tienda en línea completa con dashboards.",
+    "heroQuoteBtn": "Cotizar mi landing a la medida",
+    "heroPlansBtn": "Ver paquetes",
+    "packagesEyebrow": "Paquetes",
+    "packagesTitle": "Elige el tamaño de tu proyecto",
+    "packagesSubtitle": "Pago único por el desarrollo + cuota mensual de mantenimiento.",
+    "basicPlan": "Básica",
+    "setupLabel": "Desarrollo",
+    "basicSetupPrice": "$9,500",
+    "maintenanceLabel": "Mantenimiento",
+    "basicMaintenancePrice": "$490",
+    "basicDesc": "Landing de 6 secciones con formulario conectado a Supabase, correo y Telegram.",
+    "basicItems": [
+      "Landing de 6 secciones (hero, servicios, nosotros, beneficios, testimonios, contacto)",
+      "Diseño responsivo y optimizado para SEO",
+      "Formulario de contacto guardado en base de datos (Supabase)",
+      "Notificación automática por correo",
+      "Notificación automática a Telegram",
+      "El código y el diseño son tuyos"
+    ],
+    "basicFairUse": "Incluye hasta 300 mensajes de formulario y 3,000 visitas al mes.",
+    "basicBtn": "Cotizar Básica",
+    "proPlan": "Profesional",
+    "proSetupPrice": "$19,000",
+    "proMaintenancePrice": "$890",
+    "proDesc": "Sitio multi-sección con panel de leads y catálogo de productos o servicios.",
+    "proItems": [
+      "Todo lo incluido en Básica",
+      "Hasta 10 secciones o páginas internas",
+      "Panel para ver y exportar tus leads",
+      "Catálogo o portafolio de productos/servicios (sin carrito)",
+      "Integración con Meta Pixel / Google Analytics",
+      "SEO avanzado (metadatos, sitemap, datos estructurados)"
+    ],
+    "proFairUse": "Incluye hasta 800 mensajes de formulario y 10,000 visitas al mes.",
+    "proBtn": "Cotizar Profesional",
+    "storePlan": "Tienda en línea",
+    "storeSetupPrice": "Desde $47,500",
+    "storeMaintenancePrice": "Desde $1,990",
+    "storeDesc": "Tienda en línea completa con dashboard de productos, pedidos, clientes y cupones.",
+    "storeItems": [
+      "Todo lo incluido en Profesional",
+      "Catálogo de productos con carrito de compra",
+      "Pasarela de pago (tarjeta y transferencia)",
+      "Dashboard administrativo: productos, pedidos, clientes y cupones",
+      "Cuentas de cliente con historial de pedidos",
+      "Notificación automática de cada pedido (correo + Telegram)",
+      "Reportes de ventas y respaldo diario de tu base de datos"
+    ],
+    "storeFairUse": "Incluye hasta 5,000 visitas/mes, 500 pedidos/mes y 5GB de almacenamiento.",
+    "storeBtn": "Cotizar Tienda en línea",
+    "paymentNote": "El desarrollo se paga 50% al iniciar el proyecto y 50% contra entrega. El mantenimiento se factura mes con mes a partir del lanzamiento.",
+    "scalingNoteTitle": "¿Por qué puede ajustarse la cuota de mantenimiento?",
+    "scalingNoteDesc": "Cada paquete incluye una capacidad estándar de base de datos, ancho de banda, correos y mensajes de Telegram. Si tu negocio crece —más visitas, más formularios, más pedidos o más productos— la infraestructura necesaria también crece, así que la cuota se ajusta de forma proporcional al consumo real. Siempre te avisamos antes de cualquier cambio, nunca hay ajustes sorpresa.",
+    "compareBannerEyebrow": "¿Prefieres no invertir por adelantado?",
+    "compareBannerTitle": "Conoce Landing bajo demanda",
+    "compareBannerDesc": "Renta tu landing con una cuota mensual todo incluido, sin pago inicial. Ideal si prefieres empezar ligero y sin comprometer capital.",
+    "compareBannerBtn": "Ver planes de renta",
+    "whatsapp": {
+      "basic": "Hola, me interesa el paquete Básica de landing a la medida (6 secciones + Supabase + correo + Telegram).",
+      "pro": "Hola, me interesa el paquete Profesional de landing a la medida.",
+      "store": "Hola, me interesa el paquete de Tienda en línea con dashboards."
+    },
+    "chipEmailTelegram": "Correo + Telegram",
+    "chipOwned": "Es tuya para siempre",
+    "chipDb": "Base de datos",
+    "hostingNote": "El dominio y el hosting se cotizan aparte y dependen de la capacidad que requiera tu sitio (tráfico, base de datos, almacenamiento). No están incluidos en la cuota de mantenimiento."
+  },
+  "processCustomLanding": {
+    "eyebrow": "Cómo trabajamos",
+    "title": "De la idea a tu landing en producción",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Brief y objetivos",
+        "desc": "Entendemos tu negocio, el paquete ideal y qué automatizaciones necesitas (Supabase, correo, Telegram)."
+      },
+      {
+        "step": "02",
+        "title": "Diseño UI/UX",
+        "desc": "Diseñamos tu sitio con tu marca, pensado para conversión."
+      },
+      {
+        "step": "03",
+        "title": "Desarrollo y automatizaciones",
+        "desc": "Construimos tu sitio y conectamos formularios, base de datos, correo y Telegram."
+      },
+      {
+        "step": "04",
+        "title": "Entrega y mantenimiento",
+        "desc": "Publicamos tu sitio, te capacitamos y activamos el mantenimiento mensual."
+      }
+    ]
+  },
+  "customLandingCTA": {
+    "title": "¿Listo para tener tu propia landing?",
+    "desc": "Pagas una vez por el desarrollo y una cuota de mantenimiento accesible para mantenerla activa. Cotiza el paquete que mejor se ajuste a tu negocio.",
+    "quoteBtn": "Cotizar mi landing a la medida",
+    "callBtn": "Agendar llamada",
+    "quoteWhatsappMsg": "Hola, me gustaría cotizar una landing a la medida para mi negocio.",
+    "callWhatsappMsg": "Hola, me gustaría agendar una llamada para platicar sobre una landing a la medida."
+  },
   "mainnav": {
     "home": "Inicio",
     "apps": "Aplicaciones",
     "dev": "Desarrollo de Apps",
-    "landing": "Sitios web",
+    "landing": "Landing bajo demanda",
     "ia": "Automatizaciones con IA",
     "support": "Soporte técnico",
     "fix": "Reparaciones",
@@ -274,7 +386,8 @@
     "storeGrupos": "Grupos",
     "storeCupones": "Cupones",
     "storeUsuarios": "Clientes",
-    "storeDeals": "Tratos"
+    "storeDeals": "Tratos",
+    "landingCustom": "Landing a la medida"
   },
   "footer": {
     "rights": "Morelia, MX. Soluciones Integrales en Tecnología. 2025",
@@ -534,7 +647,10 @@
         "title": "Refacciones de calidad",
         "desc": "Nada de piezas genéricas de baja duración."
       },
-      { "title": "Garantía real", "desc": "Respaldamos nuestro trabajo." }
+      {
+        "title": "Garantía real",
+        "desc": "Respaldamos nuestro trabajo."
+      }
     ]
   },
   "storeParts": {
@@ -672,9 +788,18 @@
     "heroDesc": "Somos una empresa de tecnología nacida en Morelia, México, enfocada en crear soluciones reales que hacen que la tecnología trabaje a tu favor.",
     "heroCtaSecondary": "Conoce nuestra historia",
     "stats": [
-      { "value": "+10", "label": "años de experiencia" },
-      { "value": "+100", "label": "equipos y clientes atendidos" },
-      { "value": "100%", "label": "soporte directo, sin intermediarios" }
+      {
+        "value": "+10",
+        "label": "años de experiencia"
+      },
+      {
+        "value": "+100",
+        "label": "equipos y clientes atendidos"
+      },
+      {
+        "value": "100%",
+        "label": "soporte directo, sin intermediarios"
+      }
     ],
     "storyEyebrow": "Nuestra historia",
     "storyTitle": "De Morelia para quienes confían en su tecnología",
@@ -801,7 +926,11 @@
     "form": {
       "eyebrow": "Tu opinión importa",
       "title": "Evalúa nuestro servicio",
-      "categories": ["Servicio / Producto", "Tiempo", "Atención"],
+      "categories": [
+        "Servicio / Producto",
+        "Tiempo",
+        "Atención"
+      ],
       "allCategoriesAlert": "Por favor evalúa todas las categorías",
       "commentsLabel": "Observaciones",
       "commentsPlaceholder": "Cuéntanos cómo fue tu experiencia…",

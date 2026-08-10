@@ -133,7 +133,7 @@ export default function MainNavItem({
         <div
           className="
             absolute top-full left-0 mt-3 w-52
-            bg-black/80 backdrop-blur-2xl
+            bg-[#0B0F1A]
             border border-white/10
             rounded-2xl p-2 shadow-2xl shadow-black/40
             opacity-0 invisible translate-y-1

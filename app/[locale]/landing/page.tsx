@@ -7,6 +7,7 @@ import LandingWhy from "@/modules/landing/presentation/components/LandingWhy";
 import LandingPlans from "@/modules/landing/presentation/components/LandingPlans";
 import LandingProcess from "@/modules/landing/presentation/components/LandingProcess";
 import LandingCTA from "@/modules/landing/presentation/components/LandingCTA";
+import LandingCompareBanner from "@/modules/landing/presentation/components/LandingCompareBanner";
 
 export default function Landing() {
   return (
@@ -27,6 +28,11 @@ export default function Landing() {
       {/* Plans */}
       <section className="relative flex justify-center">
         <LandingPlans />
+      </section>
+
+      {/* Compare: Landing a la medida */}
+      <section className="relative flex justify-center py-16">
+        <LandingCompareBanner />
       </section>
 
       {/* Process */}

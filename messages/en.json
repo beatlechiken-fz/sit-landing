@@ -151,7 +151,6 @@
     "landingDesc2": "Fast, Google-optimized, and ready to scale your business.",
     "landingPlansBtn": "View plans",
     "landingQuoteBtn": "Quote landing",
-
     "whyEyebrow": "Why Sit+",
     "whyTitle": "Landing pages built to sell",
     "whyCards": [
@@ -171,50 +170,56 @@
         "desc": "Lead and conversion tracking so you know exactly what's working."
       }
     ],
-
-    "plansEyebrow": "What's included",
-    "plansTitle": "Monthly plans to grow your business",
+    "plansEyebrow": "On-demand landing",
+    "plansTitle": "Rent your landing and forget about the rest",
     "startPlan": "Start",
-    "startPlanPrice": "$2,490",
-    "startPlanDesc": "Perfect for starting your digital presence and generating leads.",
+    "startPlanPrice": "$1,490",
+    "startPlanDesc": "A multi-page site with forms, email, and Telegram, ready to generate leads with no upfront capital.",
     "startPlanBtn": "Subscribe to plan",
     "startPlanItems": [
-      "Professional landing page",
-      "Responsive design (mobile and desktop)",
-      "Basic SEO optimization",
-      "Contact form",
-      "Fast loading",
-      "Monthly support and maintenance"
+      "Site with up to 4 pages",
+      "Hosting and domain included",
+      "Up to 2 forms connected to a database",
+      "Automatic email and Telegram notifications",
+      "3 content updates per month",
+      "Up to 1,500 visits/month included"
     ],
     "proPlan": "Pro",
-    "proPlanPrice": "$7,990",
-    "proPlanDesc": "The best option for businesses looking for more sales and conversions every month.",
+    "proPlanPrice": "$2,490",
+    "proPlanDesc": "More pages, more forms, and a dashboard to track your leads.",
     "proPlanBtn": "Best seller",
     "proPlanItems": [
-      "Everything included in Start",
-      "Advanced SEO",
-      "WhatsApp integration",
-      "Conversion optimization",
-      "Admin panel",
-      "Priority support"
+      "Everything in Start",
+      "Site with up to 7 pages",
+      "Up to 6 forms connected to a database",
+      "On-page SEO",
+      "Dashboard to view and export your leads",
+      "10 content updates per month",
+      "Up to 4,000 visits/month included"
     ],
     "enterprisePlan": "Enterprise",
-    "enterprisePlanPrice": "$15,900",
-    "enterprisePlanDesc": "Custom solutions for businesses that need unlimited scalability.",
+    "enterprisePlanPrice": "$4,990",
+    "enterprisePlanDesc": "A full online store rental: catalog, customer management, and dashboards, all included, with no development investment.",
     "enterprisePlanBtn": "Request a quote",
     "enterprisePlanItems": [
-      "Everything included in Pro",
-      "Custom architecture",
-      "High availability",
-      "Advanced security",
-      "Enterprise integrations",
-      "Dedicated support"
+      "Everything in Pro",
+      "Online store with catalog and shopping cart",
+      "Customer and order management (dashboard)",
+      "Product management (dashboard)",
+      "Automatic notification for every order (email + Telegram)",
+      "Priority support",
+      "Up to 8,000 visits/month included"
     ],
     "whatsapp": {
       "start": "Hi, I’m interested in the Start monthly plan for my landing page. Can you give me more information?",
       "pro": "Hi, I’m interested in the Pro monthly plan to generate more sales with my landing page.",
       "enterprise": "Hi, I’m interested in an Enterprise monthly solution for my company. Can we talk about it?"
-    }
+    },
+    "plansNote": "The fee includes hosting, domain, database, and support for standard traffic and form usage. If your business grows and your landing gets a lot more traffic or activity, we'll let you know before moving you up a tier.",
+    "compareBannerEyebrow": "Looking to own your landing page?",
+    "compareBannerTitle": "Check out Custom Landing",
+    "compareBannerDesc": "Pay once for development and a lower monthly maintenance fee. The site is yours, with Supabase, email, and Telegram included from the basic package.",
+    "compareBannerBtn": "See custom packages"
   },
   "processLanding": {
     "eyebrow": "How we work",
@@ -250,11 +255,118 @@
     "quoteWhatsappMsg": "Hi, I’d like to get a quote for a landing page for my business.",
     "callWhatsappMsg": "Hi, I’d like to schedule a call to talk about my landing page."
   },
+  "customLanding": {
+    "heroBadge": "Custom landing — it's yours for good",
+    "heroTitle1": "We build your landing once,",
+    "heroTitle2": "you keep it",
+    "heroDesc1": "You pay for the development of your site and an affordable monthly maintenance fee to keep it active, secure, and up to date. No endless renting.",
+    "heroDesc2": "From a 6-section landing with a form connected to Supabase, email, and Telegram, up to a full online store with dashboards.",
+    "heroQuoteBtn": "Quote my custom landing",
+    "heroPlansBtn": "See packages",
+    "packagesEyebrow": "Packages",
+    "packagesTitle": "Pick the size of your project",
+    "packagesSubtitle": "One-time development fee + monthly maintenance fee.",
+    "basicPlan": "Basic",
+    "setupLabel": "Development",
+    "basicSetupPrice": "$9,500",
+    "maintenanceLabel": "Maintenance",
+    "basicMaintenancePrice": "$490",
+    "basicDesc": "6-section landing with a form connected to Supabase, email, and Telegram.",
+    "basicItems": [
+      "6-section landing (hero, services, about, benefits, testimonials, contact)",
+      "Responsive, SEO-optimized design",
+      "Contact form saved to a database (Supabase)",
+      "Automatic email notification",
+      "Automatic Telegram notification",
+      "The code and design are yours"
+    ],
+    "basicFairUse": "Includes up to 300 form messages and 3,000 visits per month.",
+    "basicBtn": "Quote Basic",
+    "proPlan": "Professional",
+    "proSetupPrice": "$19,000",
+    "proMaintenancePrice": "$890",
+    "proDesc": "Multi-section site with a leads panel and a product/service catalog.",
+    "proItems": [
+      "Everything in Basic",
+      "Up to 10 sections or internal pages",
+      "Panel to view and export your leads",
+      "Product/service catalog or portfolio (no cart)",
+      "Meta Pixel / Google Analytics integration",
+      "Advanced SEO (metadata, sitemap, structured data)"
+    ],
+    "proFairUse": "Includes up to 800 form messages and 10,000 visits per month.",
+    "proBtn": "Quote Professional",
+    "storePlan": "Online store",
+    "storeSetupPrice": "From $47,500",
+    "storeMaintenancePrice": "From $1,990",
+    "storeDesc": "Full online store with a dashboard for products, orders, customers, and coupons.",
+    "storeItems": [
+      "Everything in Professional",
+      "Product catalog with shopping cart",
+      "Payment gateway (card and bank transfer)",
+      "Admin dashboard: products, orders, customers, and coupons",
+      "Customer accounts with order history",
+      "Automatic notification for every order (email + Telegram)",
+      "Sales reports and daily database backup"
+    ],
+    "storeFairUse": "Includes up to 5,000 visits/month, 500 orders/month, and 5GB of storage.",
+    "storeBtn": "Quote Online Store",
+    "paymentNote": "Development is paid 50% upfront and 50% on delivery. Maintenance is billed monthly starting at launch.",
+    "scalingNoteTitle": "Why might the maintenance fee change?",
+    "scalingNoteDesc": "Each package includes a standard capacity for database, bandwidth, email, and Telegram messages. If your business grows — more visits, more form submissions, more orders, or more products — the infrastructure needed grows too, so the fee adjusts in proportion to actual usage. We always let you know before any change, never a surprise adjustment.",
+    "compareBannerEyebrow": "Prefer not to pay upfront?",
+    "compareBannerTitle": "Check out On-demand Landing",
+    "compareBannerDesc": "Rent your landing with an all-inclusive monthly fee, no upfront payment. Great if you'd rather start light and not commit capital.",
+    "compareBannerBtn": "See rental plans",
+    "whatsapp": {
+      "basic": "Hi, I'm interested in the Basic custom landing package (6 sections + Supabase + email + Telegram).",
+      "pro": "Hi, I'm interested in the Professional custom landing package.",
+      "store": "Hi, I'm interested in the Online Store with dashboards package."
+    },
+    "chipEmailTelegram": "Email + Telegram",
+    "chipOwned": "Yours for good",
+    "chipDb": "Database",
+    "hostingNote": "Domain and hosting are quoted separately and depend on the capacity your site needs (traffic, database, storage). They are not included in the maintenance fee."
+  },
+  "processCustomLanding": {
+    "eyebrow": "How we work",
+    "title": "From idea to a live landing page",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Brief and goals",
+        "desc": "We learn about your business, the right package, and which automations you need (Supabase, email, Telegram)."
+      },
+      {
+        "step": "02",
+        "title": "UI/UX design",
+        "desc": "We design your site with your brand, built for conversion."
+      },
+      {
+        "step": "03",
+        "title": "Development and automations",
+        "desc": "We build your site and connect forms, database, email, and Telegram."
+      },
+      {
+        "step": "04",
+        "title": "Delivery and maintenance",
+        "desc": "We launch your site, train you on it, and turn on monthly maintenance."
+      }
+    ]
+  },
+  "customLandingCTA": {
+    "title": "Ready to have your own landing page?",
+    "desc": "You pay once for development and an affordable maintenance fee to keep it active. Get a quote for the package that fits your business.",
+    "quoteBtn": "Quote my custom landing",
+    "callBtn": "Schedule a call",
+    "quoteWhatsappMsg": "Hi, I'd like to get a quote for a custom landing page for my business.",
+    "callWhatsappMsg": "Hi, I'd like to schedule a call to talk about a custom landing page."
+  },
   "mainnav": {
     "home": "Home",
     "apps": "Applications",
     "dev": "App Development",
-    "landing": "Websites",
+    "landing": "On-demand landing",
     "ia": "AI Automations",
     "support": "Technical support",
     "fix": "Repairs",
@@ -267,7 +379,8 @@
     "contact": "Contact",
     "parts": "Parts and equipment",
     "titleMobile": "Menu",
-    "subtitleMobile": "Navigation"
+    "subtitleMobile": "Navigation",
+    "landingCustom": "Custom landing"
   },
   "footer": {
     "rights": "Morelia, MX. Integrated Technology Solutions. 2025",
@@ -668,9 +781,18 @@
     "heroDesc": "We are a technology company born in Morelia, Mexico, focused on creating real solutions that make technology work in your favor.",
     "heroCtaSecondary": "Learn our story",
     "stats": [
-      { "value": "+10", "label": "years of experience" },
-      { "value": "+100", "label": "devices and clients served" },
-      { "value": "100%", "label": "direct support, no middlemen" }
+      {
+        "value": "+10",
+        "label": "years of experience"
+      },
+      {
+        "value": "+100",
+        "label": "devices and clients served"
+      },
+      {
+        "value": "100%",
+        "label": "direct support, no middlemen"
+      }
     ],
     "storyEyebrow": "Our story",
     "storyTitle": "From Morelia, for those who trust their technology",
@@ -712,11 +834,26 @@
     "servicesTitle": "Your entire tech ecosystem in one place",
     "servicesDesc": "From repair to software development, we cover every stage of your technology's life cycle.",
     "services": [
-      { "title": "Repair", "desc": "Expert diagnosis and repair for your devices." },
-      { "title": "Maintenance", "desc": "Preventive plans so your equipment never fails." },
-      { "title": "Upgrades", "desc": "More speed and lifespan with better components." },
-      { "title": "Custom apps", "desc": "Software designed around your business." },
-      { "title": "Parts", "desc": "Original and compatible parts in one place." }
+      {
+        "title": "Repair",
+        "desc": "Expert diagnosis and repair for your devices."
+      },
+      {
+        "title": "Maintenance",
+        "desc": "Preventive plans so your equipment never fails."
+      },
+      {
+        "title": "Upgrades",
+        "desc": "More speed and lifespan with better components."
+      },
+      {
+        "title": "Custom apps",
+        "desc": "Software designed around your business."
+      },
+      {
+        "title": "Parts",
+        "desc": "Original and compatible parts in one place."
+      }
     ],
     "ctaTitle": "Technology that truly works",
     "ctaDesc": "If you’re looking for someone who speaks clearly and helps you make the best decision, you’re in the right place.",
@@ -782,7 +919,11 @@
     "form": {
       "eyebrow": "Your opinion matters",
       "title": "Rate our service",
-      "categories": ["Service / Product", "Time", "Attention"],
+      "categories": [
+        "Service / Product",
+        "Time",
+        "Attention"
+      ],
       "allCategoriesAlert": "Please rate all categories",
       "commentsLabel": "Comments",
       "commentsPlaceholder": "Tell us about your experience…",

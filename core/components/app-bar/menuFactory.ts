@@ -39,6 +39,11 @@ export function createMenuNavElement(t: TType): MenuNavElement {
       submenu: [
         { id: "apps", label: t("dev"), url: "/apps" },
         { id: "landing", label: t("landing"), url: "/landing" },
+        {
+          id: "landing-custom",
+          label: t("landingCustom"),
+          url: "/landing/a-la-medida",
+        },
         { id: "ia", label: t("ia"), url: "/ia" },
       ],
     },
