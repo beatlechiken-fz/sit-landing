@@ -5,6 +5,7 @@ import {
   COOKIE_NAME,
   MAX_AGE,
 } from "@/core/helpers/auth/client-session";
+import { isMissingDebeCambiarPasswordColumnError } from "@/core/helpers/clientes/debe-cambiar-password";
 import bcrypt from "bcryptjs";
 
 export async function POST(req: NextRequest) {
@@ -20,13 +21,24 @@ export async function POST(req: NextRequest) {
 
     const supabase = getSupabaseServerClient();
 
-    const { data: cliente, error } = await supabase
+    let { data: cliente, error } = await supabase
       .from("clientes")
       .select(
         "id, nombre, apellido, email, password_hash, activo, debe_cambiar_password",
       )
       .eq("email", email.trim().toLowerCase())
       .single();
+
+    // Si la base de datos todavía no tiene la columna
+    // `debe_cambiar_password`, reintentamos sin ella para no bloquear el
+    // login de todos los clientes por esto.
+    if (error && isMissingDebeCambiarPasswordColumnError(error)) {
+      ({ data: cliente, error } = await supabase
+        .from("clientes")
+        .select("id, nombre, apellido, email, password_hash, activo")
+        .eq("email", email.trim().toLowerCase())
+        .single());
+    }
 
     if (error || !cliente) {
       return NextResponse.json(

@@ -4,6 +4,7 @@ import { requireAuth } from "@/core/helpers/require-auth";
 import { generateSecurePassword } from "@/core/helpers/auth/generate-password";
 import { sendEmail, bienvenidaTemplate } from "@/core/helpers/email";
 import { isPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
+import { isMissingDebeCambiarPasswordColumnError } from "@/core/helpers/clientes/debe-cambiar-password";
 import bcrypt from "bcryptjs";
 
 export async function POST(
@@ -33,7 +34,7 @@ export async function POST(
     const password = generateSecurePassword();
     const hash = await bcrypt.hash(password, 12);
 
-    const { error } = await supabase
+    let { error } = await supabase
       .from("clientes")
       .update({
         password_hash: hash,
@@ -41,6 +42,18 @@ export async function POST(
         updated_at: new Date().toISOString(),
       })
       .eq("id", id);
+
+    // Si la base de datos todavía no tiene la columna
+    // `debe_cambiar_password`, reintentamos sin ella.
+    if (error && isMissingDebeCambiarPasswordColumnError(error)) {
+      ({ error } = await supabase
+        .from("clientes")
+        .update({
+          password_hash: hash,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", id));
+    }
 
     if (error)
       return NextResponse.json({ error: error.message }, { status: 500 });

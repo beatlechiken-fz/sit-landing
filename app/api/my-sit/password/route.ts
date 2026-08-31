@@ -6,6 +6,7 @@ import {
   COOKIE_NAME,
   MAX_AGE,
 } from "@/core/helpers/auth/client-session";
+import { isMissingDebeCambiarPasswordColumnError } from "@/core/helpers/clientes/debe-cambiar-password";
 import bcrypt from "bcryptjs";
 
 export async function PATCH(req: NextRequest) {
@@ -60,7 +61,7 @@ export async function PATCH(req: NextRequest) {
     // Hashea y guarda la nueva
     const nuevoHash = await bcrypt.hash(passwordNuevo, 12);
 
-    const { error: updateError } = await supabase
+    let { error: updateError } = await supabase
       .from("clientes")
       .update({
         password_hash: nuevoHash,
@@ -68,6 +69,18 @@ export async function PATCH(req: NextRequest) {
         updated_at: new Date().toISOString(),
       })
       .eq("id", session!.id);
+
+    // Si la base de datos todavía no tiene la columna
+    // `debe_cambiar_password`, reintentamos sin ella.
+    if (updateError && isMissingDebeCambiarPasswordColumnError(updateError)) {
+      ({ error: updateError } = await supabase
+        .from("clientes")
+        .update({
+          password_hash: nuevoHash,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", session!.id));
+    }
 
     if (updateError) {
       return NextResponse.json({ error: updateError.message }, { status: 500 });

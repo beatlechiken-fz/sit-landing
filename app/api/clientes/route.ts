@@ -4,6 +4,7 @@ import { requireAuth } from "@/core/helpers/require-auth";
 import { generateSecurePassword } from "@/core/helpers/auth/generate-password";
 import { sendEmail, bienvenidaTemplate } from "@/core/helpers/email";
 import { buildPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
+import { isMissingDebeCambiarPasswordColumnError } from "@/core/helpers/clientes/debe-cambiar-password";
 import bcrypt from "bcryptjs";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,12 +71,8 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-    if (!apellido?.trim()) {
-      return NextResponse.json(
-        { error: "El apellido es requerido" },
-        { status: 400 },
-      );
-    }
+    // El apellido es opcional: si no viene, se guarda vacío en vez de
+    // bloquear la creación del cliente.
 
     // El email es opcional. Si no viene o no tiene formato válido, no
     // bloqueamos la creación: guardamos lo que haya (o un placeholder si
@@ -88,26 +85,46 @@ export async function POST(req: NextRequest) {
     const password = generateSecurePassword();
     const hash = await bcrypt.hash(password, 12);
 
-    const { data, error } = await supabase
+    const insertPayload = {
+      nombre: nombre.trim(),
+      apellido: apellido?.trim() || "",
+      email: emailParaGuardar,
+      telefono: telefono?.trim() || null,
+      empresa: empresa?.trim() || null,
+      password_hash: hash,
+      debe_cambiar_password: true,
+    };
+    const selectCols =
+      "id, nombre, apellido, email, telefono, empresa, activo, created_at";
+
+    let { data, error } = await supabase
       .from("clientes")
-      .insert({
-        nombre: nombre.trim(),
-        apellido: apellido.trim(),
-        email: emailParaGuardar,
-        telefono: telefono?.trim() || null,
-        empresa: empresa?.trim() || null,
-        password_hash: hash,
-        debe_cambiar_password: true,
-      })
-      .select(
-        "id, nombre, apellido, email, telefono, empresa, activo, created_at",
-      )
+      .insert(insertPayload)
+      .select(selectCols)
       .single();
 
-    if (error) {
-      const msg = error.message.includes("unique")
+    // Si la base de datos todavía no tiene la columna
+    // `debe_cambiar_password` (falta correr la migración en Supabase),
+    // reintentamos sin ella en vez de bloquear la creación del cliente.
+    if (error && isMissingDebeCambiarPasswordColumnError(error)) {
+      ({ data, error } = await supabase
+        .from("clientes")
+        .insert({
+          nombre: insertPayload.nombre,
+          apellido: insertPayload.apellido,
+          email: insertPayload.email,
+          telefono: insertPayload.telefono,
+          empresa: insertPayload.empresa,
+          password_hash: insertPayload.password_hash,
+        })
+        .select(selectCols)
+        .single());
+    }
+
+    if (error || !data) {
+      const msg = error?.message.includes("unique")
         ? "Ya existe un cliente con ese email"
-        : error.message;
+        : (error?.message ?? "Error al crear cliente");
       return NextResponse.json({ error: msg }, { status: 400 });
     }
 

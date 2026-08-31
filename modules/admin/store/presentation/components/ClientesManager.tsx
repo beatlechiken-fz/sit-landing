@@ -218,7 +218,11 @@ export function ClientesManager({
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {[
               { label: "Nombre *", key: "nombre", placeholder: "Juan" },
-              { label: "Apellido *", key: "apellido", placeholder: "García" },
+              {
+                label: "Apellido",
+                key: "apellido",
+                placeholder: "García (opcional)",
+              },
               {
                 label: "Email",
                 key: "email",
@@ -269,7 +273,7 @@ export function ClientesManager({
             </button>
             <button
               onClick={handleCreate}
-              disabled={saving || !form.nombre || !form.apellido}
+              disabled={saving || !form.nombre}
               className="
                 rounded-lg bg-[#02AFFF] px-4 py-2 text-sm font-medium text-white
                 hover:bg-[#1961B0] transition-colors
