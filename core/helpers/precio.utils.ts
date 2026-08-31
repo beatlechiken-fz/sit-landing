@@ -40,3 +40,12 @@ export function esProductoGenerico(product: Product): boolean {
 export function esServicioSIT(product: Product): boolean {
   return product.clase === "SERVICIO";
 }
+
+/**
+ * Servicio sin precio fijo (ej. reparaciones): el precio y la descripción
+ * se definen manualmente al agregarlo al carrito, y el precio que se
+ * ingresa es final (ya incluye impuestos, no se le suma IVA).
+ */
+export function esServicioSinPrecio(product: Product): boolean {
+  return product.clase === "SERVICIO" && product.precio === null;
+}

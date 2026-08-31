@@ -8,7 +8,11 @@ import {
   descargarCotizacion,
   descargarOrden,
 } from "@/core/helpers/pdf/cotizacion.pdf";
-import { formatMXN, esProductoGenerico } from "@/core/helpers/precio.utils";
+import {
+  formatMXN,
+  esProductoGenerico,
+  esServicioSinPrecio,
+} from "@/core/helpers/precio.utils";
 import { CuponValido } from "@/app/api/cupones/validar/route";
 import { Cliente } from "@/modules/admin/store/domain/entities/cliente.entity";
 import {
@@ -191,6 +195,7 @@ export function CartModal() {
     cuponGlobal,
     setCantidad,
     setPrecioEditable,
+    setDescripcionLinea,
     eliminar,
     limpiar,
     aplicarCupon,
@@ -540,6 +545,7 @@ export function CartModal() {
               {/* Líneas del carrito */}
               {lineas.map((linea) => {
                 const esGenerico = esProductoGenerico(linea.product);
+                const esServicioLibre = esServicioSinPrecio(linea.product);
                 const precioSinIva = esGenerico
                   ? Math.round((linea.precioFinal / 1.16) * 100) / 100
                   : null;
@@ -567,9 +573,29 @@ export function CartModal() {
                               </span>
                             )}
                           </div>
-                          <p className="mt-0.5 text-sm font-medium text-zinc-200 line-clamp-2">
-                            {linea.product.descripcion}
-                          </p>
+                          {esServicioLibre ? (
+                            <div className="mt-1">
+                              <label className="mb-1 block text-[10px] text-zinc-600">
+                                Descripción para la nota de venta
+                              </label>
+                              <input
+                                type="text"
+                                value={linea.product.descripcion}
+                                onChange={(e) =>
+                                  setDescripcionLinea(
+                                    linea.product.id,
+                                    e.target.value,
+                                  )
+                                }
+                                placeholder="Ej. Cambio de bomba de succión"
+                                className="input-dark w-full text-sm"
+                              />
+                            </div>
+                          ) : (
+                            <p className="mt-0.5 text-sm font-medium text-zinc-200 line-clamp-2">
+                              {linea.product.descripcion}
+                            </p>
+                          )}
                           <p className="mt-0.5 text-xs text-zinc-600">
                             {linea.product.clave}
                           </p>
@@ -652,7 +678,29 @@ export function CartModal() {
 
                         {/* Precio */}
                         <div className="text-right flex-1">
-                          {esGenerico ? (
+                          {esServicioLibre ? (
+                            <div className="flex flex-col items-end gap-0.5">
+                              <div className="flex items-center gap-1">
+                                <span className="text-xs text-zinc-500">$</span>
+                                <input
+                                  type="number"
+                                  min={0}
+                                  value={linea.precioFinal || ""}
+                                  onChange={(e) =>
+                                    setPrecioEditable(
+                                      linea.product.id,
+                                      Number(e.target.value),
+                                    )
+                                  }
+                                  placeholder="0.00"
+                                  className="w-24 bg-transparent text-right text-sm font-bold text-zinc-100 outline-none border-b border-zinc-700 focus:border-[#02AFFF] pb-0.5 transition-colors [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                                />
+                              </div>
+                              <p className="text-[10px] text-zinc-600">
+                                Precio final (con impuestos)
+                              </p>
+                            </div>
+                          ) : esGenerico ? (
                             <div className="flex flex-col items-end gap-0.5">
                               <div className="flex items-center gap-1">
                                 <span className="text-xs text-zinc-500">

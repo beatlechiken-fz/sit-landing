@@ -37,6 +37,7 @@ interface CarritoState {
   totalCarrito: () => number;
 
   setPrecioEditable: (productId: number, precio: number) => void;
+  setDescripcionLinea: (productId: number, descripcion: string) => void;
 }
 
 function calcularDescuento(
@@ -81,6 +82,11 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
   agregar: (product, cantidad = 1, precioFinal?: number) => {
     set((state) => {
       const esGenerico = product.clase === "GENERICO";
+      // Servicio sin precio fijo (ej. reparaciones): también editable,
+      // pero el precio que se escriba es final, sin sumarle IVA.
+      const esServicioSinPrecioFijo =
+        product.clase === "SERVICIO" && product.precio === null;
+      const precioEsEditable = esGenerico || esServicioSinPrecioFijo;
       const precio = precioFinal ?? product.precio ?? 0;
       const existe = state.lineas.find((l) => l.product.id === product.id);
 
@@ -103,7 +109,7 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
       return {
         lineas: [
           ...state.lineas,
-          buildLinea(product, precio, cantidad, null, esGenerico),
+          buildLinea(product, precio, cantidad, null, precioEsEditable),
         ],
       };
     });
@@ -203,6 +209,16 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
       lineas: state.lineas.map((l) =>
         l.product.id === productId && l.precioEditable
           ? buildLinea(l.product, precio, l.cantidad, l.cupon, true)
+          : l,
+      ),
+    }));
+  },
+
+  setDescripcionLinea: (productId, descripcion) => {
+    set((state) => ({
+      lineas: state.lineas.map((l) =>
+        l.product.id === productId
+          ? { ...l, product: { ...l.product, descripcion } }
           : l,
       ),
     }));

@@ -7,6 +7,7 @@ export default function StoreLayout({
 }) {
   return (
     <div className="min-h-screen bg-zinc-950">
+      <StoreSubNav />
       <div className="pt-14">{children}</div>
     </div>
   );

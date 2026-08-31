@@ -14,6 +14,7 @@ const PROTECTED_API_PATHS = [
   "/api/graphql",
   "/api/clientes",
   "/api/deals",
+  "/api/servicios",
 ];
 
 export default async function middleware(req: NextRequest) {
