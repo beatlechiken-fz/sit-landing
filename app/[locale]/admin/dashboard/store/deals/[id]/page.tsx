@@ -3,28 +3,22 @@ import { Deal } from "@/modules/admin/store/domain/entities/deal.entity";
 import { DealDetail } from "@/modules/admin/store/presentation/components/DealDetail";
 import { notFound } from "next/navigation";
 import AppBarAdmin from "@/core/components/app-bar-admin/AppBarAdmin";
-
-const BASE_SELECT = `
-  *,
-  clientes (
-    id, nombre, apellido, email, telefono, empresa
-  ),
-  cotizacion_lineas (*),
-  cotizacion_mensajes (
-    id, cotizacion_id, origen, contenido, leido, created_at
-  )
-`;
+import { SupabaseClient } from "@supabase/supabase-js";
 
 async function getDeal(id: string): Promise<Deal | null> {
   const supabase = getSupabaseServerClient();
 
-  let { data, error } = await supabase
+  const { data, error } = await supabase
     .from("cotizaciones")
     .select(
       `
-      ${BASE_SELECT},
-      cotizacion_eventos (
-        id, cotizacion_id, texto, created_at
+      *,
+      clientes (
+        id, nombre, apellido, email, telefono, empresa
+      ),
+      cotizacion_lineas (*),
+      cotizacion_mensajes (
+        id, cotizacion_id, origen, contenido, leido, created_at
       )
     `,
     )
@@ -33,28 +27,44 @@ async function getDeal(id: string): Promise<Deal | null> {
       ascending: true,
       referencedTable: "cotizacion_mensajes",
     })
-    .order("created_at", {
-      ascending: true,
-      referencedTable: "cotizacion_eventos",
-    })
     .single();
 
-  // Si la tabla `cotizacion_eventos` todavía no existe (falta correr la
-  // migración), reintenta sin el join en vez de tronar toda la página.
-  if (error?.message?.includes("cotizacion_eventos")) {
-    ({ data, error } = await supabase
-      .from("cotizaciones")
-      .select(BASE_SELECT)
-      .eq("id", id)
-      .order("created_at", {
-        ascending: true,
-        referencedTable: "cotizacion_mensajes",
-      })
-      .single());
-  }
-
   if (error || !data) return null;
-  return data as unknown as Deal;
+
+  // Línea de tiempo de eventos y parte de pagos son tablas nuevas y por
+  // separado: si alguna todavía no existe (falta correr su migración),
+  // no debe tronar el resto del detalle de la orden — solo esa sección
+  // se queda vacía hasta que se cree la tabla.
+  const [eventos, pagos] = await Promise.all([
+    getEventos(supabase, id),
+    getPagos(supabase, id),
+  ]);
+
+  return {
+    ...(data as unknown as Deal),
+    cotizacion_eventos: eventos,
+    cotizacion_pagos: pagos,
+  };
+}
+
+async function getEventos(supabase: SupabaseClient, cotizacionId: string) {
+  const { data, error } = await supabase
+    .from("cotizacion_eventos")
+    .select("id, cotizacion_id, texto, created_at")
+    .eq("cotizacion_id", cotizacionId)
+    .order("created_at", { ascending: true });
+
+  return error || !data ? [] : data;
+}
+
+async function getPagos(supabase: SupabaseClient, cotizacionId: string) {
+  const { data, error } = await supabase
+    .from("cotizacion_pagos")
+    .select("id, cotizacion_id, concepto, monto, created_at")
+    .eq("cotizacion_id", cotizacionId)
+    .order("created_at", { ascending: true });
+
+  return error || !data ? [] : data;
 }
 
 export default async function DealDetailPage({

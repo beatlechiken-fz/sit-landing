@@ -1,6 +1,7 @@
 import { DireccionSnapshot } from "./direccion.entity";
 
 export type DealStatus =
+  | "en_diagnostico"
   | "cotizacion"
   | "en_proceso"
   | "listo_para_entregar"
@@ -10,6 +11,7 @@ export type DealStatus =
   | "cancelado";
 
 export const DEAL_STATUS_LABELS: Record<DealStatus, string> = {
+  en_diagnostico: "En diagnóstico",
   cotizacion: "Cotización",
   en_proceso: "En proceso",
   listo_para_entregar: "Listo para entregar",
@@ -20,6 +22,7 @@ export const DEAL_STATUS_LABELS: Record<DealStatus, string> = {
 };
 
 export const DEAL_STATUS_COLORS: Record<DealStatus, string> = {
+  en_diagnostico: "bg-purple-500/10 text-purple-400",
   cotizacion: "bg-zinc-500/10 text-zinc-400",
   en_proceso: "bg-blue-500/10 text-blue-400",
   listo_para_entregar: "bg-emerald-500/10 text-emerald-400",
@@ -29,15 +32,43 @@ export const DEAL_STATUS_COLORS: Record<DealStatus, string> = {
   cancelado: "bg-red-500/10 text-red-400",
 };
 
-export const DEAL_TRANSICIONES: Record<DealStatus, DealStatus[]> = {
-  cotizacion: ["en_proceso", "cancelado"],
-  en_proceso: ["listo_para_entregar", "cancelado"],
-  listo_para_entregar: ["pendiente_de_pago", "cancelado"],
-  pendiente_de_pago: ["pagado", "cancelado"],
-  pagado: ["finalizado"],
-  finalizado: [],
-  cancelado: [],
-};
+// El flujo entre estos status ya no es lineal: desde cualquier status
+// "activo" se puede cambiar a cualquier otro (ej. regresar de "pagado" a
+// "en proceso"). Este arreglo solo define el orden en que se muestran los
+// botones de "Cambiar status". La única excepción es "en_diagnostico":
+// ver `puedeVolverADiagnostico`.
+export const ALL_DEAL_STATUSES: DealStatus[] = [
+  "en_diagnostico",
+  "cotizacion",
+  "en_proceso",
+  "listo_para_entregar",
+  "pendiente_de_pago",
+  "pagado",
+  "finalizado",
+  "cancelado",
+];
+
+// "En diagnóstico" es de un solo sentido: en cuanto la orden pasa por
+// "en_proceso" (lo que genera el número de orden), ya no se puede regresar
+// a diagnóstico, sin importar a qué otro status se mueva después.
+export function puedeVolverADiagnostico(numeroOrden: string | null): boolean {
+  return !numeroOrden;
+}
+
+// El total solo se puede editar mientras la orden está en diagnóstico —
+// es cuando todavía no se sabe el costo final del servicio.
+export function puedeEditarTotal(status: DealStatus): boolean {
+  return status === "en_diagnostico";
+}
+
+// "finalizado" y "cancelado" son estados de cierre: una vez ahí, la orden
+// ya no puede cambiar a ningún otro status. "finalizado" es siempre el
+// cierre exitoso y es lo único que genera cashback.
+export const ESTADOS_TERMINALES: DealStatus[] = ["finalizado", "cancelado"];
+
+export function esStatusTerminal(status: DealStatus): boolean {
+  return ESTADOS_TERMINALES.includes(status);
+}
 
 export interface DealLinea {
   id: string;
@@ -72,6 +103,17 @@ export interface DealEvento {
   created_at: string;
 }
 
+// Pagos registrados por el admin contra el total de la orden (parte de
+// pagos). El restante se calcula en el cliente restando al total la suma
+// de los pagos, nunca se guarda — así nunca queda desincronizado.
+export interface DealPago {
+  id: string;
+  cotizacion_id: string;
+  concepto: string;
+  monto: number;
+  created_at: string;
+}
+
 export interface Deal {
   id: string;
   numero_orden: string | null;
@@ -101,4 +143,5 @@ export interface Deal {
   cotizacion_lineas?: DealLinea[];
   cotizacion_mensajes?: DealMensaje[];
   cotizacion_eventos?: DealEvento[];
+  cotizacion_pagos?: DealPago[];
 }

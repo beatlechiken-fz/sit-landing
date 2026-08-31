@@ -7,9 +7,13 @@ import {
   DealStatus,
   DealMensaje,
   DealEvento,
+  DealPago,
   DEAL_STATUS_LABELS,
   DEAL_STATUS_COLORS,
-  DEAL_TRANSICIONES,
+  ALL_DEAL_STATUSES,
+  esStatusTerminal,
+  puedeVolverADiagnostico,
+  puedeEditarTotal,
 } from "@/modules/admin/store/domain/entities/deal.entity";
 import { formatMXN } from "@/core/helpers/precio.utils";
 
@@ -30,14 +34,38 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
   const [enviando, setEnviando] = useState(false);
   const [nuevoEvento, setNuevoEvento] = useState("");
   const [agregandoEvento, setAgregandoEvento] = useState(false);
+  const [nuevoConcepto, setNuevoConcepto] = useState("");
+  const [nuevoMonto, setNuevoMonto] = useState("");
+  const [registrandoPago, setRegistrandoPago] = useState(false);
   const [cambiando, setCambiando] = useState(false);
   const [nota, setNota] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [showNota, setShowNota] = useState(false);
   const [statusTarget, setStatusTarget] = useState<DealStatus | null>(null);
+  const [editandoTotal, setEditandoTotal] = useState(false);
+  const [nuevoTotal, setNuevoTotal] = useState("");
+  const [guardandoTotal, setGuardandoTotal] = useState(false);
 
-  const transiciones = DEAL_TRANSICIONES[deal.status] ?? [];
+  // Entre los status "activos" ya no es un flujo lineal: se puede cambiar
+  // a cualquier otro. Pero "finalizado" y "cancelado" son de cierre —
+  // una vez ahí, no hay más botones. Y "en_diagnostico" es de un solo
+  // sentido: no se ofrece una vez que la orden ya generó número de orden.
+  const esTerminal = esStatusTerminal(deal.status);
+  const otrosStatus = esTerminal
+    ? []
+    : ALL_DEAL_STATUSES.filter(
+        (s) =>
+          s !== deal.status &&
+          (s !== "en_diagnostico" || puedeVolverADiagnostico(deal.numero_orden)),
+      );
+
+  const totalEditable = puedeEditarTotal(deal.status);
+
+  // ── Parte de pagos ──────────────────────────
+  const pagos = deal.cotizacion_pagos ?? [];
+  const totalPagado = pagos.reduce((acc, p) => acc + p.monto, 0);
+  const restante = Math.max(0, Math.round((deal.total - totalPagado) * 100) / 100);
 
   const showFeedback = (msg: string, isError = false) => {
     if (isError) setError(msg);
@@ -59,14 +87,21 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: nuevoStatus, nota: nota || undefined }),
       });
-      const data = await res.json();
+      const { evento, ...data } = await res.json();
 
       if (!res.ok) {
         showFeedback(data.error ?? "Error al cambiar status", true);
         return;
       }
 
-      setDeal((prev) => ({ ...prev, ...data }));
+      setDeal((prev) => ({
+        ...prev,
+        ...data,
+        // Aparece de inmediato en la línea de tiempo, sin recargar.
+        cotizacion_eventos: evento
+          ? [...(prev.cotizacion_eventos ?? []), evento as DealEvento]
+          : prev.cotizacion_eventos,
+      }));
       setStatusTarget(null);
       setNota("");
       setShowNota(false);
@@ -143,6 +178,68 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
       showFeedback("Error de conexión", true);
     } finally {
       setAgregandoEvento(false);
+    }
+  };
+
+  // ── Registrar pago ─────────────────────────
+  const handleRegistrarPago = async () => {
+    if (!nuevoConcepto.trim() || !nuevoMonto) return;
+    setRegistrandoPago(true);
+
+    try {
+      const res = await fetch(`/api/deals/${deal.id}/pagos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ concepto: nuevoConcepto, monto: nuevoMonto }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showFeedback(data.error ?? "Error al registrar el pago", true);
+        return;
+      }
+
+      setDeal((prev) => ({
+        ...prev,
+        cotizacion_pagos: [...(prev.cotizacion_pagos ?? []), data as DealPago],
+      }));
+      setNuevoConcepto("");
+      setNuevoMonto("");
+      showFeedback("Pago registrado");
+    } catch {
+      showFeedback("Error de conexión", true);
+    } finally {
+      setRegistrandoPago(false);
+    }
+  };
+
+  // ── Modificar total (solo en diagnóstico) ──
+  const handleActualizarTotal = async () => {
+    if (nuevoTotal === "") return;
+    setGuardandoTotal(true);
+    setError(null);
+
+    try {
+      const res = await fetch(`/api/deals/${deal.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ total: nuevoTotal }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showFeedback(data.error ?? "Error al actualizar el total", true);
+        return;
+      }
+
+      setDeal((prev) => ({ ...prev, ...data }));
+      setEditandoTotal(false);
+      setNuevoTotal("");
+      showFeedback("Total actualizado");
+    } catch {
+      showFeedback("Error de conexión", true);
+    } finally {
+      setGuardandoTotal(false);
     }
   };
 
@@ -393,6 +490,147 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
             </div>
           </div>
 
+          {/* Pagos */}
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden">
+            <div className="border-b border-zinc-800 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                Pagos
+              </p>
+            </div>
+
+            {/* Resumen: total / pagado / restante */}
+            <div className="grid grid-cols-3 divide-x divide-zinc-800 border-b border-zinc-800">
+              <div className="px-4 py-3 text-center">
+                <p className="text-[10px] uppercase tracking-widest text-zinc-600">
+                  Total
+                </p>
+                <p className="mt-0.5 text-sm font-bold text-zinc-200">
+                  {formatMXN(deal.total)}
+                </p>
+              </div>
+              <div className="px-4 py-3 text-center">
+                <p className="text-[10px] uppercase tracking-widest text-zinc-600">
+                  Pagado
+                </p>
+                <p className="mt-0.5 text-sm font-bold text-emerald-400">
+                  {formatMXN(totalPagado)}
+                </p>
+              </div>
+              <div className="px-4 py-3 text-center">
+                <p className="text-[10px] uppercase tracking-widest text-zinc-600">
+                  Restante
+                </p>
+                <p
+                  className={`mt-0.5 text-sm font-bold ${restante > 0 ? "text-amber-400" : "text-zinc-500"}`}
+                >
+                  {formatMXN(restante)}
+                </p>
+              </div>
+            </div>
+
+            {/* Línea de tiempo de pagos */}
+            <div className="p-5">
+              {pagos.length === 0 ? (
+                <p className="text-center text-xs text-zinc-600 py-2">
+                  Sin pagos registrados
+                </p>
+              ) : (
+                <ol className="space-y-5">
+                  {pagos.map((pago, i) => {
+                    const restanteEnEsePago = Math.max(
+                      0,
+                      Math.round(
+                        (deal.total -
+                          pagos
+                            .slice(0, i + 1)
+                            .reduce((acc, p) => acc + p.monto, 0)) *
+                          100,
+                      ) / 100,
+                    );
+                    return (
+                      <li key={pago.id} className="relative pl-6">
+                        <span className="absolute left-0 top-1 h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                        {i < pagos.length - 1 && (
+                          <span className="absolute left-[4.5px] top-4 bottom-[-20px] w-px bg-zinc-800" />
+                        )}
+                        <div className="flex items-start justify-between gap-3">
+                          <div>
+                            <p className="text-sm text-zinc-200">
+                              {pago.concepto}
+                            </p>
+                            <p className="text-xs text-zinc-600">
+                              {new Date(pago.created_at).toLocaleString(
+                                "es-MX",
+                                {
+                                  day: "2-digit",
+                                  month: "short",
+                                  year: "numeric",
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                },
+                              )}
+                            </p>
+                          </div>
+                          <div className="text-right shrink-0">
+                            <p className="text-sm font-bold text-emerald-400">
+                              + {formatMXN(pago.monto)}
+                            </p>
+                            <p className="text-[10px] text-zinc-600">
+                              Restante: {formatMXN(restanteEnEsePago)}
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
+            </div>
+
+            {/* Registrar nuevo pago */}
+            <div className="border-t border-zinc-800 p-4 space-y-2">
+              {restante <= 0 ? (
+                <p className="text-center text-xs text-zinc-600">
+                  Ya no hay saldo pendiente
+                </p>
+              ) : (
+                <>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      value={nuevoConcepto}
+                      onChange={(e) => setNuevoConcepto(e.target.value)}
+                      placeholder="Concepto (ej. Anticipo)"
+                      className="flex-1 input-dark text-sm"
+                    />
+                    <input
+                      type="number"
+                      min={0}
+                      max={restante}
+                      value={nuevoMonto}
+                      onChange={(e) => setNuevoMonto(e.target.value)}
+                      placeholder={`$ (máx. ${restante.toFixed(2)})`}
+                      className="w-36 input-dark text-sm"
+                    />
+                  </div>
+                  <button
+                    onClick={handleRegistrarPago}
+                    disabled={
+                      registrandoPago || !nuevoConcepto.trim() || !nuevoMonto
+                    }
+                    className="
+                      w-full rounded-xl bg-[#02AFFF] py-2 text-sm font-medium text-white
+                      hover:bg-[#1961B0] transition-colors
+                      disabled:opacity-40 disabled:cursor-not-allowed
+                    "
+                  >
+                    {registrandoPago ? "Registrando..." : "Registrar pago"}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+
           {/* Mensajes */}
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden">
             <div className="border-b border-zinc-800 px-5 py-4">
@@ -484,10 +722,69 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                 <span>- {formatMXN(deal.cashback_canjeado)}</span>
               </div>
             )}
-            <div className="border-t border-zinc-800 pt-2 flex justify-between font-bold text-zinc-100">
+            <div className="border-t border-zinc-800 pt-2 flex justify-between items-center font-bold text-zinc-100">
               <span>Total</span>
-              <span className="text-lg">{formatMXN(deal.total)}</span>
+              {!editandoTotal && (
+                <span className="flex items-center gap-2">
+                  <span className="text-lg">{formatMXN(deal.total)}</span>
+                  {totalEditable && (
+                    <button
+                      onClick={() => {
+                        setEditandoTotal(true);
+                        setNuevoTotal(String(deal.total));
+                      }}
+                      className="rounded-lg border border-zinc-700 px-2 py-1 text-[10px] font-normal text-zinc-400 hover:text-zinc-200 transition-colors"
+                    >
+                      Editar
+                    </button>
+                  )}
+                </span>
+              )}
             </div>
+
+            {/* Edición de total — solo mientras está en diagnóstico */}
+            {totalEditable && editandoTotal && (
+              <div className="space-y-2 pt-1">
+                <p className="text-xs font-normal text-zinc-500">
+                  Aún se está diagnosticando el equipo — puedes ajustar el
+                  total las veces que haga falta.
+                </p>
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    min={0}
+                    value={nuevoTotal}
+                    onChange={(e) => setNuevoTotal(e.target.value)}
+                    placeholder="0.00"
+                    className="flex-1 input-dark text-sm font-normal"
+                  />
+                  <button
+                    onClick={handleActualizarTotal}
+                    disabled={guardandoTotal || nuevoTotal === ""}
+                    className="rounded-lg bg-[#02AFFF] px-3 py-1.5 text-xs font-medium text-white hover:bg-[#1961B0] transition-colors disabled:opacity-40"
+                  >
+                    {guardandoTotal ? "..." : "Guardar"}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setEditandoTotal(false);
+                      setNuevoTotal("");
+                    }}
+                    className="rounded-lg border border-zinc-700 px-3 py-1.5 text-xs font-normal text-zinc-400 hover:text-zinc-200 transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {totalEditable && !editandoTotal && (
+              <p className="text-[10px] font-normal text-zinc-600">
+                En diagnóstico: el total se puede ajustar hasta que se
+                conozca el costo final.
+              </p>
+            )}
+
             {deal.cashback_ganado > 0 && (
               <div className="rounded-lg bg-purple-500/10 px-3 py-2 text-center mt-2">
                 <p className="text-xs text-purple-400">
@@ -562,78 +859,76 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
             </p>
           </div>
 
-          {/* Cambiar status */}
-          {transiciones.length > 0 && (
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-                Cambiar status
-              </p>
-
-              {transiciones.map((s) => (
-                <button
-                  key={s}
-                  onClick={() => {
-                    setStatusTarget(s);
-                    setShowNota(true);
-                  }}
-                  className={`
-                    w-full rounded-xl border px-4 py-2.5 text-sm font-medium
-                    transition-colors text-left
-                    ${DEAL_STATUS_COLORS[s].replace("bg-", "border-").replace("/10", "/30")}
-                    ${DEAL_STATUS_COLORS[s]}
-                    hover:opacity-80
-                  `}
-                >
-                  → {DEAL_STATUS_LABELS[s]}
-                </button>
-              ))}
-
-              {/* Nota opcional */}
-              {showNota && statusTarget && (
-                <div className="space-y-2 pt-1">
-                  <p className="text-xs text-zinc-500">
-                    Nota para el cliente (opcional)
-                  </p>
-                  <textarea
-                    value={nota}
-                    onChange={(e) => setNota(e.target.value)}
-                    placeholder="Ej: Tu pedido está listo para recoger..."
-                    rows={3}
-                    className="input-dark w-full text-sm resize-none"
-                  />
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => handleCambiarStatus(statusTarget)}
-                      disabled={cambiando}
-                      className="flex-1 rounded-xl bg-[#02AFFF] py-2.5 text-sm font-medium text-white hover:bg-[#1961B0] transition-colors disabled:opacity-40"
-                    >
-                      {cambiando ? "Actualizando..." : "Confirmar"}
-                    </button>
-                    <button
-                      onClick={() => {
-                        setShowNota(false);
-                        setStatusTarget(null);
-                        setNota("");
-                      }}
-                      className="rounded-xl border border-zinc-700 px-4 py-2.5 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
-                    >
-                      Cancelar
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Status final */}
-          {transiciones.length === 0 && (
+          {/* Cambiar status — entre los "activos" se puede pasar a
+              cualquier otro; finalizado/cancelado son de cierre */}
+          {esTerminal ? (
             <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-4 text-center">
               <p className="text-xs text-zinc-600">
                 {deal.status === "finalizado"
-                  ? "Este trato ha sido finalizado"
-                  : "Este trato fue cancelado"}
+                  ? "Este trato ha sido finalizado y ya no puede cambiar de status"
+                  : "Este trato fue cancelado y ya no puede cambiar de status"}
               </p>
             </div>
+          ) : (
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+              Cambiar status
+            </p>
+
+            {otrosStatus.map((s) => (
+              <button
+                key={s}
+                onClick={() => {
+                  setStatusTarget(s);
+                  setShowNota(true);
+                }}
+                className={`
+                  w-full rounded-xl border px-4 py-2.5 text-sm font-medium
+                  transition-colors text-left
+                  ${DEAL_STATUS_COLORS[s].replace("bg-", "border-").replace("/10", "/30")}
+                  ${DEAL_STATUS_COLORS[s]}
+                  hover:opacity-80
+                `}
+              >
+                → {DEAL_STATUS_LABELS[s]}
+              </button>
+            ))}
+
+            {/* Nota opcional */}
+            {showNota && statusTarget && (
+              <div className="space-y-2 pt-1">
+                <p className="text-xs text-zinc-500">
+                  Nota para el cliente (opcional)
+                </p>
+                <textarea
+                  value={nota}
+                  onChange={(e) => setNota(e.target.value)}
+                  placeholder="Ej: Tu pedido está listo para recoger..."
+                  rows={3}
+                  className="input-dark w-full text-sm resize-none"
+                />
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleCambiarStatus(statusTarget)}
+                    disabled={cambiando}
+                    className="flex-1 rounded-xl bg-[#02AFFF] py-2.5 text-sm font-medium text-white hover:bg-[#1961B0] transition-colors disabled:opacity-40"
+                  >
+                    {cambiando ? "Actualizando..." : "Confirmar"}
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowNota(false);
+                      setStatusTarget(null);
+                      setNota("");
+                    }}
+                    className="rounded-xl border border-zinc-700 px-4 py-2.5 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
           )}
         </div>
       </div>
