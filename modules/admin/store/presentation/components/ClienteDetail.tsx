@@ -10,6 +10,7 @@ import {
   DEAL_STATUS_COLORS,
 } from "@/modules/admin/store/domain/entities/deal.entity";
 import { formatMXN } from "@/core/helpers/precio.utils";
+import { isPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
 import { DireccionesManager } from "./DireccionesManager";
 import type { OrdenResumen } from "@/app/[locale]/admin/dashboard/store/users/[id]/page";
 
@@ -120,11 +121,16 @@ export function ClienteDetail({
       const res = await fetch(`/api/clientes/${cliente.id}/reset-password`, {
         method: "POST",
       });
+      const data = await res.json();
       if (!res.ok) {
-        setError("Error al resetear contraseña");
+        setError(data.error ?? "Error al resetear contraseña");
         return;
       }
-      showSuccess(`Nueva contraseña enviada a ${cliente.email}`);
+      showSuccess(
+        data.emailEnviado
+          ? `Nueva contraseña enviada a ${cliente.email}`
+          : "Contraseña reseteada — el cliente no tiene un email válido para enviarla",
+      );
     } catch {
       setError("Error de conexión");
     } finally {
@@ -175,7 +181,13 @@ export function ClienteDetail({
               </h1>
               <EstadoBadge activo={cliente.activo} />
             </div>
-            <p className="mt-1 text-sm text-zinc-500">{cliente.email}</p>
+            <p className="mt-1 text-sm text-zinc-500">
+              {isPlaceholderEmail(cliente.email) ? (
+                <span className="italic">Sin correo</span>
+              ) : (
+                cliente.email
+              )}
+            </p>
           </div>
         </div>
       </div>

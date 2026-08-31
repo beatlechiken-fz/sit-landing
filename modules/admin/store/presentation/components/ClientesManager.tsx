@@ -3,6 +3,16 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Cliente } from "@/modules/admin/store/domain/entities/cliente.entity";
+import { isPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
+
+// Email real o "Sin correo" si es el placeholder interno que se genera
+// cuando el cliente se crea sin un email válido.
+function EmailCell({ email }: { email: string }) {
+  if (isPlaceholderEmail(email)) {
+    return <span className="italic text-zinc-600">Sin correo</span>;
+  }
+  return <>{email}</>;
+}
 
 // ─────────────────────────────────────────────
 // Formulario vacío
@@ -102,7 +112,11 @@ export function ClientesManager({
       setClientes((prev) => [data, ...prev]);
       setForm(EMPTY_FORM);
       setShowForm(false);
-      showSuccess(`Cliente creado — se envió email a ${data.email}`);
+      showSuccess(
+        data.emailEnviado
+          ? `Cliente creado — se envió email a ${data.email}`
+          : "Cliente creado — no se envió email (sin correo válido)",
+      );
     } catch {
       setError("Error de conexión");
     } finally {
@@ -197,8 +211,8 @@ export function ClientesManager({
         <div className="rounded-2xl border border-[#02AFFF]/20 bg-zinc-900 p-5 space-y-4">
           <p className="text-sm font-semibold text-zinc-200">Nuevo cliente</p>
           <p className="text-xs text-zinc-500">
-            Se generará una contraseña automáticamente y se enviará al email del
-            cliente.
+            Se generará una contraseña automáticamente. Si agregas un email
+            válido se le enviará por correo; si no, el cliente se crea igual.
           </p>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -206,9 +220,9 @@ export function ClientesManager({
               { label: "Nombre *", key: "nombre", placeholder: "Juan" },
               { label: "Apellido *", key: "apellido", placeholder: "García" },
               {
-                label: "Email *",
+                label: "Email",
                 key: "email",
-                placeholder: "juan@empresa.com",
+                placeholder: "juan@empresa.com (opcional)",
               },
               {
                 label: "Teléfono",
@@ -255,7 +269,7 @@ export function ClientesManager({
             </button>
             <button
               onClick={handleCreate}
-              disabled={saving || !form.nombre || !form.apellido || !form.email}
+              disabled={saving || !form.nombre || !form.apellido}
               className="
                 rounded-lg bg-[#02AFFF] px-4 py-2 text-sm font-medium text-white
                 hover:bg-[#1961B0] transition-colors
@@ -319,7 +333,9 @@ export function ClientesManager({
                 </td>
 
                 {/* Email */}
-                <td className="px-5 py-4 text-zinc-400">{cliente.email}</td>
+                <td className="px-5 py-4 text-zinc-400">
+                  <EmailCell email={cliente.email} />
+                </td>
 
                 {/* Empresa */}
                 <td className="px-5 py-4 text-zinc-500">
@@ -370,7 +386,7 @@ export function ClientesManager({
                   {cliente.nombre} {cliente.apellido}
                 </p>
                 <p className="text-xs text-zinc-500 truncate">
-                  {cliente.email}
+                  <EmailCell email={cliente.email} />
                 </p>
               </div>
               <EstadoBadge activo={cliente.activo} />

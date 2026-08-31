@@ -3,7 +3,10 @@ import { getSupabaseServerClient } from "@/modules/admin/store/data/datasources/
 import { requireAuth } from "@/core/helpers/require-auth";
 import { generateSecurePassword } from "@/core/helpers/auth/generate-password";
 import { sendEmail, bienvenidaTemplate } from "@/core/helpers/email";
+import { buildPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
 import bcrypt from "bcryptjs";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // GET — lista todos los clientes con búsqueda opcional
 export async function GET(req: NextRequest) {
@@ -73,9 +76,13 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-    if (!email?.trim() || !email.includes("@")) {
-      return NextResponse.json({ error: "Email inválido" }, { status: 400 });
-    }
+
+    // El email es opcional. Si no viene o no tiene formato válido, no
+    // bloqueamos la creación: guardamos lo que haya (o un placeholder si
+    // viene vacío) y simplemente no enviamos el correo de bienvenida.
+    const emailInput = email?.trim().toLowerCase();
+    const emailEsValido = !!emailInput && EMAIL_REGEX.test(emailInput);
+    const emailParaGuardar = emailInput || buildPlaceholderEmail();
 
     const supabase = getSupabaseServerClient();
     const password = generateSecurePassword();
@@ -86,7 +93,7 @@ export async function POST(req: NextRequest) {
       .insert({
         nombre: nombre.trim(),
         apellido: apellido.trim(),
-        email: email.trim().toLowerCase(),
+        email: emailParaGuardar,
         telefono: telefono?.trim() || null,
         empresa: empresa?.trim() || null,
         password_hash: hash,
@@ -104,16 +111,25 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: msg }, { status: 400 });
     }
 
-    // Enviar email de bienvenida
-    const loginUrl = `${process.env.NEXT_PUBLIC_APP_URL}/my-sit`;
-    const { subject, html } = bienvenidaTemplate({
-      nombre: data.nombre,
-      email: data.email,
-      password,
-      loginUrl,
-    });
-
-    const emailEnviado = await sendEmail({ to: data.email, subject, html });
+    // Enviar email de bienvenida — best effort. Si el correo no es válido,
+    // no existe o el envío falla por cualquier motivo, nunca debe tronar la
+    // creación del cliente (que ya quedó guardado arriba).
+    let emailEnviado = false;
+    if (emailEsValido) {
+      try {
+        const loginUrl = `${process.env.NEXT_PUBLIC_APP_URL}/my-sit`;
+        const { subject, html } = bienvenidaTemplate({
+          nombre: data.nombre,
+          email: data.email,
+          password,
+          loginUrl,
+        });
+        emailEnviado = await sendEmail({ to: data.email, subject, html });
+      } catch (err) {
+        console.error("No se pudo enviar el email de bienvenida:", err);
+        emailEnviado = false;
+      }
+    }
 
     return NextResponse.json({ ...data, emailEnviado }, { status: 201 });
   } catch {

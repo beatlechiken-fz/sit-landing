@@ -104,15 +104,27 @@ export default function CustomLandingPackages() {
 
             <div className="text-center my-6 flex flex-col gap-1">
               <div>
+                {pkg.key === "store" && (
+                  <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">
+                    {t("priceFromLabel")}
+                  </div>
+                )}
                 <span className="text-4xl font-extrabold text-teal-400">
                   {pkg.setupPrice}
                 </span>
+                {pkg.key === "store" && (
+                  <span className="text-teal-400 text-xl align-top">*</span>
+                )}
                 <span className="text-sm text-gray-400 ml-1">
                   MXN {t("setupLabel")}
                 </span>
               </div>
               <div className="text-sm text-gray-400">
-                + {pkg.maintenancePrice} MXN/mes ({t("maintenanceLabel")})
+                + {pkg.maintenancePrice}
+                {pkg.key === "store" && (
+                  <span className="text-teal-400">*</span>
+                )}{" "}
+                MXN/mes ({t("maintenanceLabel")})
               </div>
             </div>
 
@@ -157,6 +169,11 @@ export default function CustomLandingPackages() {
       {/* Nota de dominio y hosting (aparte del mantenimiento) */}
       <p className="mt-3 text-center text-sm text-gray-500 max-w-3xl mx-auto">
         {t("hostingNote")}
+      </p>
+
+      {/* Nota del asterisco de precio (paquete Tienda en línea) */}
+      <p className="mt-2 text-center text-sm text-gray-500 max-w-3xl mx-auto">
+        {t("priceAsteriskNote")}
       </p>
 
       {/* Nota de escalado por demanda */}

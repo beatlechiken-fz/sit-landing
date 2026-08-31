@@ -3,6 +3,7 @@ import { getSupabaseServerClient } from "@/modules/admin/store/data/datasources/
 import { requireAuth } from "@/core/helpers/require-auth";
 import { generateSecurePassword } from "@/core/helpers/auth/generate-password";
 import { sendEmail, bienvenidaTemplate } from "@/core/helpers/email";
+import { isPlaceholderEmail } from "@/core/helpers/clientes/placeholder-email";
 import bcrypt from "bcryptjs";
 
 export async function POST(
@@ -44,18 +45,27 @@ export async function POST(
     if (error)
       return NextResponse.json({ error: error.message }, { status: 500 });
 
-    // Reenvía email con nueva contraseña
-    const loginUrl = `${process.env.NEXT_PUBLIC_APP_URL}/my-sit`;
-    const { subject, html } = bienvenidaTemplate({
-      nombre: cliente.nombre,
-      email: cliente.email,
-      password,
-      loginUrl,
-    });
+    // Reenvía email con nueva contraseña — best effort, nunca debe tronar
+    // el reseteo (que ya se guardó arriba). Si el cliente no tiene un
+    // email real (placeholder), ni siquiera lo intentamos.
+    let emailEnviado = false;
+    if (!isPlaceholderEmail(cliente.email)) {
+      try {
+        const loginUrl = `${process.env.NEXT_PUBLIC_APP_URL}/my-sit`;
+        const { subject, html } = bienvenidaTemplate({
+          nombre: cliente.nombre,
+          email: cliente.email,
+          password,
+          loginUrl,
+        });
+        emailEnviado = await sendEmail({ to: cliente.email, subject, html });
+      } catch (err) {
+        console.error("No se pudo reenviar el email de contraseña:", err);
+        emailEnviado = false;
+      }
+    }
 
-    await sendEmail({ to: cliente.email, subject, html });
-
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, emailEnviado });
   } catch {
     return NextResponse.json(
       { error: "Error al resetear contraseña" },

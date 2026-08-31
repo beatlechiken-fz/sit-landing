@@ -46,6 +46,7 @@ export default function LandingPlans() {
         <PlanCard
           title={t("startPlan")}
           price={t("startPlanPrice")}
+          fromLabel={t("priceFromLabel")}
           desc={t("startPlanDesc")}
           items={getItems("start")}
           button={t("startPlanBtn")}
@@ -57,6 +58,7 @@ export default function LandingPlans() {
           highlighted
           title={t("proPlan")}
           price={t("proPlanPrice")}
+          fromLabel={t("priceFromLabel")}
           desc={t("proPlanDesc")}
           items={getItems("pro")}
           button={t("proPlanBtn")}
@@ -67,6 +69,7 @@ export default function LandingPlans() {
         <PlanCard
           title={t("enterprisePlan")}
           price={t("enterprisePlanPrice")}
+          fromLabel={t("priceFromLabel")}
           desc={t("enterprisePlanDesc")}
           items={getItems("enterprise")}
           button={t("enterprisePlanBtn")}
@@ -79,6 +82,11 @@ export default function LandingPlans() {
       <p className="mt-10 text-center text-sm text-gray-500 max-w-3xl mx-auto">
         {t("plansNote")}
       </p>
+
+      {/* Nota del asterisco de precio */}
+      <p className="mt-2 text-center text-sm text-gray-500 max-w-3xl mx-auto">
+        {t("priceAsteriskNote")}
+      </p>
     </section>
   );
 }
@@ -86,6 +94,7 @@ export default function LandingPlans() {
 function PlanCard({
   title,
   price,
+  fromLabel,
   desc,
   items,
   button,
@@ -108,7 +117,11 @@ function PlanCard({
       <h3 className="text-xl font-bold mb-2 text-center">{title}</h3>
 
       <div className="text-center my-6">
+        <div className="text-xs uppercase tracking-wide text-gray-500 mb-1">
+          {fromLabel}
+        </div>
         <span className="text-4xl font-extrabold text-teal-400">{price}</span>
+        <span className="text-teal-400 text-xl align-top">*</span>
         <span className="text-sm text-gray-400 ml-1">MXN</span>
       </div>
 

@@ -219,7 +219,9 @@
     "compareBannerEyebrow": "¿Buscas ser dueño de tu landing?",
     "compareBannerTitle": "Conoce Landing a la medida",
     "compareBannerDesc": "Pagas una vez por el desarrollo y una cuota de mantenimiento más baja. El sitio es tuyo, e incluye Supabase, correo y Telegram desde el paquete básico.",
-    "compareBannerBtn": "Ver paquetes a la medida"
+    "compareBannerBtn": "Ver paquetes a la medida",
+    "priceFromLabel": "Desde",
+    "priceAsteriskNote": "* El precio final puede variar según la capacidad que requiera tu sitio (tráfico, base de datos, ancho de banda, etc.)."
   },
   "processLanding": {
     "eyebrow": "Cómo trabajamos",
@@ -297,8 +299,8 @@
     "proFairUse": "Incluye hasta 800 mensajes de formulario y 10,000 visitas al mes.",
     "proBtn": "Cotizar Profesional",
     "storePlan": "Tienda en línea",
-    "storeSetupPrice": "Desde $47,500",
-    "storeMaintenancePrice": "Desde $1,990",
+    "storeSetupPrice": "$47,500",
+    "storeMaintenancePrice": "$1,990",
     "storeDesc": "Tienda en línea completa con dashboard de productos, pedidos, clientes y cupones.",
     "storeItems": [
       "Todo lo incluido en Profesional",
@@ -326,7 +328,9 @@
     "chipEmailTelegram": "Correo + Telegram",
     "chipOwned": "Es tuya para siempre",
     "chipDb": "Base de datos",
-    "hostingNote": "El dominio y el hosting se cotizan aparte y dependen de la capacidad que requiera tu sitio (tráfico, base de datos, almacenamiento). No están incluidos en la cuota de mantenimiento."
+    "hostingNote": "El dominio y el hosting se cotizan aparte y dependen de la capacidad que requiera tu sitio (tráfico, base de datos, almacenamiento). No están incluidos en la cuota de mantenimiento.",
+    "priceFromLabel": "Desde",
+    "priceAsteriskNote": "* El precio final puede variar según la capacidad que requiera tu sitio (tráfico, base de datos, ancho de banda, etc.)."
   },
   "processCustomLanding": {
     "eyebrow": "Cómo trabajamos",

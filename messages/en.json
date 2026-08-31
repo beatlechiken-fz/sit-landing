@@ -219,7 +219,9 @@
     "compareBannerEyebrow": "Looking to own your landing page?",
     "compareBannerTitle": "Check out Custom Landing",
     "compareBannerDesc": "Pay once for development and a lower monthly maintenance fee. The site is yours, with Supabase, email, and Telegram included from the basic package.",
-    "compareBannerBtn": "See custom packages"
+    "compareBannerBtn": "See custom packages",
+    "priceFromLabel": "From",
+    "priceAsteriskNote": "* The final price may vary depending on the capacity your site needs (traffic, database, bandwidth, etc.)."
   },
   "processLanding": {
     "eyebrow": "How we work",
@@ -297,8 +299,8 @@
     "proFairUse": "Includes up to 800 form messages and 10,000 visits per month.",
     "proBtn": "Quote Professional",
     "storePlan": "Online store",
-    "storeSetupPrice": "From $47,500",
-    "storeMaintenancePrice": "From $1,990",
+    "storeSetupPrice": "$47,500",
+    "storeMaintenancePrice": "$1,990",
     "storeDesc": "Full online store with a dashboard for products, orders, customers, and coupons.",
     "storeItems": [
       "Everything in Professional",
@@ -326,7 +328,9 @@
     "chipEmailTelegram": "Email + Telegram",
     "chipOwned": "Yours for good",
     "chipDb": "Database",
-    "hostingNote": "Domain and hosting are quoted separately and depend on the capacity your site needs (traffic, database, storage). They are not included in the maintenance fee."
+    "hostingNote": "Domain and hosting are quoted separately and depend on the capacity your site needs (traffic, database, storage). They are not included in the maintenance fee.",
+    "priceFromLabel": "From",
+    "priceAsteriskNote": "* The final price may vary depending on the capacity your site needs (traffic, database, bandwidth, etc.)."
   },
   "processCustomLanding": {
     "eyebrow": "How we work",
