@@ -400,8 +400,12 @@ export function CartModal() {
   const handleCotizacion = async () => {
     if (!clienteValido) return;
 
-    // Si hay cliente seleccionado, guarda en BD
-    if (modoCliente === "seleccionado") await guardarCotizacion();
+    // Si hay cliente seleccionado, guarda en BD — si falla, no se
+    // considera generada y no se descarga ni se vacía el carrito.
+    if (modoCliente === "seleccionado") {
+      const cotizacion = await guardarCotizacion();
+      if (!cotizacion) return;
+    }
 
     descargarCotizacion(
       nombreCliente,
@@ -412,6 +416,9 @@ export function CartModal() {
       descGlobal,
       total,
     );
+
+    // Cotización generada satisfactoriamente — vacía el carrito
+    resetCarritoCompleto();
   };
 
   // ── Resetea el carrito y el estado del panel tras vaciar o cerrar una orden

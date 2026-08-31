@@ -46,6 +46,9 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
   const [editandoTotal, setEditandoTotal] = useState(false);
   const [nuevoTotal, setNuevoTotal] = useState("");
   const [guardandoTotal, setGuardandoTotal] = useState(false);
+  const [editandoLineaId, setEditandoLineaId] = useState<string | null>(null);
+  const [nuevoTotalLinea, setNuevoTotalLinea] = useState("");
+  const [guardandoLinea, setGuardandoLinea] = useState(false);
 
   // Entre los status "activos" ya no es un flujo lineal: se puede cambiar
   // a cualquier otro. Pero "finalizado" y "cancelado" son de cierre —
@@ -243,6 +246,42 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
     }
   };
 
+  // ── Editar precio de una partida (producto o servicio) ──
+  const handleGuardarLinea = async (lineaId: string) => {
+    if (nuevoTotalLinea === "") return;
+    setGuardandoLinea(true);
+    setError(null);
+
+    try {
+      const res = await fetch(`/api/deals/${deal.id}/lineas/${lineaId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ total: nuevoTotalLinea }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showFeedback(data.error ?? "Error al actualizar la partida", true);
+        return;
+      }
+
+      setDeal((prev) => ({
+        ...prev,
+        ...data.cotizacion,
+        cotizacion_lineas: (prev.cotizacion_lineas ?? []).map((l) =>
+          l.id === lineaId ? { ...l, ...data.linea } : l,
+        ),
+      }));
+      setEditandoLineaId(null);
+      setNuevoTotalLinea("");
+      showFeedback("Precio actualizado");
+    } catch {
+      showFeedback("Error de conexión", true);
+    } finally {
+      setGuardandoLinea(false);
+    }
+  };
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 w-full">
       {/* Feedback */}
@@ -385,7 +424,51 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                           : "—"}
                       </td>
                       <td className="px-4 py-3 font-bold text-zinc-100 text-xs">
-                        {formatMXN(linea.total)}
+                        {editandoLineaId === linea.id ? (
+                          <div className="flex items-center gap-1">
+                            <input
+                              type="number"
+                              min={0}
+                              value={nuevoTotalLinea}
+                              onChange={(e) =>
+                                setNuevoTotalLinea(e.target.value)
+                              }
+                              autoFocus
+                              className="w-20 input-dark text-xs font-normal"
+                            />
+                            <button
+                              onClick={() => handleGuardarLinea(linea.id)}
+                              disabled={guardandoLinea || nuevoTotalLinea === ""}
+                              className="text-emerald-400 hover:text-emerald-300 disabled:opacity-40"
+                              title="Guardar"
+                            >
+                              ✓
+                            </button>
+                            <button
+                              onClick={() => setEditandoLineaId(null)}
+                              className="text-zinc-500 hover:text-zinc-300"
+                              title="Cancelar"
+                            >
+                              ✕
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            {formatMXN(linea.total)}
+                            {!esTerminal && (
+                              <button
+                                onClick={() => {
+                                  setEditandoLineaId(linea.id);
+                                  setNuevoTotalLinea(String(linea.total));
+                                }}
+                                className="font-normal text-[10px] text-zinc-600 hover:text-zinc-300 transition-colors"
+                                title="Cambiar precio"
+                              >
+                                Editar
+                              </button>
+                            )}
+                          </div>
+                        )}
                       </td>
                     </tr>
                   ))}
@@ -403,13 +486,52 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                   <p className="text-xs text-zinc-600 mt-0.5">
                     {linea.clave} · {linea.marca}
                   </p>
-                  <div className="mt-2 flex justify-between text-xs">
+                  <div className="mt-2 flex justify-between items-center text-xs">
                     <span className="text-zinc-500">
                       {linea.cantidad} × {formatMXN(linea.precio_unitario)}
                     </span>
-                    <span className="font-bold text-zinc-100">
-                      {formatMXN(linea.total)}
-                    </span>
+                    {editandoLineaId === linea.id ? (
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min={0}
+                          value={nuevoTotalLinea}
+                          onChange={(e) => setNuevoTotalLinea(e.target.value)}
+                          autoFocus
+                          className="w-20 input-dark text-xs font-normal"
+                        />
+                        <button
+                          onClick={() => handleGuardarLinea(linea.id)}
+                          disabled={guardandoLinea || nuevoTotalLinea === ""}
+                          className="text-emerald-400 hover:text-emerald-300 disabled:opacity-40"
+                        >
+                          ✓
+                        </button>
+                        <button
+                          onClick={() => setEditandoLineaId(null)}
+                          className="text-zinc-500 hover:text-zinc-300"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <span className="font-bold text-zinc-100">
+                          {formatMXN(linea.total)}
+                        </span>
+                        {!esTerminal && (
+                          <button
+                            onClick={() => {
+                              setEditandoLineaId(linea.id);
+                              setNuevoTotalLinea(String(linea.total));
+                            }}
+                            className="text-[10px] text-zinc-600 hover:text-zinc-300 transition-colors"
+                          >
+                            Editar
+                          </button>
+                        )}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
