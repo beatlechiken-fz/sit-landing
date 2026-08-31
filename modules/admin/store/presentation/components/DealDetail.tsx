@@ -6,6 +6,7 @@ import {
   Deal,
   DealStatus,
   DealMensaje,
+  DealEvento,
   DEAL_STATUS_LABELS,
   DEAL_STATUS_COLORS,
   DEAL_TRANSICIONES,
@@ -27,6 +28,8 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
   const [deal, setDeal] = useState<Deal>(initial);
   const [mensaje, setMensaje] = useState("");
   const [enviando, setEnviando] = useState(false);
+  const [nuevoEvento, setNuevoEvento] = useState("");
+  const [agregandoEvento, setAgregandoEvento] = useState(false);
   const [cambiando, setCambiando] = useState(false);
   const [nota, setNota] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -106,6 +109,40 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
       showFeedback("Error de conexión", true);
     } finally {
       setEnviando(false);
+    }
+  };
+
+  // ── Agregar evento a la línea de tiempo ───
+  const handleAgregarEvento = async () => {
+    if (!nuevoEvento.trim()) return;
+    setAgregandoEvento(true);
+
+    try {
+      const res = await fetch(`/api/deals/${deal.id}/eventos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ texto: nuevoEvento }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showFeedback(data.error ?? "Error al agregar el evento", true);
+        return;
+      }
+
+      setDeal((prev) => ({
+        ...prev,
+        cotizacion_eventos: [
+          ...(prev.cotizacion_eventos ?? []),
+          data as DealEvento,
+        ],
+      }));
+      setNuevoEvento("");
+      showFeedback("Evento agregado");
+    } catch {
+      showFeedback("Error de conexión", true);
+    } finally {
+      setAgregandoEvento(false);
     }
   };
 
@@ -279,6 +316,80 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Línea de tiempo */}
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900 overflow-hidden">
+            <div className="border-b border-zinc-800 px-5 py-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                Línea de tiempo
+              </p>
+            </div>
+
+            <div className="p-5">
+              <ol className="space-y-5">
+                {/* Ancla: creación de la orden */}
+                <li className="relative pl-6">
+                  <span className="absolute left-0 top-1 h-2.5 w-2.5 rounded-full bg-zinc-600" />
+                  {(deal.cotizacion_eventos ?? []).length > 0 && (
+                    <span className="absolute left-[4.5px] top-4 bottom-[-20px] w-px bg-zinc-800" />
+                  )}
+                  <p className="text-sm text-zinc-300">Orden creada</p>
+                  <p className="text-xs text-zinc-600">
+                    {new Date(deal.created_at).toLocaleString("es-MX", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </p>
+                </li>
+
+                {/* Eventos manuales */}
+                {(deal.cotizacion_eventos ?? []).map((evento, i, arr) => (
+                  <li key={evento.id} className="relative pl-6">
+                    <span className="absolute left-0 top-1 h-2.5 w-2.5 rounded-full bg-[#02AFFF]" />
+                    {i < arr.length - 1 && (
+                      <span className="absolute left-[4.5px] top-4 bottom-[-20px] w-px bg-zinc-800" />
+                    )}
+                    <p className="text-sm text-zinc-200">{evento.texto}</p>
+                    <p className="text-xs text-zinc-600">
+                      {new Date(evento.created_at).toLocaleString("es-MX", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Input nuevo evento */}
+            <div className="border-t border-zinc-800 p-4 flex gap-2">
+              <input
+                type="text"
+                value={nuevoEvento}
+                onChange={(e) => setNuevoEvento(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleAgregarEvento()}
+                placeholder="Ej: En espera de piezas, piezas instaladas..."
+                className="flex-1 input-dark text-sm"
+              />
+              <button
+                onClick={handleAgregarEvento}
+                disabled={agregandoEvento || !nuevoEvento.trim()}
+                className="
+                  rounded-xl bg-[#02AFFF] px-4 py-2 text-sm font-medium text-white
+                  hover:bg-[#1961B0] transition-colors
+                  disabled:opacity-40 disabled:cursor-not-allowed
+                "
+              >
+                {agregandoEvento ? "..." : "Agregar"}
+              </button>
             </div>
           </div>
 

@@ -62,6 +62,16 @@ export interface DealMensaje {
   created_at: string;
 }
 
+// Eventos de la línea de tiempo: texto libre que el admin va agregando
+// para llevar el historial de una orden (ej. "En espera de piezas",
+// "Piezas instaladas"). No existen aún automáticos, todos son manuales.
+export interface DealEvento {
+  id: string;
+  cotizacion_id: string;
+  texto: string;
+  created_at: string;
+}
+
 export interface Deal {
   id: string;
   numero_orden: string | null;
@@ -90,4 +100,5 @@ export interface Deal {
   } | null;
   cotizacion_lineas?: DealLinea[];
   cotizacion_mensajes?: DealMensaje[];
+  cotizacion_eventos?: DealEvento[];
 }

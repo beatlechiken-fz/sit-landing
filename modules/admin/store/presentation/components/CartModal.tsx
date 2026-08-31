@@ -414,20 +414,32 @@ export function CartModal() {
     );
   };
 
+  // ── Resetea el carrito y el estado del panel tras vaciar o cerrar una orden
+  const resetCarritoCompleto = () => {
+    limpiar();
+    setModoCliente("search");
+    setClienteSeleccionado(null);
+    setOtroNombre("");
+    setCashbackACanjear(0);
+    setFechaEntrega("");
+  };
+
   // ── Generar orden ─────────────────────────
   const handleOrden = async () => {
     if (!clienteValido) return;
 
-    // Si hay cliente seleccionado, guarda y cambia status a en_proceso
+    // Si hay cliente seleccionado, guarda y cambia status a en_proceso.
+    // Si falla el guardado, no se considera generada y no se descarga ni
+    // se vacía el carrito.
     if (modoCliente === "seleccionado") {
       const cotizacion = await guardarCotizacion();
-      if (cotizacion) {
-        await fetch(`/api/deals/${cotizacion.id}/status`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ status: "en_proceso" }),
-        });
-      }
+      if (!cotizacion) return;
+
+      await fetch(`/api/deals/${cotizacion.id}/status`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "en_proceso" }),
+      });
     }
 
     descargarOrden(
@@ -439,6 +451,9 @@ export function CartModal() {
       descGlobal,
       total,
     );
+
+    // Orden generada satisfactoriamente — vacía el carrito
+    resetCarritoCompleto();
   };
 
   // ── Vaciar carrito ────────────────────────
@@ -447,13 +462,8 @@ export function CartModal() {
       setConfirmarVaciar(true);
       return;
     }
-    limpiar();
+    resetCarritoCompleto();
     setConfirmarVaciar(false);
-    setModoCliente("search");
-    setClienteSeleccionado(null);
-    setOtroNombre("");
-    setCashbackACanjear(0);
-    setFechaEntrega("");
   };
 
   // ── Reset cliente ─────────────────────────
