@@ -8,6 +8,7 @@ import {
   DealMensaje,
   DealEvento,
   DealPago,
+  DealLinea,
   DEAL_STATUS_LABELS,
   DEAL_STATUS_COLORS,
   ALL_DEAL_STATUSES,
@@ -16,6 +17,50 @@ import {
   puedeEditarTotal,
 } from "@/modules/admin/store/domain/entities/deal.entity";
 import { formatMXN } from "@/core/helpers/precio.utils";
+import {
+  descargarCotizacion,
+  descargarOrden,
+} from "@/core/helpers/pdf/cotizacion.pdf";
+import { LineaCarrito } from "@/modules/admin/store/presentation/store/carrito.store";
+import { CuponValido } from "@/app/api/cupones/validar/route";
+import { Product } from "@/modules/admin/store/domain/entities/product.entity";
+
+// Adapta una partida ya guardada (DealLinea) a la forma que usa el
+// generador de PDF (LineaCarrito), para reutilizar el mismo PDF que se
+// genera desde el carrito.
+function dealLineaToLineaCarrito(linea: DealLinea): LineaCarrito {
+  const product: Product = {
+    id: linea.producto_id,
+    clave: linea.clave,
+    codigoFabricante: null,
+    descripcion: linea.descripcion,
+    marca: linea.marca,
+    principal: "",
+    grupo: "",
+    garantia: "N/A",
+    clase: "",
+    requiereSerie: false,
+    imagen: null,
+    brandImage: null,
+    precio: linea.precio_unitario,
+    moneda: "Pesos",
+    disponible: 0,
+    disponibleCD: 0,
+    fechaSync: null,
+  };
+
+  return {
+    product,
+    precioFinal: linea.precio_unitario,
+    precioEditable: false,
+    cantidad: linea.cantidad,
+    subtotal: Math.round(linea.precio_unitario * linea.cantidad * 100) / 100,
+    descuento: linea.descuento,
+    total: linea.total,
+    cupon: linea.cupon as CuponValido | null,
+    detalleServicio: linea.detalle,
+  };
+}
 
 function StatusBadge({ status }: { status: DealStatus }) {
   return (
@@ -282,6 +327,44 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
     }
   };
 
+  // ── Generar PDF (mismo formato que desde el carrito) ──
+  const handleGenerarPDF = (tipo: "cotizacion" | "orden") => {
+    const lineasPdf = (deal.cotizacion_lineas ?? []).map(
+      dealLineaToLineaCarrito,
+    );
+    // `deal.descuento` combina el descuento de líneas + el cupón global;
+    // separamos restando lo que ya sabemos que corresponde a las líneas.
+    const descLineas = lineasPdf.reduce((acc, l) => acc + l.descuento, 0);
+    const descGlobal = Math.max(
+      0,
+      Math.round((deal.descuento - descLineas) * 100) / 100,
+    );
+    const cuponGlobal = deal.cupon_global as CuponValido | null;
+
+    if (tipo === "cotizacion") {
+      descargarCotizacion(
+        deal.cliente_nombre,
+        lineasPdf,
+        cuponGlobal,
+        deal.subtotal,
+        descLineas,
+        descGlobal,
+        deal.total,
+      );
+    } else {
+      descargarOrden(
+        deal.cliente_nombre,
+        lineasPdf,
+        cuponGlobal,
+        deal.subtotal,
+        descLineas,
+        descGlobal,
+        deal.total,
+        deal.numero_orden ?? undefined,
+      );
+    }
+  };
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 w-full">
       {/* Feedback */}
@@ -331,7 +414,23 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
             })}
           </p>
         </div>
-        <StatusBadge status={deal.status} />
+        <div className="flex flex-col items-end gap-3">
+          <StatusBadge status={deal.status} />
+          <div className="flex gap-2">
+            <button
+              onClick={() => handleGenerarPDF("cotizacion")}
+              className="rounded-xl border border-zinc-700 px-3 py-1.5 text-xs text-zinc-400 hover:text-zinc-200 hover:border-zinc-600 transition-colors"
+            >
+              PDF cotización
+            </button>
+            <button
+              onClick={() => handleGenerarPDF("orden")}
+              className="rounded-xl bg-[#02AFFF]/10 border border-[#02AFFF]/30 px-3 py-1.5 text-xs text-[#02AFFF] hover:bg-[#02AFFF]/20 transition-colors"
+            >
+              PDF orden
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
@@ -403,6 +502,11 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                         <p className="font-medium text-zinc-200 text-xs">
                           {linea.descripcion}
                         </p>
+                        {linea.detalle && (
+                          <p className="mt-0.5 text-zinc-500 text-xs italic">
+                            {linea.detalle}
+                          </p>
+                        )}
                         <p className="text-zinc-600 text-xs">
                           {linea.clave} · {linea.marca}
                         </p>
@@ -483,6 +587,11 @@ export function DealDetail({ deal: initial }: { deal: Deal }) {
                   <p className="text-sm font-medium text-zinc-200">
                     {linea.descripcion}
                   </p>
+                  {linea.detalle && (
+                    <p className="text-xs text-zinc-500 italic mt-0.5">
+                      {linea.detalle}
+                    </p>
+                  )}
                   <p className="text-xs text-zinc-600 mt-0.5">
                     {linea.clave} · {linea.marca}
                   </p>

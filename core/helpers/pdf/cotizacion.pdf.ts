@@ -124,10 +124,16 @@ export function generarPDF(data: PDFData) {
 
   // ── Tabla de productos ────────────────────
   const tableBody = data.lineas.map((linea, i) => {
+    // El detalle de un servicio (ej. "Cambio de bomba de succión") va
+    // debajo del nombre, en la misma celda.
+    const descripcionCelda = linea.detalleServicio
+      ? `${linea.product.descripcion}\n${linea.detalleServicio}`
+      : linea.product.descripcion;
+
     const fila = [
       String(i + 1),
       linea.product.clave,
-      linea.product.descripcion,
+      descripcionCelda,
       linea.product.marca,
       String(linea.cantidad),
       formatMXN(linea.precioFinal),

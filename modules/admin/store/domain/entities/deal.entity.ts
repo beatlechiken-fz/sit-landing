@@ -82,6 +82,9 @@ export interface DealLinea {
   descuento: number;
   total: number;
   cupon: { codigo: string; descuento: number; tipo: string } | null;
+  // Nota libre para servicios (ej. "Cambio de bomba de succión"). Se
+  // muestra debajo del nombre del servicio, nunca lo reemplaza.
+  detalle: string | null;
 }
 
 export interface DealMensaje {

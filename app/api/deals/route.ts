@@ -131,11 +131,25 @@ export async function POST(req: NextRequest) {
       descuento: l.descuento,
       total: l.total,
       cupon: l.cupon || null,
+      detalle: l.detalleServicio || null,
     }));
 
-    const { error: lineasError } = await supabase
+    let { error: lineasError } = await supabase
       .from("cotizacion_lineas")
       .insert(lineasData);
+
+    // Si la columna `detalle` todavía no existe (falta correr la
+    // migración), reintenta sin ella en vez de perder toda la cotización.
+    if (lineasError?.message?.includes("detalle")) {
+      const lineasSinDetalle = lineasData.map((linea: Record<string, unknown>) => {
+        const resto: Record<string, unknown> = { ...linea };
+        delete resto.detalle;
+        return resto;
+      });
+      ({ error: lineasError } = await supabase
+        .from("cotizacion_lineas")
+        .insert(lineasSinDetalle));
+    }
 
     if (lineasError) {
       return NextResponse.json({ error: lineasError.message }, { status: 500 });

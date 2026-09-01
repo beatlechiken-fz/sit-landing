@@ -11,6 +11,12 @@ export interface LineaCarrito {
   descuento: number;
   total: number;
   cupon: CuponValido | null;
+  // Nota libre para servicios (ej. "Cambio de bomba de succión"). Se
+  // muestra debajo del nombre del servicio, sin reemplazarlo, y se
+  // guarda aparte en la BD (cotizacion_lineas.detalle). Opcional para
+  // que el carrito de la tienda pública (que no la usa) siga siendo
+  // asignable al mismo `LineaCarrito[]` que consume el generador de PDF.
+  detalleServicio?: string | null;
 }
 
 interface CarritoState {
@@ -37,7 +43,7 @@ interface CarritoState {
   totalCarrito: () => number;
 
   setPrecioEditable: (productId: number, precio: number) => void;
-  setDescripcionLinea: (productId: number, descripcion: string) => void;
+  setDetalleServicio: (productId: number, detalle: string) => void;
 }
 
 function calcularDescuento(
@@ -59,6 +65,7 @@ function buildLinea(
   cantidad: number,
   cupon: CuponValido | null,
   precioEditable: boolean = false,
+  detalleServicio: string | null = null,
 ): LineaCarrito {
   const subtotal = Math.round(precioFinal * cantidad * 100) / 100;
   const descuento = calcularDescuento(precioFinal, cantidad, cupon);
@@ -72,6 +79,7 @@ function buildLinea(
     descuento,
     total,
     cupon,
+    detalleServicio,
   };
 }
 
@@ -100,6 +108,7 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
                   l.cantidad + cantidad,
                   l.cupon,
                   l.precioEditable,
+                  l.detalleServicio,
                 )
               : l,
           ),
@@ -127,7 +136,14 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
       return {
         lineas: state.lineas.map((l) =>
           l.product.id === productId
-            ? buildLinea(l.product, l.precioFinal, l.cantidad - 1, l.cupon)
+            ? buildLinea(
+                l.product,
+                l.precioFinal,
+                l.cantidad - 1,
+                l.cupon,
+                l.precioEditable,
+                l.detalleServicio,
+              )
             : l,
         ),
       };
@@ -139,7 +155,14 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
     set((state) => ({
       lineas: state.lineas.map((l) =>
         l.product.id === productId
-          ? buildLinea(l.product, l.precioFinal, cantidad, l.cupon)
+          ? buildLinea(
+              l.product,
+              l.precioFinal,
+              cantidad,
+              l.cupon,
+              l.precioEditable,
+              l.detalleServicio,
+            )
           : l,
       ),
     }));
@@ -157,7 +180,14 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
     set((state) => ({
       lineas: state.lineas.map((l) =>
         l.product.id === productId
-          ? buildLinea(l.product, l.precioFinal, l.cantidad, cupon)
+          ? buildLinea(
+              l.product,
+              l.precioFinal,
+              l.cantidad,
+              cupon,
+              l.precioEditable,
+              l.detalleServicio,
+            )
           : l,
       ),
     }));
@@ -167,7 +197,14 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
     set((state) => ({
       lineas: state.lineas.map((l) =>
         l.product.id === productId
-          ? buildLinea(l.product, l.precioFinal, l.cantidad, null)
+          ? buildLinea(
+              l.product,
+              l.precioFinal,
+              l.cantidad,
+              null,
+              l.precioEditable,
+              l.detalleServicio,
+            )
           : l,
       ),
     }));
@@ -208,18 +245,16 @@ export const useCarritoStore = create<CarritoState>((set, get) => ({
     set((state) => ({
       lineas: state.lineas.map((l) =>
         l.product.id === productId && l.precioEditable
-          ? buildLinea(l.product, precio, l.cantidad, l.cupon, true)
+          ? buildLinea(l.product, precio, l.cantidad, l.cupon, true, l.detalleServicio)
           : l,
       ),
     }));
   },
 
-  setDescripcionLinea: (productId, descripcion) => {
+  setDetalleServicio: (productId, detalle) => {
     set((state) => ({
       lineas: state.lineas.map((l) =>
-        l.product.id === productId
-          ? { ...l, product: { ...l.product, descripcion } }
-          : l,
+        l.product.id === productId ? { ...l, detalleServicio: detalle } : l,
       ),
     }));
   },

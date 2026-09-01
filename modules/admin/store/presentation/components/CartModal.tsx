@@ -12,6 +12,7 @@ import {
   formatMXN,
   esProductoGenerico,
   esServicioSinPrecio,
+  esServicioSIT,
 } from "@/core/helpers/precio.utils";
 import { CuponValido } from "@/app/api/cupones/validar/route";
 import { Cliente } from "@/modules/admin/store/domain/entities/cliente.entity";
@@ -195,7 +196,7 @@ export function CartModal() {
     cuponGlobal,
     setCantidad,
     setPrecioEditable,
-    setDescripcionLinea,
+    setDetalleServicio,
     eliminar,
     limpiar,
     aplicarCupon,
@@ -590,16 +591,19 @@ export function CartModal() {
                               </span>
                             )}
                           </div>
-                          {esServicioLibre ? (
-                            <div className="mt-1">
+                          <p className="mt-0.5 text-sm font-medium text-zinc-200 line-clamp-2">
+                            {linea.product.descripcion}
+                          </p>
+                          {esServicioSIT(linea.product) && (
+                            <div className="mt-1.5">
                               <label className="mb-1 block text-[10px] text-zinc-600">
-                                Descripción para la nota de venta
+                                Detalle del servicio (opcional)
                               </label>
                               <input
                                 type="text"
-                                value={linea.product.descripcion}
+                                value={linea.detalleServicio ?? ""}
                                 onChange={(e) =>
-                                  setDescripcionLinea(
+                                  setDetalleServicio(
                                     linea.product.id,
                                     e.target.value,
                                   )
@@ -608,10 +612,6 @@ export function CartModal() {
                                 className="input-dark w-full text-sm"
                               />
                             </div>
-                          ) : (
-                            <p className="mt-0.5 text-sm font-medium text-zinc-200 line-clamp-2">
-                              {linea.product.descripcion}
-                            </p>
                           )}
                           <p className="mt-0.5 text-xs text-zinc-600">
                             {linea.product.clave}
