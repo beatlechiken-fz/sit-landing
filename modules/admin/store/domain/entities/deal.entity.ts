@@ -24,11 +24,11 @@ export const DEAL_STATUS_LABELS: Record<DealStatus, string> = {
 export const DEAL_STATUS_COLORS: Record<DealStatus, string> = {
   en_diagnostico: "bg-purple-500/10 text-purple-400",
   cotizacion: "bg-zinc-500/10 text-zinc-400",
-  en_proceso: "bg-blue-500/10 text-blue-400",
-  listo_para_entregar: "bg-emerald-500/10 text-emerald-400",
+  en_proceso: "bg-pink-500/10 text-pink-400",
+  listo_para_entregar: "bg-violet-500/10 text-violet-400",
   pendiente_de_pago: "bg-amber-500/10 text-amber-400",
-  pagado: "bg-green-500/10 text-green-400",
-  finalizado: "bg-[#02AFFF]/10 text-[#02AFFF]",
+  pagado: "bg-blue-500/10 text-blue-400",
+  finalizado: "bg-green-500/10 text-green-400",
   cancelado: "bg-red-500/10 text-red-400",
 };
 
