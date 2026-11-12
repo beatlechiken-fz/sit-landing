@@ -14,7 +14,7 @@ export default function Apps() {
     <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
       <AppBar />
 
-      <section className="relative flex justify-center py-24">
+      <section className="relative flex justify-center pb-24">
         <DevApps />
       </section>
 

@@ -19,7 +19,7 @@ export default function PromotionsPage() {
 
       {hasCampaign ? (
         <>
-          <section className="flex justify-center mt-24">
+          <section className="flex justify-center">
             <PromotionsHero />
           </section>
 

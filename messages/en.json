@@ -926,42 +926,38 @@
     "noPromotions": "There are not promotions for now",
     "badgeUpcoming": "Upcoming campaign",
     "badgeActive": "Active campaign",
-    "heroTitle1": "Get ready for our",
-    "heroTitle2": "next discount campaign",
-    "heroDesc": "From August 3 to 17, 2026 we're turning on special discounts on SSDs, RAM, parts, and more.",
+    "heroTitle1": "The Irresistible",
+    "heroTitle2": "End",
+    "heroDesc": "From Friday November 13 to Monday November 23 we're turning on special discounts on repairs and parts.",
     "heroCtaWhatsapp": "Notify me when it starts",
     "heroCtaSecondary": "See discounts",
-    "heroWhatsappMsg": "Hi, I'd like to be notified when the next promotions campaign starts.",
+    "heroWhatsappMsg": "Hi, I'd like to be notified when the Irresistible End campaign starts.",
     "gridEyebrow": "Discounts included",
-    "gridTitle": "What's coming in this campaign",
+    "gridTitle": "What's included in the Irresistible End",
     "items": {
-      "ssd": {
-        "title": "SSD",
-        "desc": "Upgrade to an SSD and boot your device in seconds."
+      "celularRepair": {
+        "title": "Phone repairs",
+        "desc": "15% off any phone repair."
       },
-      "ram": {
-        "title": "RAM memory",
-        "desc": "More multitasking without slowdowns or freezes."
+      "laptopRepair": {
+        "title": "Laptop repairs",
+        "desc": "15% off any laptop repair."
       },
-      "laptopParts": {
-        "title": "Laptop screens and keyboards",
-        "desc": "Original and compatible parts for your laptop."
+      "printerRepair": {
+        "title": "Printer repairs",
+        "desc": "20% off any printer repair."
       },
-      "battery": {
-        "title": "Laptop batteries and chargers",
-        "desc": "Get your device's battery life back with a new one."
+      "ssdRam": {
+        "title": "SSD and RAM",
+        "desc": "15% off upgrading your device with an SSD or RAM memory."
       },
-      "secondMaintenance": {
-        "title": "Second maintenance package",
-        "desc": "Ideal if you bring two devices: the second one at a big discount."
-      },
-      "phoneScreen": {
-        "title": "Phone screen replacement",
-        "desc": "Quality screens so your phone looks brand new."
+      "thermalPaste": {
+        "title": "Thermal paste replacement",
+        "desc": "20% off a thermal paste replacement."
       }
     },
     "ctaTitleUpcoming": "Don't miss it",
-    "ctaDescUpcoming": "From August 3 to 17, message us and we'll notify you as soon as the campaign starts.",
+    "ctaDescUpcoming": "From November 13 to 23, message us and we'll notify you as soon as the campaign starts.",
     "ctaBtnUpcoming": "Notify me when it starts",
     "ctaTitleActive": "Take advantage before it ends",
     "ctaDescActive": "This promotion is for a limited time. Message us and secure your discount.",

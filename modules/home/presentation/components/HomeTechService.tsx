@@ -33,9 +33,9 @@ export default function HomeTechService() {
         </span>
         <h2 className="text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-tight font-title">
           {t("title1")}{" "}
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("title2")}
-          </span>
+          
         </h2>
         <p className="text-gray-400 max-w-2xl">{t("desc")}</p>
       </motion.div>

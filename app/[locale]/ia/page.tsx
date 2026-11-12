@@ -15,7 +15,7 @@ export default function IA() {
     <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
       <AppBar />
 
-      <section className="relative flex justify-center my-24">
+      <section className="relative flex justify-center mb-24">
         <IAMain />
       </section>
 

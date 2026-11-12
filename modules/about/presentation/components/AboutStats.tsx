@@ -21,7 +21,7 @@ export default function AboutStats() {
             key={i}
             className="flex flex-col items-center justify-center gap-2 px-6 py-6 sm:py-0 text-center"
           >
-            <span className="text-[clamp(2.2rem,5vw,3.2rem)] font-bold font-title bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+            <span className="text-[clamp(2.2rem,5vw,3.2rem)] font-bold font-title text-teal-400">
               {item.value}
             </span>
             <span className="text-sm text-gray-400">{item.label}</span>

@@ -16,7 +16,7 @@ export default function AboutPage() {
     <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
       <AppBar />
 
-      <section className="flex justify-center mt-24">
+      <section className="flex justify-center">
         <AboutHero />
       </section>
 

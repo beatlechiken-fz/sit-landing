@@ -933,42 +933,38 @@
     "noPromotions": "No hay promociones vigentes",
     "badgeUpcoming": "Próxima campaña",
     "badgeActive": "Campaña activa",
-    "heroTitle1": "Prepárate para los descuentos",
-    "heroTitle2": "con el regreso a clases",
-    "heroDesc": "Del 3 al 17 de agosto de 2026 activamos descuentos especiales en SSD, RAM, refacciones y más.",
+    "heroTitle1": "El Fin",
+    "heroTitle2": "Irresistible",
+    "heroDesc": "Del viernes 13 al lunes 23 de noviembre activamos descuentos especiales en reparaciones y refacciones.",
     "heroCtaWhatsapp": "Contactar un asesor",
     "heroCtaSecondary": "Ver descuentos",
-    "heroWhatsappMsg": "Hola, quiero que me avisen cuando inicie la próxima campaña de promociones.",
+    "heroWhatsappMsg": "Hola, quiero que me avisen cuando inicie la campaña El Fin Irresistible.",
     "gridEyebrow": "Descuentos incluidos",
-    "gridTitle": "Lo que viene en esta campaña",
+    "gridTitle": "Lo que incluye El Fin Irresistible",
     "items": {
-      "ssd": {
-        "title": "SSD",
-        "desc": "Actualiza a un SSD y arranca tu equipo en segundos."
+      "celularRepair": {
+        "title": "Reparaciones de celular",
+        "desc": "15% de descuento en toda reparación de celular."
       },
-      "ram": {
-        "title": "Memoria RAM",
-        "desc": "Más multitarea sin trabarse ni ralentizar tu equipo."
+      "laptopRepair": {
+        "title": "Reparaciones de laptop",
+        "desc": "15% de descuento en toda reparación de laptop."
       },
-      "laptopParts": {
-        "title": "Pantallas y teclados de laptop",
-        "desc": "Refacciones originales y compatibles para tu laptop."
+      "printerRepair": {
+        "title": "Reparaciones de impresora",
+        "desc": "20% de descuento en toda reparación de impresora."
       },
-      "battery": {
-        "title": "Baterías y cargadores de laptop",
-        "desc": "Recupera la autonomía de tu equipo con batería nueva."
+      "ssdRam": {
+        "title": "SSD y RAM",
+        "desc": "15% de descuento al actualizar tu equipo con SSD o memoria RAM."
       },
-      "secondMaintenance": {
-        "title": "Segundo paquete de mantenimiento",
-        "desc": "Ideal si traes dos equipos: el segundo con gran descuento."
-      },
-      "phoneScreen": {
-        "title": "Cambio de pantalla de celular",
-        "desc": "Pantallas de calidad para que tu celular luzca como nuevo."
+      "thermalPaste": {
+        "title": "Cambio de pastas",
+        "desc": "20% de descuento en cambio de pasta térmica."
       }
     },
     "ctaTitleUpcoming": "No te la pierdas",
-    "ctaDescUpcoming": "Del 3 al 17 de agosto, escríbenos y te avisamos en cuanto arranque la campaña.",
+    "ctaDescUpcoming": "Del 13 al 23 de noviembre, escríbenos y te avisamos en cuanto arranque la campaña.",
     "ctaBtnUpcoming": "Avísenme cuando inicie",
     "ctaTitleActive": "Aprovecha antes de que termine",
     "ctaDescActive": "Esta promoción es por tiempo limitado. Escríbenos y asegura tu descuento.",

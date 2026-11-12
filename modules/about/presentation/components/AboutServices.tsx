@@ -52,9 +52,9 @@ export default function AboutServices() {
           {t("servicesEyebrow")}
         </span>
         <h2 className="text-[clamp(2rem,5vw,3.2rem)] font-bold font-title">
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("servicesTitle")}
-          </span>
+          
         </h2>
         <p className="text-gray-400 max-w-2xl">{t("servicesDesc")}</p>
       </motion.div>

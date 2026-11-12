@@ -20,9 +20,9 @@ export default function IAProcess() {
           {t("processEyebrow")}
         </span>
         <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-bold font-title">
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("processTitle")}
-          </span>
+          
         </h2>
       </motion.div>
 

@@ -36,14 +36,14 @@ export default function HomeIASection() {
         </span>
         <h2 className="text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-tight font-title">
           {t("title1")}{" "}
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("title2")}
-          </span>
+          
         </h2>
         <p className="text-gray-400 max-w-2xl">{t("desc")}</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {services.map((service, i) => (
           <motion.div
             key={service.title}
@@ -51,10 +51,16 @@ export default function HomeIASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="flex flex-col gap-2 rounded-2xl p-6 border border-white/10 bg-white/5 hover:border-teal-400/40 transition-colors"
+            className={
+              i === 0
+                ? "md:col-span-2 flex flex-col justify-center gap-2 rounded-2xl p-8 border border-teal-400/30 bg-teal-400/5 hover:border-teal-400/50 transition-colors"
+                : "flex flex-col gap-2 rounded-2xl p-6 border border-white/10 bg-white/5 hover:border-teal-400/40 transition-colors"
+            }
           >
-            <h3 className="text-lg font-bold">{service.title}</h3>
-            <p className="text-gray-400 text-sm">{service.desc}</p>
+            <h3 className={i === 0 ? "text-xl font-bold" : "text-lg font-bold"}>
+              {service.title}
+            </h3>
+            <p className="text-gray-400 text-sm max-w-md">{service.desc}</p>
           </motion.div>
         ))}
       </div>

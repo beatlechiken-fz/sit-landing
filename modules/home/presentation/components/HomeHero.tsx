@@ -4,33 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import CustomLink from "@/core/components/custom-link/CustomLink";
-import Images from "@/core/assets/Images";
 import { HomeCTAButton } from "./HomeCTAButton";
-
-// ─────────────────────────────────────────────
-// Ilustración lateral — imagen real, con glow
-// ambiental detrás para que se integre al fondo.
-// Se achica en mobile para no dominar la pantalla
-// cuando se apila debajo del texto.
-// ─────────────────────────────────────────────
-function HeroImage() {
-  return (
-    <div className="relative mx-auto w-full max-w-[260px] sm:max-w-sm lg:max-w-xl">
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="h-40 w-40 sm:h-56 sm:w-56 rounded-full bg-gradient-to-tr from-teal-500/20 to-sky-500/20 blur-[100px]" />
-      </div>
-      <Image
-        src={Images.heroSplash}
-        alt="Ilustración de desarrollo de apps con IA"
-        width={1503}
-        height={1047}
-        priority
-        sizes="(max-width: 640px) 260px, (max-width: 1024px) 384px, 576px"
-        className="h-auto w-full select-none"
-      />
-    </div>
-  );
-}
 
 export default function HomeHero() {
   const t = useTranslations("homeV2.hero");
@@ -47,14 +21,23 @@ export default function HomeHero() {
   ];
 
   return (
-    <section className="relative w-[85%] max-w-7xl flex flex-col mt-28 lg:mt-16 gap-16">
-      <div className="flex flex-col lg:flex-row items-center gap-14">
-        {/* Texto */}
+    <section className="relative w-full flex flex-col mt-[76px] gap-16">
+      <div className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden">
+        <Image
+          src="/img/hero/home.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0F] via-[#0B0B0F]/90 to-[#0B0B0F]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-transparent to-transparent" />
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
+          className="relative z-10 w-[85%] max-w-7xl mx-auto flex flex-col items-center lg:items-start text-center lg:text-left gap-6 py-20"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-1.5 text-xs font-medium text-teal-300">
             <svg
@@ -67,15 +50,13 @@ export default function HomeHero() {
             {t("badge")}
           </span>
 
-          <h1 className="text-[clamp(2.4rem,5vw,4.2rem)] font-bold leading-tight font-title">
+          <h1 className="text-[clamp(2.4rem,5vw,4.2rem)] font-bold leading-tight font-title text-white">
             {t("title1")}
             <br />
-            <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
-              {t("title2")}
-            </span>
+            {t("title2")}
           </h1>
 
-          <p className="text-gray-400 max-w-xl text-[clamp(1.05rem,1.6vw,1.25rem)]">
+          <p className="text-gray-200 max-w-xl text-[clamp(1.05rem,1.6vw,1.25rem)]">
             {t("desc")}
           </p>
 
@@ -96,16 +77,6 @@ export default function HomeHero() {
             </div>
           </div>
         </motion.div>
-
-        {/* Ilustración */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="flex-1 flex justify-center"
-        >
-          <HeroImage />
-        </motion.div>
       </div>
 
       {/* Highlights */}
@@ -113,7 +84,7 @@ export default function HomeHero() {
         initial="hidden"
         animate="visible"
         variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-        className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full"
+        className="w-[85%] max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6"
       >
         {highlights.map((h) => (
           <motion.div

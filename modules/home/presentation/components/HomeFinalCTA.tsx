@@ -27,14 +27,13 @@ export default function HomeFinalCTA() {
         "
       >
         <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
-          <div className="w-[520px] h-[320px] bg-gradient-to-tr from-teal-600/20 to-sky-600/20 blur-[140px]" />
         </div>
 
         <h2 className="text-[clamp(2rem,4.5vw,3.4rem)] font-bold leading-tight font-title">
           {t("title1")}{" "}
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("title2")}
-          </span>
+          
         </h2>
 
         <p className="text-gray-400 max-w-xl text-lg">{t("desc")}</p>

@@ -16,7 +16,7 @@ export default function Landing() {
       <AppBar />
 
       {/* Hero */}
-      <section className="relative flex justify-center py-24">
+      <section className="relative flex justify-center pb-24">
         <LandingMain />
       </section>
 

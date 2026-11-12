@@ -13,7 +13,7 @@ export default function Home() {
     <main className="bg-[#0B0B0F] text-white min-h-screen overflow-x-hidden">
       <AppBar />
 
-      <section className="flex justify-center mt-16">
+      <section className="flex justify-center">
         <HomeHero />
       </section>
 

@@ -27,13 +27,12 @@ export default function AboutCTA() {
         "
       >
         <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
-          <div className="w-[520px] h-[320px] bg-gradient-to-tr from-teal-600/20 to-sky-600/20 blur-[140px]" />
         </div>
 
         <h2 className="text-[clamp(2.2rem,5vw,3.8rem)] font-bold font-title">
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("ctaTitle")}
-          </span>
+          
         </h2>
 
         <p className="text-gray-400 text-lg max-w-3xl">{t("ctaDesc")}</p>

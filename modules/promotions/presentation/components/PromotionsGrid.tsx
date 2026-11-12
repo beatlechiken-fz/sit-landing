@@ -52,6 +52,13 @@ const ICONS: Record<Promotion["icon"], React.ReactNode> = {
       <path d="M11 18h2" />
     </>
   ),
+  printer: (
+    <>
+      <path d="M6 9V3h12v6" />
+      <rect x="4" y="9" width="16" height="8" rx="1.5" />
+      <path d="M6 17v4h12v-4" />
+    </>
+  ),
 };
 
 export default function PromotionsGrid() {
@@ -73,9 +80,9 @@ export default function PromotionsGrid() {
           {t("gridEyebrow")}
         </span>
         <h2 className="text-[clamp(2rem,5vw,3.2rem)] font-bold font-title">
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("gridTitle")}
-          </span>
+          
         </h2>
       </motion.div>
 
@@ -109,7 +116,7 @@ export default function PromotionsGrid() {
               </svg>
             </div>
 
-            <p className="mt-5 text-2xl font-extrabold bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+            <p className="mt-5 text-2xl font-extrabold text-teal-400">
               {promo.discount}
             </p>
 

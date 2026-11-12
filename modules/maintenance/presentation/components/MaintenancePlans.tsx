@@ -25,9 +25,9 @@ export default function MaintenancePlans() {
           {t("plansEyebrow")}
         </span>
         <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold font-title">
-          <span className="bg-gradient-to-r from-teal-400 to-sky-400 bg-clip-text text-transparent">
+          
             {t("plansTitle")}
-          </span>
+          
         </h2>
       </div>
 
