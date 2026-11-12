@@ -3,7 +3,9 @@
 import AppBar from "@/core/components/app-bar/AppBar";
 import FooterBar from "@/core/components/footer-bar/FooterBar";
 import IAMain from "@/modules/ia/presentation/components/IAMain";
+import AboutStats from "@/modules/about/presentation/components/AboutStats";
 import IAServices from "@/modules/ia/presentation/components/IAServices";
+import IATiers from "@/modules/ia/presentation/components/IATiers";
 import IAProcess from "@/modules/ia/presentation/components/IAProcess";
 import IATech from "@/modules/ia/presentation/components/IATech";
 import IACTA from "@/modules/ia/presentation/components/IACTA";
@@ -17,8 +19,16 @@ export default function IA() {
         <IAMain />
       </section>
 
+      <section className="relative flex justify-center mb-24">
+        <AboutStats />
+      </section>
+
       <section className="relative flex justify-center">
         <IAServices />
+      </section>
+
+      <section className="relative flex justify-center">
+        <IATiers />
       </section>
 
       <section className="relative flex justify-center">

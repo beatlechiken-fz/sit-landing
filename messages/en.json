@@ -376,7 +376,6 @@
     "fix": "Repairs",
     "maintenance": "Equipment maintenance",
     "upgrade": "Hardware upgrades",
-    "store": "Store",
     "sit": "Sit",
     "about": "About us",
     "promotion": "Promotions",
@@ -429,6 +428,51 @@
         "desc": "We develop applications that think, learn, and scale with you."
       }
     ],
+    "tiersEyebrow": "How we work with you",
+    "tiersTitle": "Choose your starting point",
+    "tiersNote": "Every AI project is different, so we quote each one based on its scope.",
+    "tiers": [
+      {
+        "key": "diagnostico",
+        "name": "Diagnosis and first automation",
+        "desc": "To get started: we identify the highest-impact process and automate it first.",
+        "price": "Custom quote",
+        "items": [
+          "Process diagnosis",
+          "1 automation or chatbot up and running",
+          "Delivered in weeks, not months"
+        ],
+        "btn": "Get a quote",
+        "whatsappMsg": "Hi, I'd like a quote for a diagnosis and first AI automation."
+      },
+      {
+        "key": "escala",
+        "name": "Automation at scale",
+        "desc": "For businesses that already automated something and want more.",
+        "price": "Custom quote",
+        "items": [
+          "Multiple automated processes",
+          "Integration with your current systems",
+          "Ongoing support and tuning"
+        ],
+        "highlight": true,
+        "btn": "Get a quote",
+        "whatsappMsg": "Hi, I'd like a quote for AI automation at scale for my business."
+      },
+      {
+        "key": "medida",
+        "name": "Custom AI",
+        "desc": "Agents and models designed specifically for your operation.",
+        "price": "Custom quote",
+        "items": [
+          "Custom AI agents",
+          "Models trained on your data",
+          "Dedicated support"
+        ],
+        "btn": "Get a quote",
+        "whatsappMsg": "Hi, I'd like a quote for a custom AI project for my business."
+      }
+    ],
     "processEyebrow": "How we work",
     "processTitle": "Our automation process",
     "processSteps": [
@@ -464,14 +508,14 @@
       "OpenAI",
       "Anthropic",
       "LangChain",
-      "HyperAgent",
-      "Lovable",
-      "Horizon",
       "Pinecone",
       "PostgreSQL",
       "Python",
       "Node.js",
-      "Next.js"
+      "Next.js",
+      "HyperAgent",
+      "Lovable",
+      "Horizon"
     ]
   },
   "fixCTA": {
@@ -482,9 +526,9 @@
     "secondaryBtn": "See maintenance plans"
   },
   "fixHero": {
-    "title1": "Professional device repair",
+    "title1": "Device repair and improvement",
     "title2": "fast, reliable, and guaranteed",
-    "desc": "We repair computers, laptops, phones, and printers. Honest diagnostics, quality parts, and direct service in Mexico.",
+    "desc": "We repair and improve computers, laptops, phones, and printers, for individuals and businesses. Honest diagnostics, quality parts, and direct service in Mexico.",
     "ctaBtn": "Schedule inspection",
     "whatsappMsg": "Hi, I’d like to repair a device.",
     "heroBadge": "Specialized technical service",
@@ -522,8 +566,8 @@
     ]
   },
   "fixServices": {
-    "eyebrow": "What we repair",
-    "title": "Repair services",
+    "eyebrow": "What we repair and improve",
+    "title": "Repair and improvement services",
     "services": [
       {
         "title": "Computers & Laptops",
@@ -539,7 +583,7 @@
       },
       {
         "title": "Upgrades",
-        "desc": "Performance improvements, SSDs, RAM, and systems."
+        "desc": "Performance improvements on computers, phones, and printers: SSDs, RAM, battery, and systems."
       }
     ]
   },
@@ -620,6 +664,19 @@
         ],
         "btn": "Schedule",
         "whatsappMsg": "Hi, I’d like more information about Apple Care+ Maintenance."
+      },
+      {
+        "key": "empresarial",
+        "name": "Enterprise Maintenance",
+        "price": "Custom quote",
+        "desc": "A support contract for every device in your company.",
+        "items": [
+          "Volume-based pricing",
+          "Scheduled visits with agreed response times",
+          "A single point of contact for your account"
+        ],
+        "btn": "Get a quote for my company",
+        "whatsappMsg": "Hi, I’d like a quote for an enterprise maintenance contract for my company's devices."
       }
     ],
     "processEyebrow": "How we work",
@@ -862,7 +919,7 @@
     "ctaTitle": "Technology that truly works",
     "ctaDesc": "If you’re looking for someone who speaks clearly and helps you make the best decision, you’re in the right place.",
     "ctaBtn": "Contact us",
-    "ctaSecondaryBtn": "Browse our store",
+    "ctaSecondaryBtn": "See parts and equipment",
     "ctaWhatsappMsg": "Hi, I’d like information about your services."
   },
   "promotions": {
@@ -909,7 +966,7 @@
     "ctaTitleActive": "Take advantage before it ends",
     "ctaDescActive": "This promotion is for a limited time. Message us and secure your discount.",
     "ctaBtnActive": "I want the promotion",
-    "ctaSecondaryBtn": "Browse our store"
+    "ctaSecondaryBtn": "See parts and equipment"
   },
   "contact": {
     "hero": {
@@ -965,14 +1022,14 @@
       "highlight3Title": "Ongoing support",
       "highlight3Desc": "We stay with you after launch."
     },
-    "store": {
-      "eyebrow": "Online store",
-      "title1": "Equipment and tech,",
-      "title2": "ready today",
-      "desc": "Browse our catalog of computer equipment, components and accessories with clear pricing and real availability.",
-      "cta": "Explore the Store",
-      "categoriesLabel": "Popular categories",
-      "noPrice": "Get a quote"
+    "ia": {
+      "eyebrow": "Our main focus",
+      "title1": "AI automation,",
+      "title2": "for businesses ready to scale",
+      "desc": "We implement AI for Mexican businesses looking to save time, cut costs and scale operations.",
+      "ctaPrimary": "See AI automation",
+      "ctaSecondary": "Talk to an expert",
+      "whatsappMsg": "Hi, I'd like more information about AI automation."
     },
     "techService": {
       "eyebrow": "Technical service",

@@ -50,7 +50,7 @@ export default function AboutCTA() {
             </CustomLink>
           </div>
           <div className="w-full sm:w-auto flex">
-            <HomeCTAButton href="/store" variant="outline">
+            <HomeCTAButton href="/parts" variant="outline">
               {t("ctaSecondaryBtn")}
             </HomeCTAButton>
           </div>

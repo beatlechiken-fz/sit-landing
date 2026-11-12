@@ -57,8 +57,7 @@ export default function DevApps() {
         {/* Texto */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
         >
@@ -105,8 +104,7 @@ export default function DevApps() {
         {/* Ilustración */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="flex-1 flex justify-center"
         >
@@ -117,8 +115,7 @@ export default function DevApps() {
       {/* Plataformas */}
       <motion.div
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate="visible"
         variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
         className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 w-full"
       >

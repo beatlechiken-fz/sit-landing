@@ -32,6 +32,11 @@ export function createMenuNavElement(t: TType): MenuNavElement {
       label: t("home"),
       url: "/",
     },
+    ia: {
+      id: "ia",
+      label: t("ia"),
+      url: "/ia",
+    },
     dev: {
       id: "dev",
       label: t("apps"),
@@ -44,7 +49,6 @@ export function createMenuNavElement(t: TType): MenuNavElement {
           label: t("landingCustom"),
           url: "/landing/a-la-medida",
         },
-        { id: "ia", label: t("ia"), url: "/ia" },
       ],
     },
     support: {
@@ -57,10 +61,10 @@ export function createMenuNavElement(t: TType): MenuNavElement {
         { id: "upgrade", label: t("upgrade"), url: "/upgrade" },
       ],
     },
-    store: {
-      id: "store",
-      label: t("store"),
-      url: "/store",
+    parts: {
+      id: "parts",
+      label: t("parts"),
+      url: "/parts",
     },
     sit: {
       id: "sit",

@@ -376,7 +376,6 @@
     "fix": "Reparaciones",
     "maintenance": "Mantenimiento de equipos",
     "upgrade": "Actualización de equipos",
-    "store": "Store",
     "sit": "Sit",
     "about": "Acerca de nosotros",
     "promotion": "Promociones",
@@ -436,6 +435,51 @@
         "desc": "Desarrollamos aplicaciones que piensan, aprenden y escalan contigo."
       }
     ],
+    "tiersEyebrow": "Cómo trabajamos contigo",
+    "tiersTitle": "Elige tu punto de partida",
+    "tiersNote": "Cada proyecto de IA es distinto, por eso cotizamos a la medida según el alcance.",
+    "tiers": [
+      {
+        "key": "diagnostico",
+        "name": "Diagnóstico y primer automatización",
+        "desc": "Para empezar: identificamos el proceso con mayor impacto y lo automatizamos primero.",
+        "price": "Cotización a la medida",
+        "items": [
+          "Diagnóstico de procesos",
+          "1 automatización o chatbot funcionando",
+          "Entrega en semanas, no meses"
+        ],
+        "btn": "Cotizar este plan",
+        "whatsappMsg": "Hola, me gustaría cotizar un diagnóstico y primera automatización con IA."
+      },
+      {
+        "key": "escala",
+        "name": "Automatización a escala",
+        "desc": "Para empresas que ya automatizaron algo y quieren más.",
+        "price": "Cotización a la medida",
+        "items": [
+          "Múltiples procesos automatizados",
+          "Integración con tus sistemas actuales",
+          "Soporte y ajuste continuo"
+        ],
+        "highlight": true,
+        "btn": "Cotizar este plan",
+        "whatsappMsg": "Hola, me gustaría cotizar automatización con IA a escala para mi empresa."
+      },
+      {
+        "key": "medida",
+        "name": "IA a la medida",
+        "desc": "Agentes y modelos diseñados específicamente para tu operación.",
+        "price": "Cotización a la medida",
+        "items": [
+          "Agentes de IA personalizados",
+          "Modelos entrenados con tus datos",
+          "Acompañamiento dedicado"
+        ],
+        "btn": "Cotizar este plan",
+        "whatsappMsg": "Hola, me gustaría cotizar un proyecto de IA a la medida para mi empresa."
+      }
+    ],
     "processEyebrow": "Cómo trabajamos",
     "processTitle": "Nuestro proceso de automatización",
     "processSteps": [
@@ -471,14 +515,14 @@
       "OpenAI",
       "Anthropic",
       "LangChain",
-      "HyperAgent",
-      "Lovable",
-      "Horizon",
       "Pinecone",
       "PostgreSQL",
       "Python",
       "Node.js",
-      "Next.js"
+      "Next.js",
+      "HyperAgent",
+      "Lovable",
+      "Horizon"
     ]
   },
   "fixCTA": {
@@ -489,9 +533,9 @@
     "secondaryBtn": "Ver planes de mantenimiento"
   },
   "fixHero": {
-    "title1": "Reparación profesional de equipos",
+    "title1": "Reparación y mejora de equipos",
     "title2": "rápida, confiable y garantizada",
-    "desc": "Reparamos computadoras, laptops, celulares e impresoras. Diagnóstico honesto, refacciones de calidad y atención directa en México.",
+    "desc": "Reparamos y mejoramos computadoras, laptops, celulares e impresoras, para personas y empresas. Diagnóstico honesto, refacciones de calidad y atención directa en México.",
     "ctaBtn": "Agendar revisión",
     "whatsappMsg": "Hola, me gustaría reparar un equipo.",
     "heroBadge": "Servicio técnico especializado",
@@ -529,8 +573,8 @@
     ]
   },
   "fixServices": {
-    "eyebrow": "Lo que reparamos",
-    "title": "Servicios de reparación",
+    "eyebrow": "Lo que reparamos y mejoramos",
+    "title": "Servicios de reparación y mejora",
     "services": [
       {
         "title": "Computadoras & Laptops",
@@ -546,7 +590,7 @@
       },
       {
         "title": "Actualizaciones",
-        "desc": "Mejora de rendimiento, SSD, RAM y sistemas."
+        "desc": "Mejora de rendimiento en computadoras, celulares e impresoras: SSD, RAM, batería y sistemas."
       }
     ]
   },
@@ -627,6 +671,19 @@
         ],
         "btn": "Agendar",
         "whatsappMsg": "Hola, me gustaría más información sobre el Mantenimiento Apple Care+."
+      },
+      {
+        "key": "empresarial",
+        "name": "Mantenimiento Empresarial",
+        "price": "Cotización",
+        "desc": "Contrato de soporte para todos los equipos de tu empresa.",
+        "items": [
+          "Precio por volumen de equipos",
+          "Visitas programadas y tiempos de respuesta acordados",
+          "Un solo contacto para dar seguimiento a tu cuenta"
+        ],
+        "btn": "Cotizar para mi empresa",
+        "whatsappMsg": "Hola, me gustaría cotizar un contrato de mantenimiento empresarial para los equipos de mi empresa."
       }
     ],
     "processEyebrow": "Cómo trabajamos",
@@ -869,7 +926,7 @@
     "ctaTitle": "Tecnología que sí funciona",
     "ctaDesc": "Si buscas alguien que te hable claro y te ayude a tomar la mejor decisión, estás en el lugar correcto.",
     "ctaBtn": "Contáctanos",
-    "ctaSecondaryBtn": "Explora nuestra tienda",
+    "ctaSecondaryBtn": "Ver refacciones y equipos",
     "ctaWhatsappMsg": "Hola, quiero información sobre sus servicios."
   },
   "promotions": {
@@ -916,7 +973,7 @@
     "ctaTitleActive": "Aprovecha antes de que termine",
     "ctaDescActive": "Esta promoción es por tiempo limitado. Escríbenos y asegura tu descuento.",
     "ctaBtnActive": "Quiero la promoción",
-    "ctaSecondaryBtn": "Explora nuestra tienda"
+    "ctaSecondaryBtn": "Ver refacciones y equipos"
   },
   "contact": {
     "hero": {
@@ -972,14 +1029,14 @@
       "highlight3Title": "Soporte continuo",
       "highlight3Desc": "Te acompañamos después del lanzamiento."
     },
-    "store": {
-      "eyebrow": "Tienda en línea",
-      "title1": "Equipo y tecnología,",
-      "title2": "listos para hoy",
-      "desc": "Explora nuestro catálogo de equipo de cómputo, componentes y accesorios con precio claro y disponibilidad real.",
-      "cta": "Explorar la Store",
-      "categoriesLabel": "Categorías populares",
-      "noPrice": "Cotizar"
+    "ia": {
+      "eyebrow": "Nuestra apuesta principal",
+      "title1": "Automatización con IA,",
+      "title2": "para empresas que quieren escalar",
+      "desc": "Implementamos inteligencia artificial para empresas mexicanas que buscan ahorrar tiempo, reducir costos y escalar operaciones.",
+      "ctaPrimary": "Ver automatizaciones con IA",
+      "ctaSecondary": "Hablar con un experto",
+      "whatsappMsg": "Hola, me gustaría más información sobre las automatizaciones con IA."
     },
     "techService": {
       "eyebrow": "Servicio técnico",

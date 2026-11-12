@@ -58,8 +58,7 @@ function ContactIllustration() {
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.2 }}
               className={`flex ${msg.from === "me" ? "justify-end" : "justify-start"}`}
             >
@@ -116,8 +115,7 @@ export default function ContactHero() {
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
       >
@@ -164,8 +162,7 @@ export default function ContactHero() {
 
       <motion.div
         initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
         className="flex-1 flex justify-center"
       >

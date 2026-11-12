@@ -94,8 +94,7 @@ function AboutIllustration() {
             <motion.div
               key={row.label}
               initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.15 }}
               className="flex items-center gap-3"
             >
@@ -164,8 +163,7 @@ export default function AboutHero() {
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
       >
@@ -214,8 +212,7 @@ export default function AboutHero() {
 
       <motion.div
         initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
         className="flex-1 flex justify-center"
       >

@@ -118,8 +118,7 @@ function UpgradeIllustration() {
                   <motion.div
                     className="h-full rounded-full bg-gradient-to-r from-teal-400 to-sky-400"
                     initial={{ width: "10%" }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
+                    animate={{ width: "100%" }}
                     transition={{ duration: 1, delay: 0.2 + i * 0.15 }}
                   />
                 </div>
@@ -177,8 +176,7 @@ export default function UpgradeHero() {
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="flex flex-1 flex-col items-center lg:items-start text-center lg:text-left gap-6"
       >
@@ -227,8 +225,7 @@ export default function UpgradeHero() {
 
       <motion.div
         initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 0.1 }}
         className="flex-1 flex justify-center"
       >

@@ -9,8 +9,6 @@ import MobileMenu from "./MobileMenu";
 import NativeSelect from "../native-select/NativeSelect";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
-import { useCarritoStore } from "@/modules/store/presentation/store/carrito.store";
-import { useUIStore } from "@/modules/store/presentation/store/ui.store";
 import { ClientSession } from "@/core/helpers/auth/client-session";
 import { UserMenu } from "@/modules/(my-sit)/presentation/components/UserMenu";
 
@@ -39,48 +37,6 @@ export function AuthArea() {
     >
       Iniciar sesión
     </Link>
-  );
-}
-
-function CartButton() {
-  const [mounted, setMounted] = useState(false);
-  const lineas = useCarritoStore((s) => s.lineas);
-  const abrirCarrito = useUIStore((s) => s.abrirCarrito);
-  const pathname = usePathname();
-
-  useEffect(() => setMounted(true), []);
-
-  const cantidad = mounted
-    ? lineas.reduce((acc, l) => acc + l.cantidad, 0)
-    : 0;
-
-  if (cantidad === 0 && pathname !== "/store") return null;
-
-  return (
-    <button
-      onClick={abrirCarrito}
-      className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition"
-      aria-label="Carrito"
-    >
-      <svg
-        className="h-5 w-5 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.6}
-          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      </svg>
-      {cantidad > 0 && (
-        <span className="absolute -top-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-r from-teal-400 to-[#02AFFF] text-[10px] font-bold text-black">
-          {cantidad}
-        </span>
-      )}
-    </button>
   );
 }
 
@@ -146,8 +102,6 @@ export default function AppBar() {
           <div className="hidden sm:block">
             <AuthArea />
           </div>
-
-          <CartButton />
 
           {/* Hamburger */}
           <button

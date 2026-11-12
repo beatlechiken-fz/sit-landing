@@ -115,11 +115,11 @@ export function ClientMobileMenu({
           })}
 
           <Link
-            href="/store"
+            href="/"
             onClick={onClose}
             className="mt-2 px-4 py-2.5 rounded-xl border border-white/10 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
           >
-            ← Regresar a Store
+            ← Volver al sitio
           </Link>
 
           <button

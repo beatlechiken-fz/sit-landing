@@ -31,7 +31,7 @@ export default function MaintenancePlans() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
         {plans.map((p: any, i: number) => {
           const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(p.whatsappMsg)}`;
           return (

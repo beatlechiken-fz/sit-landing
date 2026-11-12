@@ -91,7 +91,7 @@ export function ClientNavbar({ session }: { session: ClientSession }) {
         {/* DERECHA */}
         <div className="flex items-center gap-3">
           <Link
-            href="/store"
+            href="/"
             className="hidden md:flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3.5 py-2 text-sm text-white/70 transition-colors hover:bg-white/10 hover:text-white"
           >
             <svg
@@ -107,7 +107,7 @@ export function ClientNavbar({ session }: { session: ClientSession }) {
                 d="M10 19l-7-7m0 0l7-7m-7 7h18"
               />
             </svg>
-            Regresar a Store
+            Volver al sitio
           </Link>
 
           <div className="hidden md:block">
