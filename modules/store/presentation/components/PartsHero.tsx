@@ -9,7 +9,7 @@ function PartsHero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-76px)] flex items-center justify-center overflow-hidden mt-[76px]">
       <Image
-        src="/img/hero/parts.jpg"
+        src="/img/hero/parts.png"
         alt=""
         fill
         priority

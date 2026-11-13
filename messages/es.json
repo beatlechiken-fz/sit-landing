@@ -435,6 +435,7 @@
         "desc": "Desarrollamos aplicaciones que piensan, aprenden y escalan contigo."
       }
     ],
+    "serviceCategories": ["Atención y agentes", "Automatización y datos", "Desarrollo con IA"],
     "tiersEyebrow": "Cómo trabajamos contigo",
     "tiersTitle": "Elige tu punto de partida",
     "tiersNote": "Cada proyecto de IA es distinto, por eso cotizamos a la medida según el alcance.",

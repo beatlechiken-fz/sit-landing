@@ -14,7 +14,7 @@ export default function FixHero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-76px)] flex items-center overflow-hidden mt-[76px]">
       <Image
-        src="/img/hero/fix.jpg"
+        src="/img/hero/fix.png"
         alt=""
         fill
         priority

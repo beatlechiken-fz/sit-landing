@@ -14,11 +14,11 @@ export default function MaintenanceHero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-76px)] flex items-center overflow-hidden mt-[76px]">
       <Image
-        src="/img/hero/maintenance.jpg"
+        src="/img/hero/maintenance.png"
         alt=""
         fill
         priority
-        className="object-cover object-[center_25%]"
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0F] via-[#0B0B0F]/90 to-[#0B0B0F]/30" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-transparent to-transparent" />

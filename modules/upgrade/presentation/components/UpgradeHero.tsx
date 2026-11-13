@@ -15,7 +15,7 @@ export default function UpgradeHero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-76px)] flex items-center overflow-hidden mt-[76px]">
       <Image
-        src="/img/hero/upgrade.jpg"
+        src="/img/hero/upgrade.png"
         alt=""
         fill
         priority

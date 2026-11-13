@@ -428,6 +428,7 @@
         "desc": "We develop applications that think, learn, and scale with you."
       }
     ],
+    "serviceCategories": ["Support and agents", "Automation and data", "Development with AI"],
     "tiersEyebrow": "How we work with you",
     "tiersTitle": "Choose your starting point",
     "tiersNote": "Every AI project is different, so we quote each one based on its scope.",

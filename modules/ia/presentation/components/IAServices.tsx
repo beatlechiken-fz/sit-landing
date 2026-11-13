@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useMessages, useTranslations } from "next-intl";
 
 const ICONS: React.ReactNode[] = [
@@ -56,12 +57,30 @@ const ICONS: React.ReactNode[] = [
   </>,
 ];
 
+type ServiceItem = { title: string; desc: string };
+
 export default function IAServices() {
   const t = useTranslations("ia");
   const messages = useMessages();
-  const services = (messages?.ia as any)?.services as any[];
+  const services =
+    (messages?.ia as { services?: ServiceItem[] } | undefined)?.services ??
+    [];
+  const categories =
+    (messages?.ia as { serviceCategories?: string[] } | undefined)
+      ?.serviceCategories ?? [];
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const groups = categories.map((label, i) => ({
+    label,
+    items: services.slice(i * 2, i * 2 + 2),
+    iconsStart: i * 2,
+  }));
+
   return (
-    <section id="servicios" className="w-[85%] max-w-7xl py-24 flex flex-col items-center scroll-mt-24">
+    <section
+      id="servicios"
+      className="w-[85%] max-w-5xl py-24 flex flex-col items-center scroll-mt-24"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -73,47 +92,73 @@ export default function IAServices() {
           {t("servicesEyebrow")}
         </span>
         <h2 className="text-[clamp(2.2rem,5vw,3.8rem)] font-bold font-title">
-          
-            {t("servicesTitle")}
-          
+          {t("servicesTitle")}
         </h2>
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full"
-      >
-        {services.map((item, i) => (
-          <motion.div
-            key={i}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="rounded-2xl bg-white/5 backdrop-blur border border-white/10 p-8 hover:border-teal-400/40 hover:-translate-y-2 transition"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-400/10">
-              <svg
-                className="h-6 w-6 text-teal-300"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.8}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                viewBox="0 0 24 24"
+      <div className="w-full flex flex-col divide-y divide-white/10 border-t border-b border-white/10">
+        {groups.map((group, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <div key={group.label}>
+              <button
+                onClick={() => setOpenIndex(isOpen ? -1 : i)}
+                className="w-full flex items-center justify-between py-6 text-left"
+                aria-expanded={isOpen}
               >
-                {ICONS[i]}
-              </svg>
-            </div>
+                <span className="text-lg md:text-xl font-bold">
+                  {group.label}
+                </span>
+                <span
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/15 text-lg transition-transform ${isOpen ? "rotate-45" : ""}`}
+                  aria-hidden
+                >
+                  +
+                </span>
+              </button>
 
-            <h3 className="text-xl font-bold mt-6 mb-3">{item.title}</h3>
-            <p className="text-gray-400">{item.desc}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-10">
+                      {group.items.map((item, j) => (
+                        <div
+                          key={item.title}
+                          className="rounded-2xl bg-white/5 border border-white/10 p-6 hover:border-teal-400/40 transition"
+                        >
+                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-400/10">
+                            <svg
+                              className="h-5 w-5 text-teal-300"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth={1.8}
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              viewBox="0 0 24 24"
+                            >
+                              {ICONS[group.iconsStart + j]}
+                            </svg>
+                          </div>
+                          <h3 className="text-lg font-bold mt-4 mb-2">
+                            {item.title}
+                          </h3>
+                          <p className="text-gray-400 text-sm">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

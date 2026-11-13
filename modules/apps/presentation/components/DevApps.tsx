@@ -30,7 +30,7 @@ export default function DevApps() {
     <section className="relative w-full flex flex-col mt-[76px] gap-16">
       <div className="relative min-h-[calc(100vh-76px)] flex items-center overflow-hidden">
         <Image
-          src="/img/hero/apps.jpg"
+          src="/img/hero/apps.png"
           alt=""
           fill
           priority

@@ -15,7 +15,7 @@ export default function PromotionsHero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-76px)] flex items-center overflow-hidden mt-[76px]">
       <Image
-        src="/img/hero/promotions-sale.jpg"
+        src="/img/hero/promotions.png"
         alt=""
         fill
         priority

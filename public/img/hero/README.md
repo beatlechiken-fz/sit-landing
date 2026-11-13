@@ -1,20 +1,17 @@
-home.png e ia.png son mockups reales del producto (AI Agent, en español) agregados el
-2026-11-12 — estos sí reflejan el producto, no son placeholder.
+Mockups e imágenes reales del producto/negocio, agregados por Mario el 2026-11-12/13 — no son
+placeholder, reflejan el producto y los servicios reales:
 
-El resto son fotos de stock de Pexels (Pexels License: uso comercial libre, sin atribución
-requerida — https://www.pexels.com/license/) descargadas el 2026-11-12, como reemplazo
-temporal de las ilustraciones genéricas que tenía cada hero.
+- home.png, apps.png — mockup de la app (web/finanzas)
+- ia.png — mockup de "AI Agent" en español
+- fix.png — técnico reparando una laptop
+- maintenance.png — cambio de pasta térmica
+- upgrade.png — RAM DDR5 y SSD NVMe
+- us.png — foto del equipo/negocio (About)
+- promotions.png — dispositivos + etiqueta de descuento (El Fin Irresistible)
+- parts.png — componentes y refacciones sobre un escritorio
+- contact.png — íconos de contacto (teléfono, email, WhatsApp, ubicación)
 
-Son un placeholder razonable, no fotos reales de SIT. Cuando haya fotos propias
-(equipo, oficina en Morelia, equipos reparados, etc.), reemplazar el archivo correspondiente
-manteniendo el mismo nombre:
+Pendientes de reemplazar por fotos propias (siguen siendo stock de Pexels, Pexels License,
+uso comercial libre sin atribución — https://www.pexels.com/license/):
 
-- apps.jpg — equipo de desarrollo
-- fix.jpg — técnico reparando una computadora
-- maintenance.jpg — limpieza/mantenimiento de laptop
-- upgrade.jpg — instalación de RAM
-- about.jpg — equipo/oficina
 - landing.jpg, landing-custom.jpg — diseño/desarrollo web
-- promotions-sale.jpg — laptop y etiqueta de descuento (El Fin Irresistible)
-- contact.jpg — soporte/atención a cliente
-- parts.jpg — componentes de computadora
