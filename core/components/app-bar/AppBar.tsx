@@ -30,14 +30,7 @@ export function AuthArea() {
     return <UserMenu session={session} />;
   }
 
-  return (
-    <Link
-      href="/my-sit"
-      className="rounded-xl bg-gradient-to-r from-teal-400 to-[#02AFFF] px-4 py-2 text-sm font-semibold text-black transition-opacity hover:opacity-90"
-    >
-      Iniciar sesión
-    </Link>
-  );
+  return null;
 }
 
 export default function AppBar() {
