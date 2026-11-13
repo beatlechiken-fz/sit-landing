@@ -30,14 +30,14 @@ export default function HomeHero() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0F] via-[#0B0B0F]/90 to-[#0B0B0F]/30" />
+        <div className="absolute inset-0 bg-[#0B0B0F]/75" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0F] via-transparent to-transparent" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="relative z-10 w-[85%] max-w-7xl mx-auto flex flex-col items-center lg:items-start text-center lg:text-left gap-6 py-20"
+          className="relative z-10 w-[85%] max-w-7xl mx-auto flex flex-col items-center text-center gap-6 py-20"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-1.5 text-xs font-medium text-teal-300">
             <svg
